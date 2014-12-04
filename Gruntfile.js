@@ -19,13 +19,12 @@ module.exports = function (grunt) {
   /**
    * Dynamically load npm tasks
    */
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt);
 
   /**
    * Grunt config
    */
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
 
     /**
@@ -35,10 +34,7 @@ module.exports = function (grunt) {
       src: 'src',
       app: 'app',
       css: '<%= project.app %>/css/flexie.css',
-      assets: '<%= project.app %>/assets',
-      scss: [
-        '<%= project.src %>/scss/flexie.scss'
-      ]
+      scss: '<%= project.src %>/scss/flexie.scss'
     },
 
     /**
@@ -83,7 +79,7 @@ module.exports = function (grunt) {
      * Compiles all Sass/SCSS files and appends project banner
      */
     sass: {
-      dev: {
+      dist: {
         options: {
           cacheLocation : '_tmp',
           lineNumbers   : true,
@@ -92,7 +88,7 @@ module.exports = function (grunt) {
           style         : 'expanded'
         },
         files: {
-          '<%= project.css %>': '<%= project.scss %>'
+          '<%= project.css %>' : '<%= project.scss %>'
         }
       }
     },
@@ -107,15 +103,18 @@ module.exports = function (grunt) {
         browsers: [
           'last 2 version',
           'safari 6',
+          'ie 8',
           'ie 9',
+          'ie 10',
+          'ie 11',
           'opera 12.1',
-          'ios 6',
+          'ios 5',
           'android 4'
         ]
       },
-      dev: {
+      dist: {
         files: {
-          '<%= project.css %>': '<%= project.scss %>'
+          '<%= project.css %>' : '<%= project.css %>'
         }
       }
     },
@@ -126,12 +125,12 @@ module.exports = function (grunt) {
      * https://github.com/gruntjs/grunt-contrib-cssmin
      */
     cssmin: {
-      dist: {
+      combine: {
         options: {
           banner: '<%= tag.banner %>'
         },
         files: {
-          '<%= project.css %>': '<%= project.css %>'
+          '<%= project.css %>' : '<%= project.css %>'
         }
       }
     },
@@ -155,7 +154,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: '<%= project.src %>/scss/{,*/}*.{scss,sass}',
-        tasks: ['sass:dev', 'cssmin:dev', 'autoprefixer:dev']
+        tasks: ['sass', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -163,8 +162,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= project.app %>/{,*/}*.html',
-          '<%= project.assets %>/css/*.css',
-          '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= project.css %>'
         ]
       }
     }
@@ -188,8 +186,6 @@ module.exports = function (grunt) {
    * Then compress all JS/CSS files
    */
   grunt.registerTask('build', [
-    'sass',
-    'autoprefixer',
     'cssmin'
   ]);
 
