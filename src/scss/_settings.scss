@@ -1,0 +1,108 @@
+// ----------------------------------------------------------------------------
+// Set the grid, breakpoints, font, colors, etc for new themes
+// All pixel values will be converted to ems on build
+//
+// 1. Adjust grid system
+// 2. Font settings
+// 3. Color palette
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Adjust grid system
+// ----------------------------------------------------------------------------
+
+// Grid sizing
+$screen-size-small        : 980px !default;
+$screen-size-medium       : 1140px !default;
+$screen-size-large        : 1440px !default;
+$gutter-width             : 24px !default;
+
+// Responsive breakpoints
+$grid-breakpoints: (
+  mobile                  : 320px,
+  tablet                  : 720px,
+  desktop                 : 1140px,
+  wide                    : 1440px
+) !default;
+
+
+// ----------------------------------------------------------------------------
+// 2. Font settings
+// ----------------------------------------------------------------------------
+
+// Font stacks
+$font-primary             : helvetica, arial, sans-serif !default;
+$font-secondary           : helvetica, arial, sans-serif !default;
+$font-monospace           : Menlo, Monaco, 'Courier New', monospace !default;
+
+// Default font size
+$font-base                : 14px !default;
+
+// Heading font sizes
+// Based on Major Second scale @ 14px
+// type-scale.com offers a great tool to calculate font sizes
+$h1-font-size             : 23px !default;
+$h2-font-size             : 20px !default;
+$h3-font-size             : 18px !default;
+$h4-font-size             : 16px !default;
+$h5-font-size             : $font-base !default;
+$h6-font-size             : 12px !default;
+
+// Spacing variable creates consistent margin/padding for components and modules
+$spacing                  : 20px !default;
+
+
+// ----------------------------------------------------------------------------
+// 3. Color palette
+//
+// The scale-color() function allows to dynamically change color values
+// Read the documentation on scale-color and its use
+// http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method
+// ----------------------------------------------------------------------------
+
+// Primary
+$color-primary            : rgb(46, 160, 235) !default; // #2ea0eb
+$color-primary-dark       : scale-color($color-primary, $lightness: -15%) !default; // #158cda
+$color-primary-darker     : scale-color($color-primary, $lightness: -25%) !default; // #127bc0
+$color-primary-darkest    : scale-color($color-primary, $lightness: -35%) !default; // #106ba7
+$color-primary-light      : scale-color($color-primary, $lightness: 15%) !default; // #4daeee
+$color-primary-lighter    : scale-color($color-primary, $lightness: 25%) !default; // #62b8f0
+$color-primary-lightest   : scale-color($color-primary, $lightness: 35%) !default; // #77c1f2
+
+// Secondary
+$color-secondary          : rgb(235, 121, 46) !default;  // #eb792e
+$color-secondary-dark     : scale-color($color-secondary, $lightness: -15%) !default; // #da6315
+$color-secondary-darker   : scale-color($color-secondary, $lightness: -25%) !default; // #c05712
+$color-secondary-darkest  : scale-color($color-secondary, $lightness: -35%) !default; // #a74c10
+$color-secondary-light    : scale-color($color-secondary, $lightness: 15%) !default; // #ee8d4d
+$color-secondary-lighter  : scale-color($color-secondary, $lightness: 25%) !default; // #f09a62
+$color-secondary-lightest : scale-color($color-secondary, $lightness: 35%) !default; // #f2a877
+
+// Tertiary
+$color-tertiary           : rgb(160, 235, 46) !default; // #a0eb2e
+$color-tertiary-dark      : scale-color($color-tertiary, $lightness: -15%) !default; // #8cda15
+$color-tertiary-darker    : scale-color($color-tertiary, $lightness: -25%) !default; // #7bc012
+$color-tertiary-darkest   : scale-color($color-tertiary, $lightness: -35%) !default; // #6ba710
+$color-tertiary-light     : scale-color($color-tertiary, $lightness: 15%) !default; // #aeee4d
+$color-tertiary-lighter   : scale-color($color-tertiary, $lightness: 25%) !default; // #b8f062
+$color-tertiary-lightest  : scale-color($color-tertiary, $lightness: 35%) !default; // #c1f277
+
+// Alerts
+$color-danger             : rgb(250, 87, 87) !default; // #fa5757
+$color-default            : rgb(178, 219, 235) !default; // #b2dbeb
+$color-warning            : rgb(237, 210, 104) !default; // #edd268
+$color-success            : rgb(137, 208, 133) !default; // #89d085
+
+// Grays
+$color-gray               : rgb(187, 187, 187) !default; // #bbb
+$color-gray-dark          : scale-color($color-gray, $lightness: -25%) !default; // #8c8c8c
+$color-gray-darker        : scale-color($color-gray, $lightness: -50%) !default; // #5e5e5e
+$color-gray-darkest       : scale-color($color-gray, $lightness: -75%) !default; // #2f2f2f
+$color-gray-light         : scale-color($color-gray, $lightness: 25%) !default; // #ccc
+$color-gray-lighter       : scale-color($color-gray, $lightness: 50%) !default; // #ddd
+$color-gray-lightest      : scale-color($color-gray, $lightness: 75%) !default; // #eee
+
+// Black & White
+$color-black              : rgb(0, 0, 0) !default; // #000
+$color-white              : rgb(255, 255, 255) !default; // #fff

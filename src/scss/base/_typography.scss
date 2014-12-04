@@ -1,0 +1,189 @@
+// ----------------------------------------------------------------------------
+// Typography
+// Sets font styles for entire site.
+//
+// 1. Page structure
+// 2. Links
+// 3. Lists
+// 4. Headings
+// 5. Miscellaneous
+// 6. Highlighting colors
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Page structure
+// ----------------------------------------------------------------------------
+
+// REM units need to have base font size on root of an HTML document
+// Any font size added to body will compound EM units being used
+html { font-size: $font-base/16px * 100%; }
+body {
+  background: $color-white;
+  color: $color-black;
+  font-family: $font-secondary;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+// ----------------------------------------------------------------------------
+// 2. Links
+// ----------------------------------------------------------------------------
+
+// Anchor styling
+a {
+  color: $color-primary;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  word-wrap: break-word;
+
+  // Image links
+  img {
+    background: none;
+    border: 0;
+  }
+
+  // Prevents border/background on linked image hover.
+  // Adds slight opacity to image links.
+  &:hover img,
+  &:focus img {
+    background: none;
+    border: 0;
+    filter: alpha(opacity=80);
+    opacity: .8;
+  }
+}
+
+// Anchor states
+a:hover,
+a:focus,
+a:active {
+  color: $color-primary-dark;
+  text-decoration: none;
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Lists
+// ----------------------------------------------------------------------------
+
+// Styling for lists
+ul,
+ol {
+  list-style-position: inside;
+  margin-bottom: rem($spacing);
+  padding-left: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+dl,
+dd {
+  margin-left: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+
+// ----------------------------------------------------------------------------
+// 4. Headings
+// ----------------------------------------------------------------------------
+
+// h1 through h6 styling
+// Heading class lets you use one heading type for semantics
+// but style it as another heading type.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  word-wrap: break-word;
+}
+
+h1,
+.h1 {
+  @include rem(font-size, $h1-font-size);
+  font-family: $font-primary;
+}
+
+h2,
+.h2 {
+  @include rem(font-size, $h2-font-size);
+}
+
+h3,
+.h3 {
+  @include rem(font-size, $h3-font-size);
+}
+
+h4,
+.h4 {
+  @include rem(font-size, $h4-font-size);
+}
+
+h5,
+.h5 {
+  @include rem(font-size, $h5-font-size);
+}
+
+h6,
+.h6 {
+  @include rem(font-size, $h6-font-size);
+}
+
+
+// ----------------------------------------------------------------------------
+// 5. Miscellaneous
+// ----------------------------------------------------------------------------
+
+// Lines
+hr {
+  @include rem(margin, 32px auto);
+  border: 0;
+  border-bottom: 0 solid $color-white;
+  border-top: rem(1px) solid $color-gray-lighter;
+}
+
+// Subscript & Superscript
+sub,
+sup {
+  @include rem(margin-left, 4px);
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: rem(4px) solid $color-gray-dark;
+  font-style: italic;
+  margin-bottom: rem($spacing);
+  padding-left: rem($spacing);
+  padding-right: rem($spacing);
+}
+
+
+// ----------------------------------------------------------------------------
+// 6. Highlighting colors
+// ----------------------------------------------------------------------------
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $color-white;
+}
