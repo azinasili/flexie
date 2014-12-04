@@ -1,0 +1,20 @@
+{
+  "name": "flexie",
+  "title": "Flexbox grid made specifically for SCSS",
+  "url": "http://www.enterprisecloudworks.com/",
+  "author": "Azin Asili",
+  "copyright": "2014",
+  "version": "0.1.0",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-autoprefixer": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "connect-livereload": "~0.2.0",
+    "grunt-open": "~0.2.0",
+    "matchdep": "~0.1.2"
+  }
+}
