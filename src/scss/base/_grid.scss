@@ -117,17 +117,20 @@
 
 // Need to fix this logic
 // Create loops to output proper grids
+// Missing: 3/5, 4/7, 5/7, 3/8, 5/8, 5/9, 7/9, 7/10
 // @for $i from 1 through 10 {
 //   @if $i == 1 {
 //     .col-#{$i} { width: $i; }
+//   } @else {
+//     .col-#{$i} { width: 1 $i; }
 //   }
 //   @for $j from 1 through 10 {
-//     @if $j < $i /*and ($i % $j != 0)*/ {
-//       .col-#{$j}-#{$i} { flex-basis: percentage($j/$i); }
-//       // .col-#{$j}-#{$i} { width: $j $i; }
+//     @if $j < $i and /*($i/$j != $i or $i/$j == $i) and*/ $i % $j == 1 {
+//       .col-#{$j}-#{$i} { width: $j $i; }
 //     }
 //   }
 // }
+
 
 
 // ----------------------------------------------------------------------------
