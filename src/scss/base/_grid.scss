@@ -2,16 +2,16 @@
 // The Grid
 // Structure and layout
 //
-// 1. Demo
-// 2. Universal grid structure
-// 3. Grid overrides
-// 4. Grid system
-// 5. Breakpoints
+// Demo
+// 1. Universal grid structure
+// 2. Grid overrides
+// 3. Grid system
+// 4. Breakpoints
 // ----------------------------------------------------------------------------
 
 
 // ----------------------------------------------------------------------------
-// 1. Demo
+// Demo
 // ----------------------------------------------------------------------------
 
 // Column styles for demo
@@ -41,7 +41,7 @@
 
 
 // ----------------------------------------------------------------------------
-// 2. Universal grid structure
+// 1. Universal grid structure
 // ----------------------------------------------------------------------------
 
 // Global container object
@@ -72,7 +72,7 @@
 
 
 // ----------------------------------------------------------------------------
-// 3. Grid overrides
+// 2. Grid overrides
 // ----------------------------------------------------------------------------
 
 // Reverse order columns
@@ -106,7 +106,7 @@
 
 
 // ----------------------------------------------------------------------------
-// 4. Grid system
+// 3. Grid system
 // ----------------------------------------------------------------------------
 .col-auto { flex-basis: 0; flex-grow: 1; }
 
@@ -115,9 +115,23 @@
   .col-#{$i}   { flex-basis: percentage(1/$i); }
 }
 
+// Need to fix this logic
+// Create loops to output proper grids
+// @for $i from 1 through 10 {
+//   @if $i == 1 {
+//     .col-#{$i} { width: $i; }
+//   }
+//   @for $j from 1 through 10 {
+//     @if $j < $i /*and ($i % $j != 0)*/ {
+//       .col-#{$j}-#{$i} { flex-basis: percentage($j/$i); }
+//       // .col-#{$j}-#{$i} { width: $j $i; }
+//     }
+//   }
+// }
+
 
 // ----------------------------------------------------------------------------
-// 5. Breakpoints
+// 4. Breakpoints
 // ----------------------------------------------------------------------------
 
 // Medium breakpoint
