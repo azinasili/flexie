@@ -1,3 +1,32 @@
+// Options will be in a map
+$flexie-options: (
+  gutter: 20px
+);
+
+// Column mixin
+@mixin flexie-col($width: auto, $gutter: 20px) {
+  @if $width != auto {
+    flex-grow: 0;
+    width: percentage($width);
+  } @else {
+    flex-basis: 0;  
+    flex-grow: 1;
+  }
+  @if $gutter > 0 {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2; 
+  } @else {
+    @warn 'Flexie column mixin #{$name} argument only accpets values greater than zero!';
+  }
+  display: flex;
+  flex-direction: column; 
+  flex-shrink: 0;
+}
+
+
+// ----------
+// Old syntax
+// ----------
 @mixin flex-column($auto: false, $width: 0) {
   // Check to see if auto width column
   @if $auto != false {
