@@ -75,7 +75,7 @@
 // 2. Grid overrides
 // ----------------------------------------------------------------------------
 
-// Reverse order columns
+// Reverse column order
 .row-reverse   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
 // Horizontal alignment for children columns
@@ -89,11 +89,11 @@
 .row-bottom    { align-items: flex-end; }
 .row-stretch   { align-items: stretch; }
 
-// Evenly distributed space for children columns
+// Evenly distribute remaining space for children columns
 .row-around    { justify-content: space-around; }
 .row-between   { justify-content: space-between; }
 
-// Individual column alignment
+  // Column alignment overrides
 .col-top       { align-self: flex-start; }
 .col-middle    { align-self: center; }
 .col-bottom    { align-self: flex-end; }
@@ -139,7 +139,7 @@
 
 // Medium breakpoint
 @include mq($from: tablet) {
-  // Reverse order columns
+  // Reverse column order
   .row-reverse-md   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
@@ -153,11 +153,11 @@
   .row-bottom-md    { align-items: flex-end; }
   .row-stretch-md   { align-items: stretch; }
 
-  // Evenly distributed space for children columns
+  // Evenly distribute remaining space for children columns
   .row-around-md    { justify-content: space-around; }
   .row-between-md   { justify-content: space-between; }
 
-  // Individual column alignment
+  // Column alignment overrides
   .col-top-md       { align-self: flex-start; }
   .col-middle-md    { align-self: center; }
   .col-bottom-md    { align-self: flex-end; }
@@ -179,7 +179,7 @@
 
 // Desktop breakpoint
 @include mq($from: desktop) {
-  // Reverse order columns
+  // Reverse column order
   .row-reverse-lg   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
@@ -193,11 +193,11 @@
   .row-bottom-lg    { align-items: flex-end; }
   .row-stretch-lg   { align-items: stretch; }
 
-  // Evenly distributed space for children columns
+  // Evenly distribute remaining space for children columns
   .row-around-lg    { justify-content: space-around; }
   .row-between-lg   { justify-content: space-between; }
 
-  // Individual column alignment
+  // Column alignment overrides
   .col-top-lg       { align-self: flex-start; }
   .col-middle-lg    { align-self: center; }
   .col-bottom-lg    { align-self: flex-end; }
@@ -219,7 +219,7 @@
 
 // Wide breakpoint
 @include mq($from: wide) {
-  // Reverse order columns
+  // Reverse column order
   .row-reverse-xl   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
@@ -233,11 +233,11 @@
   .row-bottom-xl    { align-items: flex-end; }
   .row-stretch-xl   { align-items: stretch; }
 
-  // Evenly distributed space for children columns
+  // Evenly distribute remaining space for children columns
   .row-around-xl    { justify-content: space-around; }
   .row-between-xl   { justify-content: space-between; }
 
-  // Individual column alignment
+  // Column alignment overrides
   .col-top-xl       { align-self: flex-start; }
   .col-middle-xl    { align-self: center; }
   .col-bottom-xl    { align-self: flex-end; }
