@@ -3,23 +3,57 @@ $flexie-options: (
   gutter: 20px
 );
 
+// Row mixin
+@mixin flexie-row($gutter: 20px) {
+  // Create custom gutter
+  @if $gutter > 0 {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  } @else {
+    @warn 'Flexie row mixin #{$gutter} argument only accepts values greater than zero!';
+  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 // Column mixin
-@mixin flexie-col($width: auto, $gutter: 20px) {
+@mixin flexie-col($width: auto, $align: top, $order: 0, $gutter: 20px) {
+  // Create width when not auto
   @if $width != auto {
     flex-grow: 0;
     width: percentage($width);
   } @else {
-    flex-basis: 0;  
+    flex-basis: 0;
     flex-grow: 1;
   }
+  // Column alignment
+  @if $align == top or $align == middle or $align == bottom or $align == stretch {
+    @if $align == top {
+      align-self: flex-start;
+    } @else if $align == middle {
+      align-self: center;
+    } @else if $align == bottom {
+      align-self: flex-end;
+    } @else if $align == stretch {
+      align-self: stretch;
+    } @else {
+      @warn 'Flexie columns mixin #{$align} argument only accepts top, middle, bottom, or stretch';
+    }
+  }
+  // Create order context
+  @if $order != 0 {
+    order: $order;
+  }
+  // Create custom gutter
   @if $gutter > 0 {
     padding-left: $gutter/2;
-    padding-right: $gutter/2; 
+    padding-right: $gutter/2;
   } @else {
-    @warn 'Flexie column mixin #{$name} argument only accpets values greater than zero!';
+    @warn 'Flexie column mixin #{$gutter} argument only accepts values greater than zero!';
   }
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   flex-shrink: 0;
 }
 

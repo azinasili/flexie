@@ -47,14 +47,14 @@
 // Global container object
 .container {
   @include ss();
-  @include rem(padding-left, 10px);
-  @include rem(padding-right, 10px);
+  @include rem(padding-left, $gutter-width/2);
+  @include rem(padding-right, $gutter-width/2);
 }
 
 // Column container
 .row {
-  @include rem(margin-left, -10px);
-  @include rem(margin-right, -10px);
+  @include rem(margin-left, -$gutter-width/2);
+  @include rem(margin-right, -$gutter-width/2);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,8 +62,8 @@
 
 // Column base object
 .col {
-  @include rem(padding-left, 10px);
-  @include rem(padding-right, 10px);
+  @include rem(padding-left, $gutter-width/2);
+  @include rem(padding-right, $gutter-width/2);
   display: flex;
   flex-direction: column;
   flex-grow: 0;
