@@ -329,10 +329,10 @@ sub {
 }
 
 // Corrects list images handled incorrectly in IE7
-nav {
-  ul,
-  ol {
-    @if $legacy-support-for-ie {
+@if $legacy-support-for-ie {
+  nav {
+    ul,
+    ol {
       list-style-image: none;
     }
   }
