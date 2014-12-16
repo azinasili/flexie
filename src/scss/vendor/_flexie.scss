@@ -1,25 +1,72 @@
-// Options will be in a map
+// ----------------------------------------------------------------------------
+// Flexie grid system
+// @author: Azin Asili
+//
+// Flexie is a modular SCSS flexbox grid system
+// Use the predefined row an column mixins
+// or customize your own grid system with the helper mixins
+//
+// 1. Options
+// 2. Row helpers
+// 3. Column helpers
+// 4. Flexie mixins
+// 5. Legacy syntax
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Options
+// ----------------------------------------------------------------------------
 $flexie-options: (
   gutter: 20px
 );
 
-// Row mixin
-@mixin flexie-row($gutter: 20px) {
-  // Create custom gutter
+
+// ----------------------------------------------------------------------------
+// 2. Row helpers
+// ----------------------------------------------------------------------------
+
+// Flexie row gutter
+@mixin flx-row-gutter($gutter) {
   @if $gutter > 0 {
     margin-left: -$gutter/2;
     margin-right: -$gutter/2;
   } @else {
     @warn 'Flexie row mixin #{$gutter} argument only accepts values greater than zero!';
   }
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
-// Column mixin
-@mixin flexie-col($width: auto, $align: top, $order: 0, $gutter: 20px) {
-  // Create width when not auto
+// Flexie row direction
+@mixin flx-row-direction($direction) {
+ @else if $direction == column {
+    flex-direction: column;
+  } @else if $direction == column-reverse {
+    flex-direction: column-reverse;
+  } @else if $direction == row-reverse {
+    flex-direction: row-reverse;
+  } @else {
+    flex-direction: row;
+  }
+}
+
+// Flexie row wrap
+@mixin flx-row-wrap($wrap) {
+  @if $wrap == wrap {
+    flex-wrap: wrap;
+  } @else if $wrap == wrap-reverse {
+    flex-wrap: wrap-reverse;
+  } @else {
+    flex-wrap: nowrap;
+  }
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Column helpers
+// ----------------------------------------------------------------------------
+
+// Flexie column width
+@mixin flx-col-width($width) {
   @if $width != auto {
     flex-grow: 0;
     width: percentage($width);
@@ -27,40 +74,69 @@ $flexie-options: (
     flex-basis: 0;
     flex-grow: 1;
   }
+}
+
+// Flexie coloumn align
+@mixin flx-col-align($align) {
   // Column alignment
-  @if $align == top or $align == middle or $align == bottom or $align == stretch {
-    @if $align == top {
-      align-self: flex-start;
-    } @else if $align == middle {
-      align-self: center;
-    } @else if $align == bottom {
-      align-self: flex-end;
-    } @else if $align == stretch {
-      align-self: stretch;
-    } @else {
-      @warn 'Flexie columns mixin #{$align} argument only accepts top, middle, bottom, or stretch';
-    }
+  @if $align == top {
+    align-self: flex-start;
+  } @else if $align == middle {
+    align-self: center;
+  } @else if $align == bottom {
+    align-self: flex-end;
+  } @else if $align == stretch {
+    align-self: stretch;
+  } @else {
+    @warn 'Flexie columns mixin #{$align} argument only accepts top, middle, bottom, or stretch';
   }
-  // Create order context
+}
+
+// Flexie column ordering
+@mixin flx-col-order($order) {
   @if $order != 0 {
     order: $order;
   }
-  // Create custom gutter
+}
+
+// Flexie column gutter width
+@mixin flx-col-gutter($gutter) {
   @if $gutter > 0 {
     padding-left: $gutter/2;
     padding-right: $gutter/2;
   } @else {
     @warn 'Flexie column mixin #{$gutter} argument only accepts values greater than zero!';
   }
+}
+
+
+// ----------------------------------------------------------------------------
+// 4. Flexie mixins
+// ----------------------------------------------------------------------------
+
+// Row mixin
+@mixin flexie-row($direction: row, $wrap: wrap, $gutter: 20px) {
+  @include flx-row-direction($direction);
+  @include flx-row-wrap($wrap);
+  @include flx-row-gutter($gutter);
+  display: flex;
+}
+
+// Column mixin
+@mixin flexie-col($width: auto, $align: top, $order: 0, $gutter: 20px) {
+  @include flx-col-width($width);
+  @include flx-col-align($align);
+  @include flx-col-order($order);
+  @include flx-col-gutter($gutter);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
 
 
-// ----------
-// Old syntax
-// ----------
+// ----------------------------------------------------------------------------
+// 5. Legacy syntax
+// ----------------------------------------------------------------------------
 @mixin flex-column($auto: false, $width: 0) {
   // Check to see if auto width column
   @if $auto != false {
