@@ -60,6 +60,36 @@ $flexie-options: (
   }
 }
 
+// Flexie row justification
+@mixin flx-row-jusify($justify) {
+  @if $justify == right {
+    justify-content: flex-end;
+  } @else if $justify == center {
+    justify-content: center;
+  } @if $justify == between {
+    justify-content: space-between;
+  } @if $justify == around {
+    justify-content: space-around;
+  } @else {
+    justify-content: flex-start;
+  }
+}
+
+// Flexie row children align
+@mixin flx-row-align($align) {
+  @if $align == bottom {
+    align-items: flex-end;
+  } @else if $align == middle {
+    align-items: center;
+  } @else if $align == stretch {
+    align-items: stretch;
+  } @else if $align == baseline {
+    align-items: baseline;
+  } @else {
+    align-items: flex-start;
+  }
+}
+
 
 // ----------------------------------------------------------------------------
 // 3. Column helpers
