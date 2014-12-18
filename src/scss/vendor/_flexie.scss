@@ -57,14 +57,14 @@ $flexie: (
 }
 
 // Flexie row justification
-@mixin flx-row-jusify($justify) {
-  @if $justify == right {
+@mixin flx-row-justify($justify: left) {
+  @if $justify == 'right' {
     justify-content: flex-end;
-  } @else if $justify == center {
+  } @else if $justify == 'center' {
     justify-content: center;
-  } @if $justify == between {
+  } @else if $justify == 'between' {
     justify-content: space-between;
-  } @if $justify == around {
+  } @else if $justify == 'around' {
     justify-content: space-around;
   } @else {
     justify-content: flex-start;
