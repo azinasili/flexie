@@ -26,23 +26,22 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Flexie row gutter
-@mixin flx-row-gutter($gutter) {
-  @if $gutter > 0 {
+@mixin flx-row-gutter($gutter: 20px) {
+  @if map-has-key($flexie, gutter) {
+    margin-left: map-get($flexie, gutter)/-2;
+    margin-right: map-get($flexie, gutter)/-2;
+  } @else if $gutter != 0 and $gutter > 0 {
     margin-left: -$gutter/2;
     margin-right: -$gutter/2;
   } @else {
-    @warn 'Flexie row mixin #{$gutter} argument only accepts values greater than zero!';
+    @warn 'Flexie row mixin #{$gutter} argument only accepts values greater than zero.';
   }
 }
 
 // Flexie row direction
-@mixin flx-row-direction($direction) {
- @if $direction == column {
-    flex-direction: column;
-  } @else if $direction == column-reverse {
-    flex-direction: column-reverse;
-  } @else if $direction == row-reverse {
-    flex-direction: row-reverse;
+@mixin flx-row-direction($direction: row) {
+  @if index('column' 'column-reverse' 'row-reverse', $direction) {
+    flex-direction: #{$direction};
   } @else {
     flex-direction: row;
   }
