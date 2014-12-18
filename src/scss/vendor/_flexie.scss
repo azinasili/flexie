@@ -37,7 +37,7 @@ $flexie-options: (
 
 // Flexie row direction
 @mixin flx-row-direction($direction) {
- @else if $direction == column {
+ @if $direction == column {
     flex-direction: column;
   } @else if $direction == column-reverse {
     flex-direction: column-reverse;
