@@ -48,13 +48,11 @@ $flexie: (
 }
 
 // Flexie row wrap
-@mixin flx-row-wrap($wrap) {
-  @if $wrap == wrap {
-    flex-wrap: wrap;
-  } @else if $wrap == wrap-reverse {
-    flex-wrap: wrap-reverse;
+@mixin flx-row-wrap($wrap: wrap) {
+  @if index('wrap-reverse' 'nowrap', $wrap) {
+    flex-wrap: $wrap;
   } @else {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 }
 
