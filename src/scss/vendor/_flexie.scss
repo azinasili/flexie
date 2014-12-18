@@ -72,14 +72,14 @@ $flexie: (
 }
 
 // Flexie row children align
-@mixin flx-row-align($align) {
-  @if $align == bottom {
+@mixin flx-row-align($align: top) {
+  @if $align == 'bottom' {
     align-items: flex-end;
-  } @else if $align == middle {
+  } @else if $align == 'middle' {
     align-items: center;
-  } @else if $align == stretch {
+  } @else if $align == 'stretch' {
     align-items: stretch;
-  } @else if $align == baseline {
+  } @else if $align == 'baseline' {
     align-items: baseline;
   } @else {
     align-items: flex-start;
