@@ -20,6 +20,14 @@ $flexie: (
   gutter: 20px
 );
 
+// Remove units on input
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function percent($fraction) {
+  @return strip-unit($fraction) * 100%;
+}
 
 // ----------------------------------------------------------------------------
 // 2. Row helpers
@@ -85,10 +93,10 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Flexie column width
-@mixin flx-col-width($width) {
+@mixin flx-col-width($width: auto) {
   @if $width != auto {
     flex-grow: 0;
-    width: percentage($width);
+    width: percent($width);
   } @else {
     flex-basis: 0;
     flex-grow: 1;
