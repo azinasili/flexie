@@ -149,12 +149,14 @@ $flexie: (
 }
 
 // Column mixin
-@mixin flexie-col($width: auto, $gutter: 20px, $align: '', $order: '') {
+@mixin flexie-col($width: auto, $gutter: 20px, $align: '', $order: '', $column: column) {
   @include flx-col-width($width);
   @include flx-col-align($align);
   @include flx-col-order($order);
   @include flx-col-gutter($gutter);
+  @if index('column' 'column-reverse', $column) {
+    flex-direction: column;
+  }
   display: flex;
-  flex-direction: column;
   flex-shrink: 0;
 }
