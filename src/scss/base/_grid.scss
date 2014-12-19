@@ -68,34 +68,34 @@
 .row-reverse   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
 // Horizontal alignment for children columns
-.row-start     { @include flx-row-justify(flex-start); }
-.row-center    { @include flx-row-justify(center); }
-.row-end       { @include flx-row-justify(flex-end); }
+.row-start     { @include flexie-row-justify(flex-start); }
+.row-center    { @include flexie-row-justify(center); }
+.row-end       { @include flexie-row-justify(flex-end); }
 
 // Vertical alignment for children columns
-.row-top       { @include flx-row-align(flex-start); }
-.row-middle    { @include flx-row-align(center); }
-.row-bottom    { @include flx-row-align(flex-end); }
-.row-stretch   { @include flx-row-align(stretch); }
+.row-top       { @include flexie-row-align(flex-start); }
+.row-middle    { @include flexie-row-align(center); }
+.row-bottom    { @include flexie-row-align(flex-end); }
+.row-stretch   { @include flexie-row-align(stretch); }
 
 // Evenly distribute remaining space for children columns
-.row-around    { @include flx-row-align(space-around); }
-.row-between   { @include flx-row-align(space-between); }
+.row-around    { @include flexie-row-align(space-around); }
+.row-between   { @include flexie-row-align(space-between); }
 
   // Column alignment overrides
-.col-top       { @include flx-col-align(flex-start); }
-.col-middle    { @include flx-col-align(center); }
-.col-bottom    { @include flx-col-align(flex-end); }
-.col-stretch   { @include flx-col-align(stretch); }
+.col-top       { @include flexie-col-align(flex-start); }
+.col-middle    { @include flexie-col-align(center); }
+.col-bottom    { @include flexie-col-align(flex-end); }
+.col-stretch   { @include flexie-col-align(stretch); }
 
 // Re-order columns
 @if map-has-key($flexie, columns) {
   @for $i from 1 through map-get($flexie, columns) {
-    .order-#{$i} { @include flx-col-order($i); }
+    .order-#{$i} { @include flexie-col-order($i); }
   }
 } @else {
   @for $i from 1 through 10 {
-    .order-#{$i} { @include flx-col-order($i); }
+    .order-#{$i} { @include flexie-col-order($i); }
   }
 }
 
@@ -103,16 +103,16 @@
 // ----------------------------------------------------------------------------
 // 3. Grid system
 // ----------------------------------------------------------------------------
-.col-auto { @include flx-col-width(); }
+.col-auto { @include flexie-col-width(); }
 
 // Column sizes
 @if map-has-key($flexie, columns) {
   @for $i from 1 through map-get($flexie, columns) {
-    .col-#{$i}   { @include flx-col-width(1/$i); }
+    .col-#{$i}   { @include flexie-col-width(1/$i); }
   }
 } @else {
   @for $i from 1 through 10 {
-    .col-#{$i}   { @include flx-col-width(1/$i); }
+    .col-#{$i}   { @include flexie-col-width(1/$i); }
   }
 }
 
@@ -127,48 +127,48 @@
   .row-reverse-md   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-md     { @include flx-row-justify(flex-start); }
-  .row-center-md    { @include flx-row-justify(center); }
-  .row-end-md       { @include flx-row-justify(flex-end); }
+  .row-start-md     { @include flexie-row-justify(flex-start); }
+  .row-center-md    { @include flexie-row-justify(center); }
+  .row-end-md       { @include flexie-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-md       { @include flx-row-align(flex-start); }
-  .row-middle-md    { @include flx-row-align(center); }
-  .row-bottom-md    { @include flx-row-align(flex-end); }
-  .row-stretch-md   { @include flx-row-align(stretch); }
+  .row-top-md       { @include flexie-row-align(flex-start); }
+  .row-middle-md    { @include flexie-row-align(center); }
+  .row-bottom-md    { @include flexie-row-align(flex-end); }
+  .row-stretch-md   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-md    { @include flx-row-align(space-around); }
-  .row-between-md   { @include flx-row-align(space-between); }
+  .row-around-md    { @include flexie-row-align(space-around); }
+  .row-between-md   { @include flexie-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-md       { @include flx-col-align(flex-start); }
-  .col-middle-md    { @include flx-col-align(center); }
-  .col-bottom-md    { @include flx-col-align(flex-end); }
-  .col-stretch-md   { @include flx-col-align(stretch); }
+  .col-top-md       { @include flexie-col-align(flex-start); }
+  .col-middle-md    { @include flexie-col-align(center); }
+  .col-bottom-md    { @include flexie-col-align(flex-end); }
+  .col-stretch-md   { @include flexie-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .order-#{$i}-md { @include flx-col-order($i); }
+      .order-#{$i}-md { @include flexie-col-order($i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .order-#{$i}-md { @include flx-col-order($i); }
+      .order-#{$i}-md { @include flexie-col-order($i); }
     }
   }
 
   // Auto size column
-  .col-auto-md { @include flx-col-width(); }
+  .col-auto-md { @include flexie-col-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-md   { @include flx-col-width(1/$i); }
+      .col-#{$i}-md   { @include flexie-col-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-md   { @include flx-col-width(1/$i); }
+      .col-#{$i}-md   { @include flexie-col-width(1/$i); }
     }
   }
 }
@@ -179,48 +179,48 @@
   .row-reverse-lg   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-lg     { @include flx-row-justify(flex-start); }
-  .row-center-lg    { @include flx-row-justify(center); }
-  .row-end-lg       { @include flx-row-justify(flex-end); }
+  .row-start-lg     { @include flexie-row-justify(flex-start); }
+  .row-center-lg    { @include flexie-row-justify(center); }
+  .row-end-lg       { @include flexie-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-lg       { @include flx-row-align(flex-start); }
-  .row-middle-lg    { @include flx-row-align(center); }
-  .row-bottom-lg    { @include flx-row-align(flex-end); }
-  .row-stretch-lg   { @include flx-row-align(stretch); }
+  .row-top-lg       { @include flexie-row-align(flex-start); }
+  .row-middle-lg    { @include flexie-row-align(center); }
+  .row-bottom-lg    { @include flexie-row-align(flex-end); }
+  .row-stretch-lg   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-lg    { @include flx-row-align(space-around); }
-  .row-between-lg   { @include flx-row-align(space-between); }
+  .row-around-lg    { @include flexie-row-align(space-around); }
+  .row-between-lg   { @include flexie-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-lg       { @include flx-col-align(flex-start); }
-  .col-middle-lg    { @include flx-col-align(center); }
-  .col-bottom-lg    { @include flx-col-align(flex-end); }
-  .col-stretch-lg   { @include flx-col-align(stretch); }
+  .col-top-lg       { @include flexie-col-align(flex-start); }
+  .col-middle-lg    { @include flexie-col-align(center); }
+  .col-bottom-lg    { @include flexie-col-align(flex-end); }
+  .col-stretch-lg   { @include flexie-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .order-#{$i}-lg { @include flx-col-order($i); }
+      .order-#{$i}-lg { @include flexie-col-order($i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .order-#{$i}-lg { @include flx-col-order($i); }
+      .order-#{$i}-lg { @include flexie-col-order($i); }
     }
   }
 
   // Auto size column
-  .col-auto-lg { @include flx-col-width(); }
+  .col-auto-lg { @include flexie-col-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-lg   { @include flx-col-width(1/$i); }
+      .col-#{$i}-lg   { @include flexie-col-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-lg   { @include flx-col-width(1/$i); }
+      .col-#{$i}-lg   { @include flexie-col-width(1/$i); }
     }
   }
 }
@@ -231,48 +231,48 @@
   .row-reverse-xl   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-xl     { @include flx-row-justify(flex-start); }
-  .row-center-xl    { @include flx-row-justify(center); }
-  .row-end-xl       { @include flx-row-justify(flex-end); }
+  .row-start-xl     { @include flexie-row-justify(flex-start); }
+  .row-center-xl    { @include flexie-row-justify(center); }
+  .row-end-xl       { @include flexie-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-xl       { @include flx-row-align(flex-start); }
-  .row-middle-xl    { @include flx-row-align(center); }
-  .row-bottom-xl    { @include flx-row-align(flex-end); }
-  .row-stretch-xl   { @include flx-row-align(stretch); }
+  .row-top-xl       { @include flexie-row-align(flex-start); }
+  .row-middle-xl    { @include flexie-row-align(center); }
+  .row-bottom-xl    { @include flexie-row-align(flex-end); }
+  .row-stretch-xl   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-xl    { @include flx-row-align(space-around); }
-  .row-between-xl   { @include flx-row-align(space-between); }
+  .row-around-xl    { @include flexie-row-align(space-around); }
+  .row-between-xl   { @include flexie-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-xl       { @include flx-col-align(flex-start); }
-  .col-middle-xl    { @include flx-col-align(center); }
-  .col-bottom-xl    { @include flx-col-align(flex-end); }
-  .col-stretch-xl   { @include flx-col-align(stretch); }
+  .col-top-xl       { @include flexie-col-align(flex-start); }
+  .col-middle-xl    { @include flexie-col-align(center); }
+  .col-bottom-xl    { @include flexie-col-align(flex-end); }
+  .col-stretch-xl   { @include flexie-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .order-#{$i}-xl { @include flx-col-order($i); }
+      .order-#{$i}-xl { @include flexie-col-order($i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .order-#{$i}-xl { @include flx-col-order($i); }
+      .order-#{$i}-xl { @include flexie-col-order($i); }
     }
   }
 
   // Auto size column
-  .col-auto-xl { @include flx-col-width(); }
+  .col-auto-xl { @include flexie-col-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-xl   { @include flx-col-width(1/$i); }
+      .col-#{$i}-xl   { @include flexie-col-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-xl   { @include flx-col-width(1/$i); }
+      .col-#{$i}-xl   { @include flexie-col-width(1/$i); }
     }
   }
 }

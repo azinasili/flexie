@@ -28,7 +28,7 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Flexie row gutter
-@mixin flx-row-gutter($gutter: map-get($flexie, gutter)) {
+@mixin flexie-row-gutter($gutter: map-get($flexie, gutter)) {
   @if $gutter == map-get($flexie, gutter) {
     margin-left: map-get($flexie, gutter)/-2;
     margin-right: map-get($flexie, gutter)/-2;
@@ -39,21 +39,21 @@ $flexie: (
 }
 
 // Flexie row direction
-@mixin flx-row-direction($direction: row) {
+@mixin flexie-row-direction($direction: row) {
   @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
     flex-direction: $direction;
   }
 }
 
 // Flexie row wrap
-@mixin flx-row-wrap($wrap: wrap) {
+@mixin flexie-row-wrap($wrap: wrap) {
   @if index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
     flex-wrap: $wrap;
   }
 }
 
 // Flexie row justification
-@mixin flx-row-justify($justify: flex-start) {
+@mixin flexie-row-justify($justify: flex-start) {
   $shorthand: (
     right   : flex-end,
     left    : flex-start,
@@ -68,7 +68,7 @@ $flexie: (
 }
 
 // Flexie row children align
-@mixin flx-row-align($align: flex-start) {
+@mixin flexie-row-align($align: flex-start) {
   $shorthand: (
     top    : flex-start,
     bottom : flex-end,
@@ -87,7 +87,7 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Flexie column width
-@mixin flx-col-width($width: auto) {
+@mixin flexie-col-width($width: auto) {
   @if $width != auto {
     flex-grow: 0;
     flex-basis: percentage($width);
@@ -100,7 +100,7 @@ $flexie: (
 }
 
 // Flexie coloumn align
-@mixin flx-col-align($align: flex-start) {
+@mixin flexie-col-align($align: flex-start) {
   $shorthand: (
     top    : flex-start,
     bottom : flex-end,
@@ -114,14 +114,14 @@ $flexie: (
 }
 
 // Flexie column ordering
-@mixin flx-col-order($order: '') {
+@mixin flexie-col-order($order: '') {
   @if $order != '' and unitless($order) == true and round($order) == $order {
     order: $order;
   }
 }
 
 // Flexie column gutter width
-@mixin flx-col-gutter($gutter) {
+@mixin flexie-col-gutter($gutter) {
   @if $gutter > 0 {
     padding-left: $gutter/2;
     padding-right: $gutter/2;
@@ -135,7 +135,7 @@ $flexie: (
 
 // Container mixin
 @mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
-  @include flx-col-gutter($gutter);
+  @include flexie-col-gutter($gutter);
   @if $width == map-get($flexie, container-width) {
     max-width: map-get($flexie, container-width);
   } @else {
@@ -150,20 +150,20 @@ $flexie: (
 
 // Row mixin
 @mixin flexie-row($direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: '', $align: '') {
-  @include flx-row-direction($direction);
-  @include flx-row-wrap($wrap);
-  @include flx-row-gutter($gutter);
-  @include flx-row-justify($justify);
-  @include flx-row-align($align);
+  @include flexie-row-direction($direction);
+  @include flexie-row-wrap($wrap);
+  @include flexie-row-gutter($gutter);
+  @include flexie-row-justify($justify);
+  @include flexie-row-align($align);
   display: flex;
 }
 
 // Column mixin
 @mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $align: '', $order: '', $column: column) {
-  @include flx-col-width($width);
-  @include flx-col-align($align);
-  @include flx-col-order($order);
-  @include flx-col-gutter($gutter);
+  @include flexie-col-width($width);
+  @include flexie-col-align($align);
+  @include flexie-col-order($order);
+  @include flexie-col-gutter($gutter);
   @if index('column' 'column-reverse', $column) {
     flex-direction: $column;
   }
