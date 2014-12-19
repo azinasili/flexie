@@ -54,22 +54,11 @@
 // Column container
 .row {
   @include flexie-row();
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-  // margin-left: -$gutter-width/2;
-  // margin-right: -$gutter-width/2;
 }
 
 // Column base object
 .col {
   @include flexie-col();
-  // padding-left: $gutter-width/2;
-  // padding-right: $gutter-width/2;
-  // display: flex;
-  // flex-direction: column;
-  // flex-grow: 0;
-  // flex-shrink: 0;
 }
 
 
@@ -103,7 +92,7 @@
 
 // Re-order columns
 @for $i from 1 through 10 {
-  .order-#{$i} { order: $i; }
+  .order-#{$i} { @include flx-col-order($i); }
 }
 
 
@@ -150,15 +139,15 @@
 
   // Re-order columns
   @for $i from 1 through 10 {
-    .order-#{$i}-md { order: $i; }
+    .order-#{$i}-md { @include flx-col-order($i); }
   }
 
   // Auto size column
-  .col-auto-md { flex-basis: 0; flex-grow: 1; }
+  .col-auto-md { @include flx-col-width(); }
 
   // Column sizes
   @for $i from 1 through 10 {
-    .col-#{$i}-md   { flex-basis: percentage(1/$i); }
+    .col-#{$i}-md   { @include flx-col-width(1/$i); }
   }
 }
 
@@ -190,15 +179,15 @@
 
   // Re-order columns
   @for $i from 1 through 10 {
-    .order-#{$i}-lg { order: $i; }
+    .order-#{$i}-lg { @include flx-col-order($i); }
   }
 
   // Auto size column
-  .col-auto-lg { flex-basis: 0; flex-grow: 1; }
+  .col-auto-lg { @include flx-col-width(); }
 
   // Column sizes
   @for $i from 1 through 10 {
-    .col-#{$i}-lg   { flex-basis: percentage(1/$i); }
+    .col-#{$i}-lg   { @include flx-col-width(1/$i); }
   }
 }
 
@@ -230,15 +219,15 @@
 
   // Re-order columns
   @for $i from 1 through 10 {
-    .order-#{$i}-xl { order: $i; }
+    .order-#{$i}-xl { @include flx-col-order($i); }
   }
 
   // Auto size column
-  .col-auto-xl { flex-basis: 0; flex-grow: 1; }
+  .col-auto-xl { @include flx-col-width(); }
 
   // Column sizes
   @for $i from 1 through 10 {
-    .col-#{$i}-xl   { flex-basis: percentage(1/$i); }
+    .col-#{$i}-xl   { @include flx-col-width(1/$i); }
   }
 }
 

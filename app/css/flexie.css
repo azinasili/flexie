@@ -491,7 +491,7 @@ blockquote {
   display: flex;
 }
 
-/* line 65, ../../src/scss/base/_grid.scss */
+/* line 60, ../../src/scss/base/_grid.scss */
 .col {
   -webkit-flex-basis: 0;
       -ms-flex-preferred-size: 0;
@@ -517,7 +517,7 @@ blockquote {
           flex-shrink: 0;
 }
 
-/* line 81, ../../src/scss/base/_grid.scss */
+/* line 70, ../../src/scss/base/_grid.scss */
 .row-reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -529,7 +529,7 @@ blockquote {
           flex-wrap: row-reverse;
 }
 
-/* line 84, ../../src/scss/base/_grid.scss */
+/* line 73, ../../src/scss/base/_grid.scss */
 .row-start {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -537,7 +537,7 @@ blockquote {
           justify-content: flex-start;
 }
 
-/* line 85, ../../src/scss/base/_grid.scss */
+/* line 74, ../../src/scss/base/_grid.scss */
 .row-center {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -545,7 +545,7 @@ blockquote {
           justify-content: center;
 }
 
-/* line 86, ../../src/scss/base/_grid.scss */
+/* line 75, ../../src/scss/base/_grid.scss */
 .row-end {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
@@ -553,7 +553,7 @@ blockquote {
           justify-content: flex-end;
 }
 
-/* line 89, ../../src/scss/base/_grid.scss */
+/* line 78, ../../src/scss/base/_grid.scss */
 .row-top {
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
@@ -561,7 +561,7 @@ blockquote {
           align-items: flex-start;
 }
 
-/* line 90, ../../src/scss/base/_grid.scss */
+/* line 79, ../../src/scss/base/_grid.scss */
 .row-middle {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -569,7 +569,7 @@ blockquote {
           align-items: center;
 }
 
-/* line 91, ../../src/scss/base/_grid.scss */
+/* line 80, ../../src/scss/base/_grid.scss */
 .row-bottom {
   -webkit-box-align: end;
   -webkit-align-items: flex-end;
@@ -577,7 +577,7 @@ blockquote {
           align-items: flex-end;
 }
 
-/* line 92, ../../src/scss/base/_grid.scss */
+/* line 81, ../../src/scss/base/_grid.scss */
 .row-stretch {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
@@ -585,14 +585,14 @@ blockquote {
           align-items: stretch;
 }
 
-/* line 95, ../../src/scss/base/_grid.scss */
+/* line 84, ../../src/scss/base/_grid.scss */
 .row-around {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
 }
 
-/* line 96, ../../src/scss/base/_grid.scss */
+/* line 85, ../../src/scss/base/_grid.scss */
 .row-between {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -600,35 +600,35 @@ blockquote {
           justify-content: space-between;
 }
 
-/* line 99, ../../src/scss/base/_grid.scss */
+/* line 88, ../../src/scss/base/_grid.scss */
 .col-top {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
 }
 
-/* line 100, ../../src/scss/base/_grid.scss */
+/* line 89, ../../src/scss/base/_grid.scss */
 .col-middle {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
 }
 
-/* line 101, ../../src/scss/base/_grid.scss */
+/* line 90, ../../src/scss/base/_grid.scss */
 .col-bottom {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
           align-self: flex-end;
 }
 
-/* line 102, ../../src/scss/base/_grid.scss */
+/* line 91, ../../src/scss/base/_grid.scss */
 .col-stretch {
   -webkit-align-self: stretch;
       -ms-flex-item-align: stretch;
           align-self: stretch;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-1 {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
@@ -636,7 +636,7 @@ blockquote {
           order: 1;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-2 {
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
@@ -644,7 +644,7 @@ blockquote {
           order: 2;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-3 {
   -webkit-box-ordinal-group: 4;
   -webkit-order: 3;
@@ -652,7 +652,7 @@ blockquote {
           order: 3;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-4 {
   -webkit-box-ordinal-group: 5;
   -webkit-order: 4;
@@ -660,7 +660,7 @@ blockquote {
           order: 4;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-5 {
   -webkit-box-ordinal-group: 6;
   -webkit-order: 5;
@@ -668,7 +668,7 @@ blockquote {
           order: 5;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-6 {
   -webkit-box-ordinal-group: 7;
   -webkit-order: 6;
@@ -676,7 +676,7 @@ blockquote {
           order: 6;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-7 {
   -webkit-box-ordinal-group: 8;
   -webkit-order: 7;
@@ -684,7 +684,7 @@ blockquote {
           order: 7;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-8 {
   -webkit-box-ordinal-group: 9;
   -webkit-order: 8;
@@ -692,7 +692,7 @@ blockquote {
           order: 8;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-9 {
   -webkit-box-ordinal-group: 10;
   -webkit-order: 9;
@@ -700,7 +700,7 @@ blockquote {
           order: 9;
 }
 
-/* line 106, ../../src/scss/base/_grid.scss */
+/* line 95, ../../src/scss/base/_grid.scss */
 .order-10 {
   -webkit-box-ordinal-group: 11;
   -webkit-order: 10;
@@ -708,7 +708,7 @@ blockquote {
           order: 10;
 }
 
-/* line 113, ../../src/scss/base/_grid.scss */
+/* line 102, ../../src/scss/base/_grid.scss */
 .col-auto {
   -webkit-flex-basis: 0;
       -ms-flex-preferred-size: 0;
@@ -720,7 +720,7 @@ blockquote {
   width: 100%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-1 {
   -webkit-flex-basis: 100%;
       -ms-flex-preferred-size: 100%;
@@ -728,7 +728,7 @@ blockquote {
   width: 100%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-2 {
   -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
@@ -736,7 +736,7 @@ blockquote {
   width: 50%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-3 {
   -webkit-flex-basis: 33.3333333333%;
       -ms-flex-preferred-size: 33.3333333333%;
@@ -744,7 +744,7 @@ blockquote {
   width: 33.3333333333%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-4 {
   -webkit-flex-basis: 25%;
       -ms-flex-preferred-size: 25%;
@@ -752,7 +752,7 @@ blockquote {
   width: 25%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-5 {
   -webkit-flex-basis: 20%;
       -ms-flex-preferred-size: 20%;
@@ -760,7 +760,7 @@ blockquote {
   width: 20%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-6 {
   -webkit-flex-basis: 16.6666666667%;
       -ms-flex-preferred-size: 16.6666666667%;
@@ -768,7 +768,7 @@ blockquote {
   width: 16.6666666667%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-7 {
   -webkit-flex-basis: 14.2857142857%;
       -ms-flex-preferred-size: 14.2857142857%;
@@ -776,7 +776,7 @@ blockquote {
   width: 14.2857142857%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-8 {
   -webkit-flex-basis: 12.5%;
       -ms-flex-preferred-size: 12.5%;
@@ -784,7 +784,7 @@ blockquote {
   width: 12.5%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-9 {
   -webkit-flex-basis: 11.1111111111%;
       -ms-flex-preferred-size: 11.1111111111%;
@@ -792,7 +792,7 @@ blockquote {
   width: 11.1111111111%;
 }
 
-/* line 117, ../../src/scss/base/_grid.scss */
+/* line 106, ../../src/scss/base/_grid.scss */
 .col-10 {
   -webkit-flex-basis: 10%;
       -ms-flex-preferred-size: 10%;
@@ -801,7 +801,7 @@ blockquote {
 }
 
 @media (min-width: 45em) {
-  /* line 128, ../../src/scss/base/_grid.scss */
+  /* line 117, ../../src/scss/base/_grid.scss */
   .row-reverse-md {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -813,7 +813,7 @@ blockquote {
             flex-wrap: row-reverse;
   }
 
-  /* line 131, ../../src/scss/base/_grid.scss */
+  /* line 120, ../../src/scss/base/_grid.scss */
   .row-start-md {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -821,7 +821,7 @@ blockquote {
             justify-content: flex-start;
   }
 
-  /* line 132, ../../src/scss/base/_grid.scss */
+  /* line 121, ../../src/scss/base/_grid.scss */
   .row-center-md {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -829,7 +829,7 @@ blockquote {
             justify-content: center;
   }
 
-  /* line 133, ../../src/scss/base/_grid.scss */
+  /* line 122, ../../src/scss/base/_grid.scss */
   .row-end-md {
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
@@ -837,7 +837,7 @@ blockquote {
             justify-content: flex-end;
   }
 
-  /* line 136, ../../src/scss/base/_grid.scss */
+  /* line 125, ../../src/scss/base/_grid.scss */
   .row-top-md {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
@@ -845,7 +845,7 @@ blockquote {
             align-items: flex-start;
   }
 
-  /* line 137, ../../src/scss/base/_grid.scss */
+  /* line 126, ../../src/scss/base/_grid.scss */
   .row-middle-md {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -853,7 +853,7 @@ blockquote {
             align-items: center;
   }
 
-  /* line 138, ../../src/scss/base/_grid.scss */
+  /* line 127, ../../src/scss/base/_grid.scss */
   .row-bottom-md {
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
@@ -861,7 +861,7 @@ blockquote {
             align-items: flex-end;
   }
 
-  /* line 139, ../../src/scss/base/_grid.scss */
+  /* line 128, ../../src/scss/base/_grid.scss */
   .row-stretch-md {
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
@@ -869,14 +869,14 @@ blockquote {
             align-items: stretch;
   }
 
-  /* line 142, ../../src/scss/base/_grid.scss */
+  /* line 131, ../../src/scss/base/_grid.scss */
   .row-around-md {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
   }
 
-  /* line 143, ../../src/scss/base/_grid.scss */
+  /* line 132, ../../src/scss/base/_grid.scss */
   .row-between-md {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -884,35 +884,35 @@ blockquote {
             justify-content: space-between;
   }
 
-  /* line 146, ../../src/scss/base/_grid.scss */
+  /* line 135, ../../src/scss/base/_grid.scss */
   .col-top-md {
     -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
             align-self: flex-start;
   }
 
-  /* line 147, ../../src/scss/base/_grid.scss */
+  /* line 136, ../../src/scss/base/_grid.scss */
   .col-middle-md {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
   }
 
-  /* line 148, ../../src/scss/base/_grid.scss */
+  /* line 137, ../../src/scss/base/_grid.scss */
   .col-bottom-md {
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
             align-self: flex-end;
   }
 
-  /* line 149, ../../src/scss/base/_grid.scss */
+  /* line 138, ../../src/scss/base/_grid.scss */
   .col-stretch-md {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-1-md {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
@@ -920,7 +920,7 @@ blockquote {
             order: 1;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-2-md {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -928,7 +928,7 @@ blockquote {
             order: 2;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-3-md {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
@@ -936,7 +936,7 @@ blockquote {
             order: 3;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-4-md {
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
@@ -944,7 +944,7 @@ blockquote {
             order: 4;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-5-md {
     -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
@@ -952,7 +952,7 @@ blockquote {
             order: 5;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-6-md {
     -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
@@ -960,7 +960,7 @@ blockquote {
             order: 6;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-7-md {
     -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
@@ -968,7 +968,7 @@ blockquote {
             order: 7;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-8-md {
     -webkit-box-ordinal-group: 9;
     -webkit-order: 8;
@@ -976,7 +976,7 @@ blockquote {
             order: 8;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-9-md {
     -webkit-box-ordinal-group: 10;
     -webkit-order: 9;
@@ -984,7 +984,7 @@ blockquote {
             order: 9;
   }
 
-  /* line 153, ../../src/scss/base/_grid.scss */
+  /* line 142, ../../src/scss/base/_grid.scss */
   .order-10-md {
     -webkit-box-ordinal-group: 11;
     -webkit-order: 10;
@@ -992,7 +992,7 @@ blockquote {
             order: 10;
   }
 
-  /* line 157, ../../src/scss/base/_grid.scss */
+  /* line 146, ../../src/scss/base/_grid.scss */
   .col-auto-md {
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
@@ -1001,80 +1001,91 @@ blockquote {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    width: 100%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-1-md {
     -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
+    width: 100%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-2-md {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+    width: 50%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-3-md {
     -webkit-flex-basis: 33.3333333333%;
         -ms-flex-preferred-size: 33.3333333333%;
             flex-basis: 33.3333333333%;
+    width: 33.3333333333%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-4-md {
     -webkit-flex-basis: 25%;
         -ms-flex-preferred-size: 25%;
             flex-basis: 25%;
+    width: 25%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-5-md {
     -webkit-flex-basis: 20%;
         -ms-flex-preferred-size: 20%;
             flex-basis: 20%;
+    width: 20%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-6-md {
     -webkit-flex-basis: 16.6666666667%;
         -ms-flex-preferred-size: 16.6666666667%;
             flex-basis: 16.6666666667%;
+    width: 16.6666666667%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-7-md {
     -webkit-flex-basis: 14.2857142857%;
         -ms-flex-preferred-size: 14.2857142857%;
             flex-basis: 14.2857142857%;
+    width: 14.2857142857%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-8-md {
     -webkit-flex-basis: 12.5%;
         -ms-flex-preferred-size: 12.5%;
             flex-basis: 12.5%;
+    width: 12.5%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-9-md {
     -webkit-flex-basis: 11.1111111111%;
         -ms-flex-preferred-size: 11.1111111111%;
             flex-basis: 11.1111111111%;
+    width: 11.1111111111%;
   }
 
-  /* line 161, ../../src/scss/base/_grid.scss */
+  /* line 150, ../../src/scss/base/_grid.scss */
   .col-10-md {
     -webkit-flex-basis: 10%;
         -ms-flex-preferred-size: 10%;
             flex-basis: 10%;
+    width: 10%;
   }
 }
 @media (min-width: 71.25em) {
-  /* line 168, ../../src/scss/base/_grid.scss */
+  /* line 157, ../../src/scss/base/_grid.scss */
   .row-reverse-lg {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -1086,7 +1097,7 @@ blockquote {
             flex-wrap: row-reverse;
   }
 
-  /* line 171, ../../src/scss/base/_grid.scss */
+  /* line 160, ../../src/scss/base/_grid.scss */
   .row-start-lg {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -1094,7 +1105,7 @@ blockquote {
             justify-content: flex-start;
   }
 
-  /* line 172, ../../src/scss/base/_grid.scss */
+  /* line 161, ../../src/scss/base/_grid.scss */
   .row-center-lg {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -1102,7 +1113,7 @@ blockquote {
             justify-content: center;
   }
 
-  /* line 173, ../../src/scss/base/_grid.scss */
+  /* line 162, ../../src/scss/base/_grid.scss */
   .row-end-lg {
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
@@ -1110,7 +1121,7 @@ blockquote {
             justify-content: flex-end;
   }
 
-  /* line 176, ../../src/scss/base/_grid.scss */
+  /* line 165, ../../src/scss/base/_grid.scss */
   .row-top-lg {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
@@ -1118,7 +1129,7 @@ blockquote {
             align-items: flex-start;
   }
 
-  /* line 177, ../../src/scss/base/_grid.scss */
+  /* line 166, ../../src/scss/base/_grid.scss */
   .row-middle-lg {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -1126,7 +1137,7 @@ blockquote {
             align-items: center;
   }
 
-  /* line 178, ../../src/scss/base/_grid.scss */
+  /* line 167, ../../src/scss/base/_grid.scss */
   .row-bottom-lg {
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
@@ -1134,7 +1145,7 @@ blockquote {
             align-items: flex-end;
   }
 
-  /* line 179, ../../src/scss/base/_grid.scss */
+  /* line 168, ../../src/scss/base/_grid.scss */
   .row-stretch-lg {
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
@@ -1142,14 +1153,14 @@ blockquote {
             align-items: stretch;
   }
 
-  /* line 182, ../../src/scss/base/_grid.scss */
+  /* line 171, ../../src/scss/base/_grid.scss */
   .row-around-lg {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
   }
 
-  /* line 183, ../../src/scss/base/_grid.scss */
+  /* line 172, ../../src/scss/base/_grid.scss */
   .row-between-lg {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -1157,35 +1168,35 @@ blockquote {
             justify-content: space-between;
   }
 
-  /* line 186, ../../src/scss/base/_grid.scss */
+  /* line 175, ../../src/scss/base/_grid.scss */
   .col-top-lg {
     -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
             align-self: flex-start;
   }
 
-  /* line 187, ../../src/scss/base/_grid.scss */
+  /* line 176, ../../src/scss/base/_grid.scss */
   .col-middle-lg {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
   }
 
-  /* line 188, ../../src/scss/base/_grid.scss */
+  /* line 177, ../../src/scss/base/_grid.scss */
   .col-bottom-lg {
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
             align-self: flex-end;
   }
 
-  /* line 189, ../../src/scss/base/_grid.scss */
+  /* line 178, ../../src/scss/base/_grid.scss */
   .col-stretch-lg {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-1-lg {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
@@ -1193,7 +1204,7 @@ blockquote {
             order: 1;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-2-lg {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -1201,7 +1212,7 @@ blockquote {
             order: 2;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-3-lg {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
@@ -1209,7 +1220,7 @@ blockquote {
             order: 3;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-4-lg {
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
@@ -1217,7 +1228,7 @@ blockquote {
             order: 4;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-5-lg {
     -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
@@ -1225,7 +1236,7 @@ blockquote {
             order: 5;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-6-lg {
     -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
@@ -1233,7 +1244,7 @@ blockquote {
             order: 6;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-7-lg {
     -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
@@ -1241,7 +1252,7 @@ blockquote {
             order: 7;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-8-lg {
     -webkit-box-ordinal-group: 9;
     -webkit-order: 8;
@@ -1249,7 +1260,7 @@ blockquote {
             order: 8;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-9-lg {
     -webkit-box-ordinal-group: 10;
     -webkit-order: 9;
@@ -1257,7 +1268,7 @@ blockquote {
             order: 9;
   }
 
-  /* line 193, ../../src/scss/base/_grid.scss */
+  /* line 182, ../../src/scss/base/_grid.scss */
   .order-10-lg {
     -webkit-box-ordinal-group: 11;
     -webkit-order: 10;
@@ -1265,7 +1276,7 @@ blockquote {
             order: 10;
   }
 
-  /* line 197, ../../src/scss/base/_grid.scss */
+  /* line 186, ../../src/scss/base/_grid.scss */
   .col-auto-lg {
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
@@ -1274,80 +1285,91 @@ blockquote {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    width: 100%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-1-lg {
     -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
+    width: 100%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-2-lg {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+    width: 50%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-3-lg {
     -webkit-flex-basis: 33.3333333333%;
         -ms-flex-preferred-size: 33.3333333333%;
             flex-basis: 33.3333333333%;
+    width: 33.3333333333%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-4-lg {
     -webkit-flex-basis: 25%;
         -ms-flex-preferred-size: 25%;
             flex-basis: 25%;
+    width: 25%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-5-lg {
     -webkit-flex-basis: 20%;
         -ms-flex-preferred-size: 20%;
             flex-basis: 20%;
+    width: 20%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-6-lg {
     -webkit-flex-basis: 16.6666666667%;
         -ms-flex-preferred-size: 16.6666666667%;
             flex-basis: 16.6666666667%;
+    width: 16.6666666667%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-7-lg {
     -webkit-flex-basis: 14.2857142857%;
         -ms-flex-preferred-size: 14.2857142857%;
             flex-basis: 14.2857142857%;
+    width: 14.2857142857%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-8-lg {
     -webkit-flex-basis: 12.5%;
         -ms-flex-preferred-size: 12.5%;
             flex-basis: 12.5%;
+    width: 12.5%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-9-lg {
     -webkit-flex-basis: 11.1111111111%;
         -ms-flex-preferred-size: 11.1111111111%;
             flex-basis: 11.1111111111%;
+    width: 11.1111111111%;
   }
 
-  /* line 201, ../../src/scss/base/_grid.scss */
+  /* line 190, ../../src/scss/base/_grid.scss */
   .col-10-lg {
     -webkit-flex-basis: 10%;
         -ms-flex-preferred-size: 10%;
             flex-basis: 10%;
+    width: 10%;
   }
 }
 @media (min-width: 90em) {
-  /* line 208, ../../src/scss/base/_grid.scss */
+  /* line 197, ../../src/scss/base/_grid.scss */
   .row-reverse-xl {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -1359,7 +1381,7 @@ blockquote {
             flex-wrap: row-reverse;
   }
 
-  /* line 211, ../../src/scss/base/_grid.scss */
+  /* line 200, ../../src/scss/base/_grid.scss */
   .row-start-xl {
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -1367,7 +1389,7 @@ blockquote {
             justify-content: flex-start;
   }
 
-  /* line 212, ../../src/scss/base/_grid.scss */
+  /* line 201, ../../src/scss/base/_grid.scss */
   .row-center-xl {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -1375,7 +1397,7 @@ blockquote {
             justify-content: center;
   }
 
-  /* line 213, ../../src/scss/base/_grid.scss */
+  /* line 202, ../../src/scss/base/_grid.scss */
   .row-end-xl {
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
@@ -1383,7 +1405,7 @@ blockquote {
             justify-content: flex-end;
   }
 
-  /* line 216, ../../src/scss/base/_grid.scss */
+  /* line 205, ../../src/scss/base/_grid.scss */
   .row-top-xl {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
@@ -1391,7 +1413,7 @@ blockquote {
             align-items: flex-start;
   }
 
-  /* line 217, ../../src/scss/base/_grid.scss */
+  /* line 206, ../../src/scss/base/_grid.scss */
   .row-middle-xl {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -1399,7 +1421,7 @@ blockquote {
             align-items: center;
   }
 
-  /* line 218, ../../src/scss/base/_grid.scss */
+  /* line 207, ../../src/scss/base/_grid.scss */
   .row-bottom-xl {
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
@@ -1407,7 +1429,7 @@ blockquote {
             align-items: flex-end;
   }
 
-  /* line 219, ../../src/scss/base/_grid.scss */
+  /* line 208, ../../src/scss/base/_grid.scss */
   .row-stretch-xl {
     -webkit-box-align: stretch;
     -webkit-align-items: stretch;
@@ -1415,14 +1437,14 @@ blockquote {
             align-items: stretch;
   }
 
-  /* line 222, ../../src/scss/base/_grid.scss */
+  /* line 211, ../../src/scss/base/_grid.scss */
   .row-around-xl {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
   }
 
-  /* line 223, ../../src/scss/base/_grid.scss */
+  /* line 212, ../../src/scss/base/_grid.scss */
   .row-between-xl {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -1430,35 +1452,35 @@ blockquote {
             justify-content: space-between;
   }
 
-  /* line 226, ../../src/scss/base/_grid.scss */
+  /* line 215, ../../src/scss/base/_grid.scss */
   .col-top-xl {
     -webkit-align-self: flex-start;
         -ms-flex-item-align: start;
             align-self: flex-start;
   }
 
-  /* line 227, ../../src/scss/base/_grid.scss */
+  /* line 216, ../../src/scss/base/_grid.scss */
   .col-middle-xl {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
   }
 
-  /* line 228, ../../src/scss/base/_grid.scss */
+  /* line 217, ../../src/scss/base/_grid.scss */
   .col-bottom-xl {
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
             align-self: flex-end;
   }
 
-  /* line 229, ../../src/scss/base/_grid.scss */
+  /* line 218, ../../src/scss/base/_grid.scss */
   .col-stretch-xl {
     -webkit-align-self: stretch;
         -ms-flex-item-align: stretch;
             align-self: stretch;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-1-xl {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
@@ -1466,7 +1488,7 @@ blockquote {
             order: 1;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-2-xl {
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -1474,7 +1496,7 @@ blockquote {
             order: 2;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-3-xl {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
@@ -1482,7 +1504,7 @@ blockquote {
             order: 3;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-4-xl {
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
@@ -1490,7 +1512,7 @@ blockquote {
             order: 4;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-5-xl {
     -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
@@ -1498,7 +1520,7 @@ blockquote {
             order: 5;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-6-xl {
     -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
@@ -1506,7 +1528,7 @@ blockquote {
             order: 6;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-7-xl {
     -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
@@ -1514,7 +1536,7 @@ blockquote {
             order: 7;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-8-xl {
     -webkit-box-ordinal-group: 9;
     -webkit-order: 8;
@@ -1522,7 +1544,7 @@ blockquote {
             order: 8;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-9-xl {
     -webkit-box-ordinal-group: 10;
     -webkit-order: 9;
@@ -1530,7 +1552,7 @@ blockquote {
             order: 9;
   }
 
-  /* line 233, ../../src/scss/base/_grid.scss */
+  /* line 222, ../../src/scss/base/_grid.scss */
   .order-10-xl {
     -webkit-box-ordinal-group: 11;
     -webkit-order: 10;
@@ -1538,7 +1560,7 @@ blockquote {
             order: 10;
   }
 
-  /* line 237, ../../src/scss/base/_grid.scss */
+  /* line 226, ../../src/scss/base/_grid.scss */
   .col-auto-xl {
     -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
@@ -1547,75 +1569,86 @@ blockquote {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    width: 100%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-1-xl {
     -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
             flex-basis: 100%;
+    width: 100%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-2-xl {
     -webkit-flex-basis: 50%;
         -ms-flex-preferred-size: 50%;
             flex-basis: 50%;
+    width: 50%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-3-xl {
     -webkit-flex-basis: 33.3333333333%;
         -ms-flex-preferred-size: 33.3333333333%;
             flex-basis: 33.3333333333%;
+    width: 33.3333333333%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-4-xl {
     -webkit-flex-basis: 25%;
         -ms-flex-preferred-size: 25%;
             flex-basis: 25%;
+    width: 25%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-5-xl {
     -webkit-flex-basis: 20%;
         -ms-flex-preferred-size: 20%;
             flex-basis: 20%;
+    width: 20%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-6-xl {
     -webkit-flex-basis: 16.6666666667%;
         -ms-flex-preferred-size: 16.6666666667%;
             flex-basis: 16.6666666667%;
+    width: 16.6666666667%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-7-xl {
     -webkit-flex-basis: 14.2857142857%;
         -ms-flex-preferred-size: 14.2857142857%;
             flex-basis: 14.2857142857%;
+    width: 14.2857142857%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-8-xl {
     -webkit-flex-basis: 12.5%;
         -ms-flex-preferred-size: 12.5%;
             flex-basis: 12.5%;
+    width: 12.5%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-9-xl {
     -webkit-flex-basis: 11.1111111111%;
         -ms-flex-preferred-size: 11.1111111111%;
             flex-basis: 11.1111111111%;
+    width: 11.1111111111%;
   }
 
-  /* line 241, ../../src/scss/base/_grid.scss */
+  /* line 230, ../../src/scss/base/_grid.scss */
   .col-10-xl {
     -webkit-flex-basis: 10%;
         -ms-flex-preferred-size: 10%;
             flex-basis: 10%;
+    width: 10%;
   }
 }
