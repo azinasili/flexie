@@ -73,10 +73,10 @@
 .row-end       { @include flx-row-justify(flex-end); }
 
 // Vertical alignment for children columns
-.row-top       { align-items: flex-start; }
-.row-middle    { align-items: center; }
-.row-bottom    { align-items: flex-end; }
-.row-stretch   { align-items: stretch; }
+.row-top       { @include flx-row-align(flex-start); }
+.row-middle    { @include flx-row-align(center); }
+.row-bottom    { @include flx-row-align(flex-end); }
+.row-stretch   { @include flx-row-align(stretch); }
 
 // Evenly distribute remaining space for children columns
 .row-around    { justify-content: space-around; }
@@ -132,10 +132,10 @@
   .row-end-md       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-md       { align-items: flex-start; }
-  .row-middle-md    { align-items: center; }
-  .row-bottom-md    { align-items: flex-end; }
-  .row-stretch-md   { align-items: stretch; }
+  .row-top-md       { @include flx-row-align(flex-start); }
+  .row-middle-md    { @include flx-row-align(center); }
+  .row-bottom-md    { @include flx-row-align(flex-end); }
+  .row-stretch-md   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-md    { justify-content: space-around; }
@@ -184,10 +184,10 @@
   .row-end-lg       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-lg       { align-items: flex-start; }
-  .row-middle-lg    { align-items: center; }
-  .row-bottom-lg    { align-items: flex-end; }
-  .row-stretch-lg   { align-items: stretch; }
+  .row-top-lg       { @include flx-row-align(flex-start); }
+  .row-middle-lg    { @include flx-row-align(center); }
+  .row-bottom-lg    { @include flx-row-align(flex-end); }
+  .row-stretch-lg   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-lg    { justify-content: space-around; }
@@ -236,10 +236,10 @@
   .row-end-xl       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-xl       { align-items: flex-start; }
-  .row-middle-xl    { align-items: center; }
-  .row-bottom-xl    { align-items: flex-end; }
-  .row-stretch-xl   { align-items: stretch; }
+  .row-top-xl       { @include flx-row-align(flex-start); }
+  .row-middle-xl    { @include flx-row-align(center); }
+  .row-bottom-xl    { @include flx-row-align(flex-end); }
+  .row-stretch-xl   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-xl    { justify-content: space-around; }
