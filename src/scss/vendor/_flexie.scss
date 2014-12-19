@@ -132,7 +132,7 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Container mixin
-@mixin flexie-container($width: map-get($flexie, container-width), $gutter: 20px) {
+@mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
   @include flx-col-gutter($gutter);
   @if $width == map-get($flexie, container-width) {
     max-width: map-get($flexie, container-width);
@@ -147,7 +147,7 @@ $flexie: (
 }
 
 // Row mixin
-@mixin flexie-row($direction: row, $wrap: wrap, $gutter: 20px, $justify: '', $align: '') {
+@mixin flexie-row($direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: '', $align: '') {
   @include flx-row-direction($direction);
   @include flx-row-wrap($wrap);
   @include flx-row-gutter($gutter);
@@ -157,7 +157,7 @@ $flexie: (
 }
 
 // Column mixin
-@mixin flexie-col($width: auto, $gutter: 20px, $align: '', $order: '', $column: column) {
+@mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $align: '', $order: '', $column: column) {
   @include flx-col-width($width);
   @include flx-col-align($align);
   @include flx-col-order($order);
