@@ -65,7 +65,10 @@
 // ----------------------------------------------------------------------------
 
 // Reverse column order
-.row-reverse   { flex-direction: row-reverse; flex-wrap: row-reverse; }
+.row-reverse   {
+  @include flexie-row-direction(row-reverse);
+  @include flexie-row-wrap(wrap-reverse);
+}
 
 // Horizontal alignment for children columns
 .row-start     { @include flexie-row-justify(flex-start); }
@@ -124,7 +127,10 @@
 // Medium breakpoint
 @include mq($from: tablet) {
   // Reverse column order
-  .row-reverse-md   { flex-direction: row-reverse; flex-wrap: row-reverse; }
+  .row-reverse-md   {
+    @include flexie-row-direction(row-reverse);
+    @include flexie-row-wrap(wrap-reverse);
+  }
 
   // Horizontal alignment for children columns
   .row-start-md     { @include flexie-row-justify(flex-start); }
@@ -176,7 +182,10 @@
 // Desktop breakpoint
 @include mq($from: desktop) {
   // Reverse column order
-  .row-reverse-lg   { flex-direction: row-reverse; flex-wrap: row-reverse; }
+  .row-reverse-lg   {
+    @include flexie-row-direction(row-reverse);
+    @include flexie-row-wrap(wrap-reverse);
+  }
 
   // Horizontal alignment for children columns
   .row-start-lg     { @include flexie-row-justify(flex-start); }
@@ -228,7 +237,10 @@
 // Wide breakpoint
 @include mq($from: wide) {
   // Reverse column order
-  .row-reverse-xl   { flex-direction: row-reverse; flex-wrap: row-reverse; }
+  .row-reverse-xl   {
+    @include flexie-row-direction(row-reverse);
+    @include flexie-row-wrap(wrap-reverse);
+  }
 
   // Horizontal alignment for children columns
   .row-start-xl     { @include flexie-row-justify(flex-start); }
