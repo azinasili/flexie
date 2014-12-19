@@ -20,6 +20,13 @@ $flexie: (
   gutter: 20px
 );
 
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function percent($value) {
+  @return strip-unit($value) * 100%;
+}
 
 // ----------------------------------------------------------------------------
 // 2. Row helpers
@@ -142,7 +149,7 @@ $flexie: (
 }
 
 // Column mixin
-@mixin flexie-col($width: auto, $align: top, $order: 0, $gutter: 20px) {
+@mixin flexie-col($width: auto, $gutter: 20px, $align: '', $order: '') {
   @include flx-col-width($width);
   @include flx-col-align($align);
   @include flx-col-order($order);
