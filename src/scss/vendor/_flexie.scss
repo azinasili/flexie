@@ -26,15 +26,13 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Flexie row gutter
-@mixin flx-row-gutter($gutter: 20px) {
-  @if map-has-key($flexie, gutter) {
+@mixin flx-row-gutter($gutter: map-get($flexie, gutter)) {
+  @if $gutter != map-get($flexie, gutter) {
+    margin-left: $gutter/-2;
+    margin-right: $gutter/-2;
+  } @else {
     margin-left: map-get($flexie, gutter)/-2;
     margin-right: map-get($flexie, gutter)/-2;
-  } @else if $gutter != 0 and $gutter > 0 {
-    margin-left: -$gutter/2;
-    margin-right: -$gutter/2;
-  } @else {
-    @warn 'Flexie row mixin #{$gutter} argument only accepts values greater than zero.';
   }
 }
 
@@ -68,17 +66,16 @@ $flexie: (
 }
 
 // Flexie row children align
-@mixin flx-row-align($align: top) {
-  @if $align == 'bottom' {
-    align-items: flex-end;
-  } @else if $align == 'middle' {
-    align-items: center;
-  } @else if $align == 'stretch' {
-    align-items: stretch;
-  } @else if $align == 'baseline' {
-    align-items: baseline;
+@mixin flx-row-align($align: flex-start) {
+  $shorthand: (
+    top    : flex-start,
+    bottom : flex-end,
+    middle : center
+  );
+  @if index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $align) {
+    align-items: $align;
   } @else {
-    align-items: flex-start;
+    align-items: map-get($shorthand, $align);
   }
 }
 
@@ -137,10 +134,12 @@ $flexie: (
 // ----------------------------------------------------------------------------
 
 // Row mixin
-@mixin flexie-row($direction: row, $wrap: wrap, $gutter: 20px) {
+@mixin flexie-row($direction: row, $wrap: wrap, $gutter: 20px, $justify: '', $align: '') {
   @include flx-row-direction($direction);
   @include flx-row-wrap($wrap);
   @include flx-row-gutter($gutter);
+  @include flx-row-justify($justify);
+  @include flx-row-align($align);
   display: flex;
 }
 
