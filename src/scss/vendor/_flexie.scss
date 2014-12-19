@@ -89,6 +89,7 @@ $flexie: (
 // Flexie column width
 @mixin flx-col-width($width: auto) {
   @if $width != auto {
+    flex-grow: 0;
     flex-basis: percentage($width);
     width: percentage($width);
   } @else {

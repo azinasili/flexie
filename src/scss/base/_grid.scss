@@ -68,9 +68,9 @@
 .row-reverse   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
 // Horizontal alignment for children columns
-.row-start     { justify-content: flex-start; }
-.row-center    { justify-content: center; }
-.row-end       { justify-content: flex-end; }
+.row-start     { @include flx-row-justify(flex-start); }
+.row-center    { @include flx-row-justify(center); }
+.row-end       { @include flx-row-justify(flex-end); }
 
 // Vertical alignment for children columns
 .row-top       { align-items: flex-start; }
@@ -127,9 +127,9 @@
   .row-reverse-md   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-md     { justify-content: flex-start; }
-  .row-center-md    { justify-content: center; }
-  .row-end-md       { justify-content: flex-end; }
+  .row-start-md     { @include flx-row-justify(flex-start); }
+  .row-center-md    { @include flx-row-justify(center); }
+  .row-end-md       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
   .row-top-md       { align-items: flex-start; }
@@ -179,9 +179,9 @@
   .row-reverse-lg   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-lg     { justify-content: flex-start; }
-  .row-center-lg    { justify-content: center; }
-  .row-end-lg       { justify-content: flex-end; }
+  .row-start-lg     { @include flx-row-justify(flex-start); }
+  .row-center-lg    { @include flx-row-justify(center); }
+  .row-end-lg       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
   .row-top-lg       { align-items: flex-start; }
@@ -231,9 +231,9 @@
   .row-reverse-xl   { flex-direction: row-reverse; flex-wrap: row-reverse; }
 
   // Horizontal alignment for children columns
-  .row-start-xl     { justify-content: flex-start; }
-  .row-center-xl    { justify-content: center; }
-  .row-end-xl       { justify-content: flex-end; }
+  .row-start-xl     { @include flx-row-justify(flex-start); }
+  .row-center-xl    { @include flx-row-justify(center); }
+  .row-end-xl       { @include flx-row-justify(flex-end); }
 
   // Vertical alignment for children columns
   .row-top-xl       { align-items: flex-start; }
