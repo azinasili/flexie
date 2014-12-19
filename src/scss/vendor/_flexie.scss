@@ -20,13 +20,6 @@ $flexie: (
   gutter: 20px
 );
 
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
-}
-
-@function percent($value) {
-  @return strip-unit($value) * 100%;
-}
 
 // ----------------------------------------------------------------------------
 // 2. Row helpers
@@ -95,7 +88,7 @@ $flexie: (
 @mixin flx-col-width($width: auto) {
   @if $width != auto {
     flex-grow: 0;
-    width: percent($width);
+    width: percentage($width);
   } @else {
     flex-basis: 0;
     flex-grow: 1;
