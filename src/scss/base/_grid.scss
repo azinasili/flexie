@@ -16,26 +16,26 @@
 
 // Column styles for demo
 .col {
-  @include rem(padding-top, 10px);
-  @include rem(padding-bottom, 10px);
   background: scale-color($color-primary-lightest, $alpha: -80%);
   box-shadow: inset 0 0 0 1px scale-color($color-primary-lightest, $alpha: -80%);
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 // Illustrates grid with content
 .box {
-  @include rem(border-radius, 3px);
-  @include rem(padding, 5px);
   background: $color-primary;
+  border-radius: 3px;
   color: $color-white;
   overflow: hidden;
+  padding: 5px;
   text-align: center;
   text-transform: capitalize;
   white-space: nowrap;
 
   // Large variation
   &.box-large {
-    @include rem(padding-bottom, 75px);
+    padding-bottom: 75px;
   }
 }
 
@@ -47,23 +47,23 @@
 // Global container object
 .container {
   @include ss();
-  @include rem(padding-left, $gutter-width/2);
-  @include rem(padding-right, $gutter-width/2);
+  padding-left: $gutter-width/2;
+  padding-right: $gutter-width/2;
 }
 
 // Column container
 .row {
-  @include rem(margin-left, -$gutter-width/2);
-  @include rem(margin-right, -$gutter-width/2);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-left: -$gutter-width/2;
+  margin-right: -$gutter-width/2;
 }
 
 // Column base object
 .col {
-  @include rem(padding-left, $gutter-width/2);
-  @include rem(padding-right, $gutter-width/2);
+  padding-left: $gutter-width/2;
+  padding-right: $gutter-width/2;
   display: flex;
   flex-direction: column;
   flex-grow: 0;
