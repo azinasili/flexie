@@ -155,7 +155,7 @@ $flexie: (
   @include flx-col-order($order);
   @include flx-col-gutter($gutter);
   @if index('column' 'column-reverse', $column) {
-    flex-direction: column;
+    flex-direction: $column;
   }
   display: flex;
   flex-shrink: 0;
