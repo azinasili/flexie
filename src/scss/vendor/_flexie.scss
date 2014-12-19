@@ -27,12 +27,12 @@ $flexie: (
 
 // Flexie row gutter
 @mixin flx-row-gutter($gutter: map-get($flexie, gutter)) {
-  @if $gutter != map-get($flexie, gutter) {
-    margin-left: $gutter/-2;
-    margin-right: $gutter/-2;
-  } @else {
+  @if $gutter == map-get($flexie, gutter) {
     margin-left: map-get($flexie, gutter)/-2;
     margin-right: map-get($flexie, gutter)/-2;
+  } @else {
+    margin-left: $gutter/-2;
+    margin-right: $gutter/-2;
   }
 }
 
