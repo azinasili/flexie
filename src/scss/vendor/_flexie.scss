@@ -121,8 +121,6 @@ $flexie: (
   @if $gutter > 0 {
     padding-left: $gutter/2;
     padding-right: $gutter/2;
-  } @else {
-    @warn 'Flexie column mixin #{$gutter} argument only accepts values greater than zero!';
   }
 }
 
