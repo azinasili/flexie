@@ -17,7 +17,8 @@
 // 1. Options
 // ----------------------------------------------------------------------------
 $flexie: (
-  gutter: 20px
+  gutter: 20px,
+  container-width: 1140px
 );
 
 
@@ -129,6 +130,21 @@ $flexie: (
 // ----------------------------------------------------------------------------
 // 4. Flexie mixins
 // ----------------------------------------------------------------------------
+
+// Container mixin
+@mixin flexie-container($width: map-get($flexie, container-width), $gutter: 20px) {
+  @include flx-col-gutter($gutter);
+  @if $width == map-get($flexie, container-width) {
+    max-width: map-get($flexie, container-width);
+  } @else {
+    max-width: $width;
+  }
+  @if $width != 100% {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  width: 100%;
+}
 
 // Row mixin
 @mixin flexie-row($direction: row, $wrap: wrap, $gutter: 20px, $justify: '', $align: '') {

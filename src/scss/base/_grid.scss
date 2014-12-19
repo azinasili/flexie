@@ -46,9 +46,10 @@
 
 // Global container object
 .container {
-  @include ss();
-  padding-left: $gutter-width/2;
-  padding-right: $gutter-width/2;
+  @include flexie-container();
+  // @include ss();
+  // padding-left: $gutter-width/2;
+  // padding-right: $gutter-width/2;
 }
 
 // Column container
