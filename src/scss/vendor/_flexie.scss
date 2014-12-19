@@ -20,14 +20,6 @@ $flexie: (
   gutter: 20px
 );
 
-// Remove units on input
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
-}
-
-@function percent($fraction) {
-  @return strip-unit($fraction) * 100%;
-}
 
 // ----------------------------------------------------------------------------
 // 2. Row helpers
@@ -118,8 +110,8 @@ $flexie: (
 }
 
 // Flexie column ordering
-@mixin flx-col-order($order) {
-  @if $order != 0 {
+@mixin flx-col-order($order: '') {
+  @if $order != '' and unitless($order) == true and round($order) == $order {
     order: $order;
   }
 }
