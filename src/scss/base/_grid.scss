@@ -79,8 +79,8 @@
 .row-stretch   { @include flx-row-align(stretch); }
 
 // Evenly distribute remaining space for children columns
-.row-around    { justify-content: space-around; }
-.row-between   { justify-content: space-between; }
+.row-around    { @include flx-row-align(space-around); }
+.row-between   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
 .col-top       { align-self: flex-start; }
@@ -138,8 +138,8 @@
   .row-stretch-md   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-md    { justify-content: space-around; }
-  .row-between-md   { justify-content: space-between; }
+  .row-around-md    { @include flx-row-align(space-around); }
+  .row-between-md   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
   .col-top-md       { align-self: flex-start; }
@@ -190,8 +190,8 @@
   .row-stretch-lg   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-lg    { justify-content: space-around; }
-  .row-between-lg   { justify-content: space-between; }
+  .row-around-lg    { @include flx-row-align(space-around); }
+  .row-between-lg   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
   .col-top-lg       { align-self: flex-start; }
@@ -242,8 +242,8 @@
   .row-stretch-xl   { @include flx-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-xl    { justify-content: space-around; }
-  .row-between-xl   { justify-content: space-between; }
+  .row-around-xl    { @include flx-row-align(space-around); }
+  .row-between-xl   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
   .col-top-xl       { align-self: flex-start; }
