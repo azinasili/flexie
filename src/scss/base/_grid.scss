@@ -47,9 +47,6 @@
 // Global container object
 .container {
   @include flexie-container();
-  // @include ss();
-  // padding-left: $gutter-width/2;
-  // padding-right: $gutter-width/2;
 }
 
 // Column container
@@ -92,8 +89,14 @@
 .col-stretch   { align-self: stretch; }
 
 // Re-order columns
-@for $i from 1 through 10 {
-  .order-#{$i} { @include flx-col-order($i); }
+@if map-has-key($flexie, columns) {
+  @for $i from 1 through map-get($flexie, columns) {
+    .order-#{$i} { @include flx-col-order($i); }
+  }
+} @else {
+  @for $i from 1 through 10 {
+    .order-#{$i} { @include flx-col-order($i); }
+  }
 }
 
 
@@ -103,8 +106,14 @@
 .col-auto { @include flx-col-width(); }
 
 // Column sizes
-@for $i from 1 through 10 {
-  .col-#{$i}   { @include flx-col-width(1/$i); }
+@if map-has-key($flexie, columns) {
+  @for $i from 1 through map-get($flexie, columns) {
+    .col-#{$i}   { @include flx-col-width(1/$i); }
+  }
+} @else {
+  @for $i from 1 through 10 {
+    .col-#{$i}   { @include flx-col-width(1/$i); }
+  }
 }
 
 
@@ -139,16 +148,28 @@
   .col-stretch-md   { align-self: stretch; }
 
   // Re-order columns
-  @for $i from 1 through 10 {
-    .order-#{$i}-md { @include flx-col-order($i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .order-#{$i}-md { @include flx-col-order($i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .order-#{$i}-md { @include flx-col-order($i); }
+    }
   }
 
   // Auto size column
   .col-auto-md { @include flx-col-width(); }
 
   // Column sizes
-  @for $i from 1 through 10 {
-    .col-#{$i}-md   { @include flx-col-width(1/$i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .col-#{$i}-md   { @include flx-col-width(1/$i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .col-#{$i}-md   { @include flx-col-width(1/$i); }
+    }
   }
 }
 
@@ -179,16 +200,28 @@
   .col-stretch-lg   { align-self: stretch; }
 
   // Re-order columns
-  @for $i from 1 through 10 {
-    .order-#{$i}-lg { @include flx-col-order($i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .order-#{$i}-lg { @include flx-col-order($i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .order-#{$i}-lg { @include flx-col-order($i); }
+    }
   }
 
   // Auto size column
   .col-auto-lg { @include flx-col-width(); }
 
   // Column sizes
-  @for $i from 1 through 10 {
-    .col-#{$i}-lg   { @include flx-col-width(1/$i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .col-#{$i}-lg   { @include flx-col-width(1/$i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .col-#{$i}-lg   { @include flx-col-width(1/$i); }
+    }
   }
 }
 
@@ -219,16 +252,28 @@
   .col-stretch-xl   { align-self: stretch; }
 
   // Re-order columns
-  @for $i from 1 through 10 {
-    .order-#{$i}-xl { @include flx-col-order($i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .order-#{$i}-xl { @include flx-col-order($i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .order-#{$i}-xl { @include flx-col-order($i); }
+    }
   }
 
   // Auto size column
   .col-auto-xl { @include flx-col-width(); }
 
   // Column sizes
-  @for $i from 1 through 10 {
-    .col-#{$i}-xl   { @include flx-col-width(1/$i); }
+  @if map-has-key($flexie, columns) {
+    @for $i from 1 through map-get($flexie, columns) {
+      .col-#{$i}-xl   { @include flx-col-width(1/$i); }
+    }
+  } @else {
+    @for $i from 1 through 10 {
+      .col-#{$i}-xl   { @include flx-col-width(1/$i); }
+    }
   }
 }
 
