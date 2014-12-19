@@ -104,18 +104,16 @@ $flexie: (
 }
 
 // Flexie coloumn align
-@mixin flx-col-align($align) {
-  // Column alignment
-  @if $align == top {
-    align-self: flex-start;
-  } @else if $align == middle {
-    align-self: center;
-  } @else if $align == bottom {
-    align-self: flex-end;
-  } @else if $align == stretch {
-    align-self: stretch;
+@mixin flx-col-align($align: flex-start) {
+  $shorthand: (
+    top    : flex-start,
+    bottom : flex-end,
+    middle : center
+  );
+  @if index('flex-start' 'center' 'flex-end' 'stretch', $align) {
+    align-self: $align;
   } @else {
-    @warn 'Flexie columns mixin #{$align} argument only accepts top, middle, bottom, or stretch';
+    align-self: map-get($shorthand, $align);
   }
 }
 
