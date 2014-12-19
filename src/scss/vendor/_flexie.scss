@@ -53,17 +53,17 @@ $flexie: (
 }
 
 // Flexie row justification
-@mixin flx-row-justify($justify: left) {
-  @if index('right' 'flex-end', $justify) {
-    justify-content: flex-end;
-  } @else if index('center', $justify) {
-    justify-content: center;
-  } @else if index('between' 'space-between', $justify) {
-    justify-content: space-between;
-  } @else if index('around' 'space-around', $justify) {
-    justify-content: space-around;
-  } @else if index('left' 'flex-start', $justify) {
-    justify-content: flex-start;
+@mixin flx-row-justify($justify: flex-start) {
+  $shorthand: (
+    right   : flex-end,
+    left    : flex-start,
+    between : space-between,
+    around  : space-around
+  );
+  @if index('flex-start' 'center' 'flex-end' 'space-between' 'space-around', $justify) {
+    justify-content: $justify;
+  } @else {
+    justify-content: map-get($shorthand, $justify);
   }
 }
 
