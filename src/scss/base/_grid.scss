@@ -83,10 +83,10 @@
 .row-between   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
-.col-top       { align-self: flex-start; }
-.col-middle    { align-self: center; }
-.col-bottom    { align-self: flex-end; }
-.col-stretch   { align-self: stretch; }
+.col-top       { @include flx-col-align(flex-start); }
+.col-middle    { @include flx-col-align(center); }
+.col-bottom    { @include flx-col-align(flex-end); }
+.col-stretch   { @include flx-col-align(stretch); }
 
 // Re-order columns
 @if map-has-key($flexie, columns) {
@@ -142,10 +142,10 @@
   .row-between-md   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-md       { align-self: flex-start; }
-  .col-middle-md    { align-self: center; }
-  .col-bottom-md    { align-self: flex-end; }
-  .col-stretch-md   { align-self: stretch; }
+  .col-top-md       { @include flx-col-align(flex-start); }
+  .col-middle-md    { @include flx-col-align(center); }
+  .col-bottom-md    { @include flx-col-align(flex-end); }
+  .col-stretch-md   { @include flx-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
@@ -194,10 +194,10 @@
   .row-between-lg   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-lg       { align-self: flex-start; }
-  .col-middle-lg    { align-self: center; }
-  .col-bottom-lg    { align-self: flex-end; }
-  .col-stretch-lg   { align-self: stretch; }
+  .col-top-lg       { @include flx-col-align(flex-start); }
+  .col-middle-lg    { @include flx-col-align(center); }
+  .col-bottom-lg    { @include flx-col-align(flex-end); }
+  .col-stretch-lg   { @include flx-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
@@ -246,10 +246,10 @@
   .row-between-xl   { @include flx-row-align(space-between); }
 
   // Column alignment overrides
-  .col-top-xl       { align-self: flex-start; }
-  .col-middle-xl    { align-self: center; }
-  .col-bottom-xl    { align-self: flex-end; }
-  .col-stretch-xl   { align-self: stretch; }
+  .col-top-xl       { @include flx-col-align(flex-start); }
+  .col-middle-xl    { @include flx-col-align(center); }
+  .col-bottom-xl    { @include flx-col-align(flex-end); }
+  .col-stretch-xl   { @include flx-col-align(stretch); }
 
   // Re-order columns
   @if map-has-key($flexie, columns) {
