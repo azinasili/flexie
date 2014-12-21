@@ -31,10 +31,10 @@ module.exports = function (grunt) {
      * Set project info
      */
     project: {
-      src: 'src',
-      app: 'app',
-      css: '<%= project.app %>/css/flexie.css',
-      scss: '<%= project.src %>/flexie/grid.scss'
+      src: 'flexie',
+      demo: 'demo',
+      css: '<%= project.demo %>/css/flexie.css',
+      scss: '<%= project.src %>/grid.scss'
     },
 
     /**
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           middleware: function (connect) {
-            return [lrSnippet, mountFolder(connect, 'app')];
+            return [lrSnippet, mountFolder(connect, 'demo')];
           }
         }
       }
@@ -82,7 +82,6 @@ module.exports = function (grunt) {
       dist: {
         options: {
           cacheLocation : '_tmp',
-          lineNumbers   : true,
           precision     : 10,
           sourcemap     : 'none',
           style         : 'expanded'
@@ -101,15 +100,7 @@ module.exports = function (grunt) {
     autoprefixer: {
       options: {
         browsers: [
-          'last 2 version',
-          'safari 6',
-          'ie 8',
-          'ie 9',
-          'ie 10',
-          'ie 11',
-          'opera 12.1',
-          'ios 5',
-          'android 4'
+          'last 2 version'
         ]
       },
       dist: {
@@ -153,7 +144,7 @@ module.exports = function (grunt) {
      */
     watch: {
       sass: {
-        files: '<%= project.src %>/flexie/{,*/}*.{scss,sass}',
+        files: '<%= project.src %>/{,*/}*.{scss,sass}',
         tasks: ['sass', 'autoprefixer']
       },
       livereload: {
@@ -161,7 +152,7 @@ module.exports = function (grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
-          '<%= project.app %>/{,*/}*.html',
+          '<%= project.demo %>/{,*/}*.html',
           '<%= project.css %>'
         ]
       }
