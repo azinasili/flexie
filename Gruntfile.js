@@ -34,7 +34,7 @@ module.exports = function (grunt) {
       src: 'src',
       app: 'app',
       css: '<%= project.app %>/css/flexie.css',
-      scss: '<%= project.src %>/scss/flexie.scss'
+      scss: '<%= project.src %>/flexie/grid.scss'
     },
 
     /**
@@ -153,7 +153,7 @@ module.exports = function (grunt) {
      */
     watch: {
       sass: {
-        files: '<%= project.src %>/scss/{,*/}*.{scss,sass}',
+        files: '<%= project.src %>/flexie/{,*/}*.{scss,sass}',
         tasks: ['sass', 'autoprefixer']
       },
       livereload: {
