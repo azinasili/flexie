@@ -95,7 +95,7 @@
 // ----------------------------------------------------------------------------
 
 // Medium breakpoint
-@include mq($from: tablet) {
+@media (min-width: 45em) {
   // Reverse column order
   .row-reverse-md   {
     @include flexie-row-direction(row-reverse);
@@ -150,7 +150,7 @@
 }
 
 // Desktop breakpoint
-@include mq($from: desktop) {
+@media (min-width: 71.25em) {
   // Reverse column order
   .row-reverse-lg   {
     @include flexie-row-direction(row-reverse);
@@ -205,7 +205,7 @@
 }
 
 // Wide breakpoint
-@include mq($from: wide) {
+@media (min-width: 90em) {
   // Reverse column order
   .row-reverse-xl   {
     @include flexie-row-direction(row-reverse);

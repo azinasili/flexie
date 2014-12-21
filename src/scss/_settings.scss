@@ -18,14 +18,6 @@ $screen-size-medium       : 1140px !default;
 $screen-size-large        : 1440px !default;
 $gutter-width             : 24px !default;
 
-// Responsive breakpoints
-$grid-breakpoints: (
-  mobile                  : 320px,
-  tablet                  : 720px,
-  desktop                 : 1140px,
-  wide                    : 1440px
-) !default;
-
 
 // ----------------------------------------------------------------------------
 // 2. Font settings
