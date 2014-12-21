@@ -11,36 +11,6 @@
 
 
 // ----------------------------------------------------------------------------
-// Demo
-// ----------------------------------------------------------------------------
-
-// Column styles for demo
-.col {
-  background: scale-color($color-primary-lightest, $alpha: -80%);
-  box-shadow: inset 0 0 0 1px scale-color($color-primary-lightest, $alpha: -80%);
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-// Illustrates grid with content
-.box {
-  background: $color-primary;
-  border-radius: 3px;
-  color: $color-white;
-  overflow: hidden;
-  padding: 5px;
-  text-align: center;
-  text-transform: capitalize;
-  white-space: nowrap;
-
-  // Large variation
-  &.box-large {
-    padding-bottom: 75px;
-  }
-}
-
-
-// ----------------------------------------------------------------------------
 // 1. Universal grid structure
 // ----------------------------------------------------------------------------
 
