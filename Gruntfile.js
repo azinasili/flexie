@@ -43,7 +43,7 @@ module.exports = function (grunt) {
      * Inherits text from package.json
      */
     tag: {
-      banner: '/*!\n' +
+      banner: '/**!\n' +
               ' * <%= pkg.name %>\n' +
               ' * <%= pkg.title %>\n' +
               ' * <%= pkg.url %>\n' +
@@ -166,18 +166,10 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'sass',
     'autoprefixer',
+    'cssmin',
     'connect:livereload',
     'open',
     'watch'
-  ]);
-
-  /**
-   * Build task
-   * Run `grunt build` on the command line
-   * Then compress all JS/CSS files
-   */
-  grunt.registerTask('build', [
-    'cssmin'
   ]);
 
 };
