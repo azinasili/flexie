@@ -1,11 +1,7 @@
 # Flexie Grid System
 
-Flexie is an easy to use mixin and function library for flexbox. Create custom grids
-using flexbox without memorizing the flexbox syntax.
-
-## What Comes With Flexie
-
-Flexie comes with a pre-defined grid system and a set of mixins to use.
+Flexie is an easy to use function and mixin library for flexbox layouts. Flexie
+also comes with a predefined grid system.
 
 ## How To Use Flexie
 

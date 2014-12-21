@@ -31,10 +31,10 @@ module.exports = function (grunt) {
      * Set project info
      */
     project: {
-      src: 'flexie',
-      demo: 'demo',
-      css: '<%= project.demo %>/css/flexie.css',
-      scss: '<%= project.src %>/grid.scss'
+      src  : 'flexie',
+      app  : 'demo',
+      css  : '<%= project.app %>/css/flexie.css',
+      scss : '<%= project.src %>/grid.scss'
     },
 
     /**
@@ -152,7 +152,7 @@ module.exports = function (grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
-          '<%= project.demo %>/{,*/}*.html',
+          '<%= project.app %>/{,*/}*.html',
           '<%= project.css %>'
         ]
       }
