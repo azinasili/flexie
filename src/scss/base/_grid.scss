@@ -82,8 +82,8 @@
 .row-stretch   { @include flexie-row-align(stretch); }
 
 // Evenly distribute remaining space for children columns
-.row-around    { @include flexie-row-align(space-around); }
-.row-between   { @include flexie-row-align(space-between); }
+.row-around    { @include flexie-row-justify(space-around); }
+.row-between   { @include flexie-row-justify(space-between); }
 
   // Column alignment overrides
 .col-top       { @include flexie-col-align(flex-start); }
@@ -144,8 +144,8 @@
   .row-stretch-md   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-md    { @include flexie-row-align(space-around); }
-  .row-between-md   { @include flexie-row-align(space-between); }
+  .row-around-md    { @include flexie-row-justify(space-around); }
+  .row-between-md   { @include flexie-row-justify(space-between); }
 
   // Column alignment overrides
   .col-top-md       { @include flexie-col-align(flex-start); }
@@ -199,8 +199,8 @@
   .row-stretch-lg   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-lg    { @include flexie-row-align(space-around); }
-  .row-between-lg   { @include flexie-row-align(space-between); }
+  .row-around-lg    { @include flexie-row-justify(space-around); }
+  .row-between-lg   { @include flexie-row-justify(space-between); }
 
   // Column alignment overrides
   .col-top-lg       { @include flexie-col-align(flex-start); }
@@ -254,8 +254,8 @@
   .row-stretch-xl   { @include flexie-row-align(stretch); }
 
   // Evenly distribute remaining space for children columns
-  .row-around-xl    { @include flexie-row-align(space-around); }
-  .row-between-xl   { @include flexie-row-align(space-between); }
+  .row-around-xl    { @include flexie-row-justify(space-around); }
+  .row-between-xl   { @include flexie-row-justify(space-between); }
 
   // Column alignment overrides
   .col-top-xl       { @include flexie-col-align(flex-start); }
