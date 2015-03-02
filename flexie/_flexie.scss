@@ -44,8 +44,12 @@
 
 // Flexie row gutter
 @mixin flexie-row-gutter($gutter: map-get($flexie, gutter)) {
-  margin-left: $gutter/-2;
-  margin-right: $gutter/-2;
+  @if type-of($gutter) != number or unitless($gutter) == true {
+    @warn 'flexie-row-gutter() only accepts a number with a unit as a parameter';
+  } @else {
+    margin-left: $gutter/-2;
+    margin-right: $gutter/-2;
+  }
 }
 
 // Flexie row wrap
@@ -126,9 +130,13 @@
 }
 
 // Flexie column gutter width
-@mixin flexie-col-gutter($gutter) {
-  padding-left: $gutter/2;
-  padding-right: $gutter/2;
+@mixin flexie-col-gutter($gutter: map-get($flexie, gutter)) {
+  @if type-of($gutter) != number or unitless($gutter) == true {
+    @warn 'flexie-col-gutter() only accepts a number with a unit as a parameter';
+  } @else {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
 }
 
 
