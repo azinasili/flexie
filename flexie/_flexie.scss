@@ -20,20 +20,20 @@
 // ----------------------------------------------------------------------------
 
 // Create flex content
-@mixin flexie-display($display: flex) {
-  @if index('flex' 'inline-flex', $display) {
-    display: $display;
+@mixin flexie-display($flexie-display: flex) {
+  @if index('flex' 'inline-flex', $flexie-display) {
+    display: $flexie-display;
   } @else {
-    @warn '#{$display} is not an accepted argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
+    @warn '#{$flexie-display} is not an accepted argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
   }
 }
 
 // Flex direction
-@mixin flexie-direction($direction: row) {
-  @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
-    flex-direction: $direction;
+@mixin flexie-direction($flexie-direction: row) {
+  @if index('row' 'row-reverse' 'column' 'column-reverse', $flexie-direction) {
+    flex-direction: $flexie-direction;
   } @else {
-    @warn '#{$direction} is not an accepted argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
+    @warn '#{$flexie-direction} is not an accepted argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
   }
 }
 
@@ -43,54 +43,57 @@
 // ----------------------------------------------------------------------------
 
 // Flexie row gutter
-@mixin flexie-row-gutter($gutter: map-get($flexie, gutter)) {
-  @if type-of($gutter) != number or unitless($gutter) == true {
-    @warn '#{$gutter} is not an accepted argument of flexie-row-gutter(). Please use a number with a unit instead';
-  } @else {
-    margin-left: $gutter/-2;
-    margin-right: $gutter/-2;
+// Output CSS only if $flexie-row-gutter is greater than 0
+@mixin flexie-row-gutter($flexie-row-gutter: map-get($flexie, gutter)) {
+  @if $flexie-row-gutter > 0 {
+    @if type-of($flexie-row-gutter) != number or unitless($flexie-row-gutter) == true {
+      @warn '#{$flexie-row-gutter} is not an accepted argument of flexie-row-gutter(). Please use a number with a unit instead';
+    } @else {
+      margin-left: $flexie-row-gutter/-2;
+      margin-right: $flexie-row-gutter/-2;
+    }
   }
 }
 
 // Flexie row wrap
-@mixin flexie-row-wrap($wrap: wrap) {
-  @if index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
-    flex-wrap: $wrap;
+@mixin flexie-row-wrap($flexie-row-wrap: wrap) {
+  @if index('wrap' 'wrap-reverse' 'nowrap', $flexie-row-wrap) {
+    flex-wrap: $flexie-row-wrap;
   } @else {
-    @warn '#{$wrap} is not an accepted argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
+    @warn '#{$flexie-row-wrap} is not an accepted argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
 }
 
 // Flexie row justification
-@mixin flexie-row-justify($justify: flex-start) {
+@mixin flexie-row-justify($flexie-row-justify: flex-start) {
   $shorthand: (
     right   : flex-end,
     left    : flex-start,
     between : space-between,
     around  : space-around
   );
-  @if index('flex-start' 'center' 'flex-end' 'space-between' 'space-around', $justify) {
-    justify-content: $justify;
-  } @else if map-has-key($shorthand, $justify) {
-    justify-content: map-get($shorthand, $justify);
+  @if index('flex-start' 'center' 'flex-end' 'space-between' 'space-around', $flexie-row-justify) {
+    justify-content: $flexie-row-justify;
+  } @else if map-has-key($shorthand, $flexie-row-justify) {
+    justify-content: map-get($shorthand, $flexie-row-justify);
   } @else {
-    @warn '#{$justify} is not an accepted argument for flexie-row-justify(). Please use `flex-start`, `flex-end`, `space-between`, `space-around`, `center`, `right`, `left`, `between`, or `around` instead.';
+    @warn '#{$flexie-row-justify} is not an accepted argument for flexie-row-justify(). Please use `flex-start`, `flex-end`, `space-between`, `space-around`, `center`, `right`, `left`, `between`, or `around` instead.';
   }
 }
 
 // Flexie row children align
-@mixin flexie-row-align($align: flex-start) {
+@mixin flexie-row-align($flexie-row-align: flex-start) {
   $shorthand: (
     top    : flex-start,
     bottom : flex-end,
     middle : center
   );
-  @if index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $align) {
-    align-items: $align;
-  } @else if map-has-key($shorthand, $align) {
-    align-items: map-get($shorthand, $align);
+  @if index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-row-align) {
+    align-items: $flexie-row-align;
+  } @else if map-has-key($shorthand, $flexie-row-align) {
+    align-items: map-get($shorthand, $flexie-row-align);
   } @else {
-    @warn '#{$align} is not an accepted argument for flexie-row-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
+    @warn '#{$flexie-row-align} is not an accepted argument for flexie-row-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
   }
 }
 
@@ -100,11 +103,11 @@
 // ----------------------------------------------------------------------------
 
 // Flexie column width
-@mixin flexie-col-width($width: auto) {
-  @if $width != auto {
-    flex-basis: percentage($width);
+@mixin flexie-col-width($flexie-col-width: auto) {
+  @if $flexie-col-width != auto {
+    flex-basis: percentage($flexie-col-width);
     flex-grow: 0;
-    width: percentage($width);
+    width: percentage($flexie-col-width);
   } @else {
     flex-basis: 0;
     flex-grow: 1;
@@ -113,37 +116,40 @@
 }
 
 // Flexie coloumn align
-@mixin flexie-col-align($align: flex-start) {
+@mixin flexie-col-align($flexie-col-align: flex-start) {
   $shorthand: (
     top    : flex-start,
     bottom : flex-end,
     middle : center
   );
-  @if index('flex-start' 'center' 'flex-end' 'stretch', $align) {
-    align-self: $align;
-  } @else if map-has-key($shorthand, $align) {
-    align-self: map-get($shorthand, $align);
+  @if index('flex-start' 'center' 'flex-end' 'stretch', $flexie-col-align) {
+    align-self: $flexie-col-align;
+  } @else if map-has-key($shorthand, $flexie-col-align) {
+    align-self: map-get($shorthand, $flexie-col-align);
   } @else {
-    @warn '#{$align} is not an accepted argument for flexie-col-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
+    @warn '#{$flexie-col-align} is not an accepted argument for flexie-col-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
   }
 }
 
 // Flexie column ordering
-@mixin flexie-col-order($order: null) {
-  @if $order != null and unitless($order) == true and round($order) == $order {
-    order: $order;
+@mixin flexie-col-order($flexie-col-order: null) {
+  @if $flexie-col-order != null and unitless($flexie-col-order) == true and round($flexie-col-order) == $flexie-col-order {
+    order: $flexie-col-order;
   } @else {
-    @warn '#{$order} is not an accepted argument of flexie-col-order(). Please use an integer instead.';
+    @warn '#{$flexie-col-order} is not an accepted argument of flexie-col-order(). Please use an integer instead.';
   }
 }
 
 // Flexie column gutter width
-@mixin flexie-col-gutter($gutter: map-get($flexie, gutter)) {
-  @if type-of($gutter) != number or unitless($gutter) == true {
-    @warn '#{$gutter} is not an accepted argument of flexie-col-gutter(). Please use a number with a unit instead';
-  } @else {
-    padding-left: $gutter/2;
-    padding-right: $gutter/2;
+// Output CSS only if $flexie-col-gutter is greater than 0
+@mixin flexie-col-gutter($flexie-col-gutter: map-get($flexie, gutter)) {
+  @if $flexie-col-gutter > 0 {
+    @if type-of($flexie-col-gutter) != number or unitless($flexie-col-gutter) == true {
+      @warn '#{$flexie-col-gutter} is not an accepted argument of flexie-col-gutter(). Please use a number with a unit instead';
+    } @else {
+      padding-left: $flexie-col-gutter/2;
+      padding-right: $flexie-col-gutter/2;
+    }
   }
 }
 
@@ -155,14 +161,10 @@
 // Container mixin
 @mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
   @include flexie-col-gutter($gutter);
-  @if $width == map-get($flexie, container-width) {
-    max-width: map-get($flexie, container-width);
-  } @else {
-    max-width: $width;
-  }
   @if $width != 100% {
     margin-left: auto;
     margin-right: auto;
+    max-width: $width;
   }
   width: 100%;
 }
