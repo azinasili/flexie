@@ -24,7 +24,7 @@
   @if index('flex' 'inline-flex', $display) {
     display: $display;
   } @else {
-    @warn 'Flexie-display only accepts `flex` or `inline-flex` as parameters';
+    @warn 'flexie-display() only accepts `flex` or `inline-flex` as parameters';
   }
 }
 
@@ -33,7 +33,7 @@
   @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
     flex-direction: $direction;
   } @else {
-    @warn 'Flexie-direction accepts `row`, `row-reverse`, `column`, or `column-reverse` as parameters';
+    @warn 'flexie-direction() accepts `row`, `row-reverse`, `column`, or `column-reverse` as parameters';
   }
 }
 
@@ -44,19 +44,16 @@
 
 // Flexie row gutter
 @mixin flexie-row-gutter($gutter: map-get($flexie, gutter)) {
-  @if $gutter == map-get($flexie, gutter) {
-    margin-left: map-get($flexie, gutter)/-2;
-    margin-right: map-get($flexie, gutter)/-2;
-  } @else {
-    margin-left: $gutter/-2;
-    margin-right: $gutter/-2;
-  }
+  margin-left: $gutter/-2;
+  margin-right: $gutter/-2;
 }
 
 // Flexie row wrap
 @mixin flexie-row-wrap($wrap: wrap) {
   @if index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
     flex-wrap: $wrap;
+  } @else {
+    @warn 'flexie-row-wrap() only accepts `wrap`, `wrap-reverse`, or `nowrap` as parameters';
   }
 }
 
@@ -130,10 +127,8 @@
 
 // Flexie column gutter width
 @mixin flexie-col-gutter($gutter) {
-  @if $gutter > 0 {
-    padding-left: $gutter/2;
-    padding-right: $gutter/2;
-  }
+  padding-left: $gutter/2;
+  padding-right: $gutter/2;
 }
 
 
