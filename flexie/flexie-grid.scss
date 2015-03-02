@@ -36,8 +36,8 @@
 // ----------------------------------------------------------------------------
 
 // Reverse column order
-.row-reverse   {
-  @include flexie-row-direction(row-reverse);
+.row-reverse {
+  @include flexie-direction(row-reverse);
   @include flexie-row-wrap(wrap-reverse);
 }
 
@@ -98,8 +98,8 @@
 // Medium breakpoint
 @media (min-width: 45em) {
   // Reverse column order
-  .row-reverse-md   {
-    @include flexie-row-direction(row-reverse);
+  .row-reverse-md {
+    @include flexie-direction(row-reverse);
     @include flexie-row-wrap(wrap-reverse);
   }
 
@@ -153,8 +153,8 @@
 // Desktop breakpoint
 @media (min-width: 71.25em) {
   // Reverse column order
-  .row-reverse-lg   {
-    @include flexie-row-direction(row-reverse);
+  .row-reverse-lg {
+    @include flexie-direction(row-reverse);
     @include flexie-row-wrap(wrap-reverse);
   }
 
@@ -208,8 +208,8 @@
 // Wide breakpoint
 @media (min-width: 90em) {
   // Reverse column order
-  .row-reverse-xl   {
-    @include flexie-row-direction(row-reverse);
+  .row-reverse-xl {
+    @include flexie-direction(row-reverse);
     @include flexie-row-wrap(wrap-reverse);
   }
 

@@ -6,8 +6,9 @@
 // Use the predefined row an column mixins
 // or customize your own grid system with the helper mixins
 //
-// 1. Row helpers
-// 2. Column helpers
+// 1. Flexie base
+// 2. Row helpers
+// 3. Column 4elpers
 // 3. Flexie mixins
 // ----------------------------------------------------------------------------
 
@@ -15,7 +16,30 @@
 @import 'flexie-settings';
 
 // ----------------------------------------------------------------------------
-// 1. Row helpers
+// 1. Flex base
+// ----------------------------------------------------------------------------
+
+// Create flex content
+@mixin flexie-display($display: flex) {
+  @if index('flex' 'inline-flex', $display) {
+    display: $display;
+  } @else {
+    @warn 'Flexie-display only accepts `flex` or `inline-flex` as parameters';
+  }
+}
+
+// Flex direction
+@mixin flexie-direction($direction: row) {
+  @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
+    flex-direction: $direction;
+  } @else {
+    @warn 'Flexie-direction accepts `row`, `row-reverse`, `column`, or `column-reverse` as parameters';
+  }
+}
+
+
+// ----------------------------------------------------------------------------
+// 2. Row helpers
 // ----------------------------------------------------------------------------
 
 // Flexie row gutter
@@ -26,13 +50,6 @@
   } @else {
     margin-left: $gutter/-2;
     margin-right: $gutter/-2;
-  }
-}
-
-// Flexie row direction
-@mixin flexie-row-direction($direction: row) {
-  @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
-    flex-direction: $direction;
   }
 }
 
@@ -74,14 +91,14 @@
 
 
 // ----------------------------------------------------------------------------
-// 2. Column helpers
+// 3. Column helpers
 // ----------------------------------------------------------------------------
 
 // Flexie column width
 @mixin flexie-col-width($width: auto) {
   @if $width != auto {
-    flex-grow: 0;
     flex-basis: percentage($width);
+    flex-grow: 0;
     width: percentage($width);
   } @else {
     flex-basis: 0;
@@ -121,7 +138,7 @@
 
 
 // ----------------------------------------------------------------------------
-// 3. Flexie mixins
+// 4. Flexie mixins
 // ----------------------------------------------------------------------------
 
 // Container mixin
@@ -140,24 +157,22 @@
 }
 
 // Row mixin
-@mixin flexie-row($direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: '', $align: '') {
-  @include flexie-row-direction($direction);
+@mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: '', $align: '') {
+  @include flexie-display($display);
+  @include flexie-direction($direction);
   @include flexie-row-wrap($wrap);
   @include flexie-row-gutter($gutter);
   @include flexie-row-justify($justify);
   @include flexie-row-align($align);
-  display: flex;
 }
 
 // Column mixin
-@mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $align: '', $order: '', $column: column) {
+@mixin flexie-col($display: flex, $direction: column, $width: auto, $gutter: map-get($flexie, gutter), $align: '', $order: '') {
+  @include flexie-display($display);
+  @include flexie-direction($direction);
   @include flexie-col-width($width);
   @include flexie-col-align($align);
   @include flexie-col-order($order);
   @include flexie-col-gutter($gutter);
-  @if index('column' 'column-reverse', $column) {
-    flex-direction: $column;
-  }
-  display: flex;
   flex-shrink: 0;
 }
