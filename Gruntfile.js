@@ -82,7 +82,6 @@ module.exports = function (grunt) {
       dist: {
         options: {
           cacheLocation : '_tmp',
-          precision     : 10,
           sourcemap     : 'none',
           style         : 'expanded'
         },
