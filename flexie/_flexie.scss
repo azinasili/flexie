@@ -24,7 +24,7 @@
   @if index('flex' 'inline-flex', $display) {
     display: $display;
   } @else {
-    @warn 'flexie-display() only accepts `flex` or `inline-flex` as parameters';
+    @warn '#{$display} is not an accepted argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
   }
 }
 
@@ -33,7 +33,7 @@
   @if index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
     flex-direction: $direction;
   } @else {
-    @warn 'flexie-direction() accepts `row`, `row-reverse`, `column`, or `column-reverse` as parameters';
+    @warn '#{$direction} is not an accepted argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
   }
 }
 
@@ -45,7 +45,7 @@
 // Flexie row gutter
 @mixin flexie-row-gutter($gutter: map-get($flexie, gutter)) {
   @if type-of($gutter) != number or unitless($gutter) == true {
-    @warn 'flexie-row-gutter() only accepts a number with a unit as a parameter';
+    @warn '#{$gutter} is not an accepted argument of flexie-row-gutter(). Please use a number with a unit instead';
   } @else {
     margin-left: $gutter/-2;
     margin-right: $gutter/-2;
@@ -57,7 +57,7 @@
   @if index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
     flex-wrap: $wrap;
   } @else {
-    @warn 'flexie-row-wrap() only accepts `wrap`, `wrap-reverse`, or `nowrap` as parameters';
+    @warn '#{$wrap} is not an accepted argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
 }
 
@@ -71,8 +71,10 @@
   );
   @if index('flex-start' 'center' 'flex-end' 'space-between' 'space-around', $justify) {
     justify-content: $justify;
-  } @else {
+  } @else if map-has-key($shorthand, $justify) {
     justify-content: map-get($shorthand, $justify);
+  } @else {
+    @warn '#{$justify} is not an accepted argument for flexie-row-justify(). Please use `flex-start`, `flex-end`, `space-between`, `space-around`, `center`, `right`, `left`, `between`, or `around` instead.';
   }
 }
 
@@ -85,8 +87,10 @@
   );
   @if index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $align) {
     align-items: $align;
-  } @else {
+  } @else if map-has-key($shorthand, $align) {
     align-items: map-get($shorthand, $align);
+  } @else {
+    @warn '#{$align} is not an accepted argument for flexie-row-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
   }
 }
 
@@ -117,22 +121,26 @@
   );
   @if index('flex-start' 'center' 'flex-end' 'stretch', $align) {
     align-self: $align;
-  } @else {
+  } @else if map-has-key($shorthand, $align) {
     align-self: map-get($shorthand, $align);
+  } @else {
+    @warn '#{$align} is not an accepted argument for flexie-col-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `top`, `middle`, or `bottom` instead.';
   }
 }
 
 // Flexie column ordering
-@mixin flexie-col-order($order: '') {
-  @if $order != '' and unitless($order) == true and round($order) == $order {
+@mixin flexie-col-order($order: null) {
+  @if $order != null and unitless($order) == true and round($order) == $order {
     order: $order;
+  } @else {
+    @warn '#{$order} is not an accepted argument of flexie-col-order(). Please use an integer instead.';
   }
 }
 
 // Flexie column gutter width
 @mixin flexie-col-gutter($gutter: map-get($flexie, gutter)) {
   @if type-of($gutter) != number or unitless($gutter) == true {
-    @warn 'flexie-col-gutter() only accepts a number with a unit as a parameter';
+    @warn '#{$gutter} is not an accepted argument of flexie-col-gutter(). Please use a number with a unit instead';
   } @else {
     padding-left: $gutter/2;
     padding-right: $gutter/2;
@@ -160,22 +168,39 @@
 }
 
 // Row mixin
-@mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: '', $align: '') {
+@mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
   @include flexie-display($display);
   @include flexie-direction($direction);
   @include flexie-row-wrap($wrap);
   @include flexie-row-gutter($gutter);
-  @include flexie-row-justify($justify);
-  @include flexie-row-align($align);
+
+  // Check if row is justified
+  @if $justify != null {
+    @include flexie-row-justify($justify);
+  }
+
+  // Check if row is aligned
+  @if $align != null {
+    @include flexie-row-align($align);
+  }
 }
 
 // Column mixin
-@mixin flexie-col($display: flex, $direction: column, $width: auto, $gutter: map-get($flexie, gutter), $align: '', $order: '') {
+@mixin flexie-col($display: flex, $direction: column, $width: auto, $gutter: map-get($flexie, gutter), $align: null, $order: null) {
   @include flexie-display($display);
   @include flexie-direction($direction);
   @include flexie-col-width($width);
-  @include flexie-col-align($align);
-  @include flexie-col-order($order);
+
+  // Check if column is aligned
+  @if $align != null {
+    @include flexie-col-align($align);
+  }
+
+  // Check if column is re-ordered
+  @if $order != null {
+    @include flexie-col-order($order);
+  }
+
   @include flexie-col-gutter($gutter);
   flex-shrink: 0;
 }
