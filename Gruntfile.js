@@ -99,7 +99,9 @@ module.exports = function (grunt) {
     autoprefixer: {
       options: {
         browsers: [
-          'last 2 version'
+          'last 2 version',
+          'ie 10',
+          'ie 11'
         ]
       },
       dist: {
