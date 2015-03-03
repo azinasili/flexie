@@ -107,9 +107,12 @@
   @if $flexie-col-width != auto {
     flex-basis: percentage($flexie-col-width);
     flex-grow: 0;
+    max-width: percentage($flexie-col-width);
   } @else {
     flex-basis: 0;
     flex-grow: 1;
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
