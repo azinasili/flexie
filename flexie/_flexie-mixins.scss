@@ -1,0 +1,141 @@
+// ----------------------------------------------------------------------------
+// Flexie grid system
+// @author: Azin Asili
+//
+// Flexie is a modular SCSS flexbox grid system
+// Use the predefined row an column mixins
+// or customize your own grid system with the helper mixins
+//
+// 1. Flexie base
+// 2. Row helpers
+// 3. Column 4elpers
+// 3. Flexie mixins
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Flex base
+// ----------------------------------------------------------------------------
+
+// Flex content
+@mixin flexie-display($flexie-display: flex) {
+  display: flexie-display($flexie-display);
+}
+
+
+// Flex direction
+@mixin flexie-direction($flexie-direction: row) {
+  flex-direction: flexie-direction($flexie-direction);
+}
+
+// Flexie gutter width
+@mixin flexie-gutter($flexie-gutter: map-get($flexie, gutter), $row-or-col: col) {
+  @if $row-or-col == 'col' {
+    padding-left: flexie-gutter($flexie-gutter, $row-or-col: col);
+    padding-right: flexie-gutter($flexie-gutter, $row-or-col: col);
+  } @else if $row-or-col == 'row' {
+    margin-left: flexie-gutter($flexie-gutter, $row-or-col: row);
+    margin-right: flexie-gutter($flexie-gutter, $row-or-col: row);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// 2. Row helpers
+// ----------------------------------------------------------------------------
+
+// Flexie row wrap
+@mixin flexie-row-wrap($flexie-row-wrap: wrap) {
+  flex-wrap: flexie-row-wrap($flexie-row-wrap);
+}
+
+// Flexie row justification
+@mixin flexie-row-justify($flexie-row-justify: flex-start) {
+  justify-content: flexie-row-justify($flexie-row-justify);
+}
+
+// Flexie row children align
+@mixin flexie-row-align($flexie-row-align: flex-start) {
+  align-items: flexie-row-align($flexie-row-align);
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Column helpers
+// ----------------------------------------------------------------------------
+
+// Flexie column width
+@mixin flexie-col-width($flexie-col-width: auto) {
+  @if $flexie-col-width != auto {
+    flex-basis: percentage($flexie-col-width);
+    flex-grow: 0;
+    max-width: percentage($flexie-col-width);
+  } @else {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+// Flexie coloumn align
+@mixin flexie-col-align($flexie-col-align: flex-start) {
+  align-self: flexie-col-align($flexie-col-align);
+}
+
+// Flexie column ordering
+@mixin flexie-col-order($flexie-col-order) {
+  order: flexie-col-order($flexie-col-order);
+}
+
+
+// ----------------------------------------------------------------------------
+// 4. Flexie mixins
+// ----------------------------------------------------------------------------
+
+// Container mixin
+@mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
+  @if $width != 100% {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width;
+  }
+  @include flexie-gutter($gutter, col);
+  width: 100%;
+}
+
+// Row mixin
+@mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
+  @include flexie-display($display);
+  @include flexie-direction($direction);
+  @include flexie-row-wrap($wrap);
+  @include flexie-gutter($gutter, row);
+
+  // Check if row is justified
+  @if $justify != null {
+    @include flexie-row-justify($justify);
+  }
+
+  // Check if row is aligned
+  @if $align != null {
+    @include flexie-row-align($align);
+  }
+}
+
+// Column mixin
+@mixin flexie-col($display: flex, $direction: column, $width: auto, $gutter: map-get($flexie, gutter), $align: null, $order: null) {
+  @include flexie-display($display);
+  @include flexie-direction($direction);
+  @include flexie-col-width($width);
+  @include flexie-gutter($gutter, col);
+
+  // Check if column is aligned
+  @if $align != null {
+    @include flexie-col-align($align);
+  }
+
+  // Check if column is re-ordered
+  @if $order != null {
+    @include flexie-col-order($order);
+  }
+  flex-shrink: 0;
+}

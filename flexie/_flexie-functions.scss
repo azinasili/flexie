@@ -1,0 +1,149 @@
+// ----------------------------------------------------------------------------
+// Flexie grid system
+// @author: Azin Asili
+//
+// Flexie is a modular SCSS flexbox grid system
+// Use the predefined row an column mixins
+// or customize your own grid system with the helper mixins
+//
+// 1. Flexie base
+// 2. Row helpers
+// 3. Column helpers
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Flex base
+// ----------------------------------------------------------------------------
+
+// Flex content
+// 1. Check if parameter is 'flex' or 'inline-flex'
+// 2. Warning message if passed incorrect value
+// 3. Return value
+@function flexie-display($flexie-display) {
+  @if not index('flex' 'inline-flex', $flexie-display) {
+    @warn '`#{$flexie-display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
+  }
+  @return $flexie-display;
+}
+
+// Flex direction
+// 1. Check if parameter is 'row', 'row-reverse', 'column', or 'column reverse'
+// 2. Warning message if passed incorrect value
+// 3. Return value
+@function flexie-direction($flexie-direction) {
+  @if not index('row' 'row-reverse' 'column' 'column-reverse', $flexie-direction) {
+    @warn '`#{$flexie-direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
+  }
+  @return $flexie-direction;
+}
+
+// Flex gutter
+// 1. Check if parameter 0, return 0
+// 2. Check if parameter is a number with a unit
+// 3. Warning message if passed incorrect value
+// 4. Check if row gutter, return value
+// 5. Check if column gutter, return value
+@function flexie-gutter($flexie-gutter, $row-or-col: col) {
+  @if $flexie-gutter == 0 {
+    @return $flexie-gutter;
+  } @else if type-of($flexie-gutter) != number or unitless($flexie-gutter) == true {
+    @warn '`#{$flexie-gutter}` is not a valid argument of flexie-row-gutter(). Please use a number with a unit instead';
+  }
+  @if $row-or-col == 'col' {
+    @return $flexie-gutter/2;
+  } @else if $row-or-col == 'row' {
+    @return $flexie-gutter/-2;
+  }
+}
+
+
+// ----------------------------------------------------------------------------
+// 2. Row helpers
+// ----------------------------------------------------------------------------
+
+// Flexie row wrap
+// 1. Check if parameter is 'wrap', 'wrap-reverse', 'nowrap'
+// 2. Warning message if passed incorrect value
+// 3. Return value
+@function flexie-row-wrap($flexie-row-wrap) {
+  @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-row-wrap) {
+    @warn '`#{$flexie-row-wrap}` is not a valid argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
+  }
+  @return $flexie-row-wrap;
+}
+
+// Flexie row justification
+// 1. Create shorthand properties
+// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right`
+// 3. Warning message if passed incorrect value
+// 4. Return value
+@function flexie-row-justify($flexie-row-justify) {
+  $shorthand: (
+    around  : space-around,
+    between : space-between,
+    left    : flex-start,
+    right   : flex-end
+  );
+  @if not index('flex-start' 'flex-end' 'center' 'space-around' 'space-between', $flexie-row-justify) and map-has-key($shorthand, $flexie-row-justify) == false {
+    @warn '`#{$flexie-row-justify}` is not a valid argument for flexie-row-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
+  } @else if map-has-key($shorthand, $flexie-row-justify) {
+    @return map-get($shorthand, $flexie-row-justify);
+  }
+  @return $flexie-row-justify;
+}
+
+// Flexie row children align
+// 1. Create shorthand properties
+// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top`
+// 3. Warning message if passed incorrect value
+// 4. Return value
+@function flexie-row-align($flexie-row-align) {
+  $shorthand: (
+    bottom : flex-end,
+    middle : center,
+    top    : flex-start
+  );
+  @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-row-align) and map-has-key($shorthand, $flexie-row-align) == false {
+    @warn '`#{$flexie-row-align}` is not a valid argument for flexie-row-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+  } @else if map-has-key($shorthand, $flexie-row-align) {
+    @return map-get($shorthand, $flexie-row-align);
+  }
+  @return $flexie-row-align;
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Column helpers
+// ----------------------------------------------------------------------------
+
+// Flexie column align
+// 1. Create shorthand properties
+// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top`
+// 3. Warning message if passed incorrect value
+// 4. Return value
+@function flexie-col-align($flexie-col-align) {
+  $shorthand: (
+    bottom : flex-end,
+    middle : center,
+    top    : flex-start
+  );
+  @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-col-align) and map-has-key($shorthand, $flexie-col-align) == false {
+    @warn '`#{$flexie-col-align}` is not a valid argument for flexie-col-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+  } @else if map-has-key($shorthand, $flexie-col-align) {
+    @return map-get($shorthand, $flexie-col-align);
+  }
+  @return $flexie-col-align;
+}
+
+
+// Flexie column ordering
+// 1. Check if value is passed into function and is an integer
+// 2. Warning message if passed incorrect value
+// 3. Return value
+@function flexie-col-order($flexie-col-order) {
+  @if type-of($flexie-col-order) != number or unitless($flexie-col-order) != true or round($flexie-col-order) != $flexie-col-order {
+    @warn '`#{$flexie-col-order}` is not a valid argument of flexie-col-order(). Please use a unit-less integer instead.';
+  }
+  @return $flexie-col-order;
+}
