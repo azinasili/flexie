@@ -1,21 +1,12 @@
-// ----------------------------------------------------------------------------
-// Flexie grid system
-// @author: Azin Asili
-//
-// 1. Base functions
-// 2. Row functions
-// 3. Column functions
-// ----------------------------------------------------------------------------
+/// Flexie grid system
+/// @author: Azin Asili
+/// @link https://github.com/azinasili/flexie
 
-
-// ----------------------------------------------------------------------------
-// 1. Base functions
-// ----------------------------------------------------------------------------
-
-// Flex content
-// 1. Check if parameter is 'flex' or 'inline-flex'
-// 2. Warning message if passed incorrect value
-// 3. Return value
+/// Get flex display
+///
+/// @param {String} $flexie-display - get flex display property
+///
+/// @return {Value} flex display property
 @function flexie-display($flexie-display) {
   @if not index('flex' 'inline-flex', $flexie-display) {
     @warn '`#{$flexie-display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
@@ -23,10 +14,11 @@
   @return $flexie-display;
 }
 
-// Flex direction
-// 1. Check if parameter is 'row', 'row-reverse', 'column', or 'column reverse'
-// 2. Warning message if passed incorrect value
-// 3. Return value
+/// Get direction of flex items
+///
+/// @param {String} $flexie-direction - get flex direction property
+///
+/// @return {Value} flex direction property
 @function flexie-direction($flexie-direction) {
   @if not index('row' 'row-reverse' 'column' 'column-reverse', $flexie-direction) {
     @warn '`#{$flexie-direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
@@ -34,12 +26,12 @@
   @return $flexie-direction;
 }
 
-// Flex gutter
-// 1. Check if parameter 0, return 0
-// 2. Check if parameter is a number with a unit
-// 3. Warning message if passed incorrect value
-// 4. Check if row gutter, return value
-// 5. Check if column gutter, return value
+/// Calculate gutter for rows or columns
+///
+/// @param {number} $flexie-gutter - get value to calculate
+/// @param {String} $row-or-col ['col'] - get context for gutter width
+///
+/// @return {number} half of $flexie-gutter for row or column
 @function flexie-gutter($flexie-gutter, $row-or-col: col) {
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
@@ -53,15 +45,11 @@
   }
 }
 
-
-// ----------------------------------------------------------------------------
-// 2. Row functions
-// ----------------------------------------------------------------------------
-
-// Flexie row wrap
-// 1. Check if parameter is 'wrap', 'wrap-reverse', 'nowrap'
-// 2. Warning message if passed incorrect value
-// 3. Return value
+/// Get flex items re-flow
+///
+/// @param {String} $flexie-row-wrap - get flex items re-flow property
+///
+/// @return {Value} flex item re-flow property
 @function flexie-row-wrap($flexie-row-wrap) {
   @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-row-wrap) {
     @warn '`#{$flexie-row-wrap}` is not a valid argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
@@ -69,11 +57,11 @@
   @return $flexie-row-wrap;
 }
 
-// Flexie row justification
-// 1. Create shorthand properties
-// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right`
-// 3. Warning message if passed incorrect value
-// 4. Return value
+/// Get flex items horizontal distribution
+///
+/// @param {String} $flexie-row-justify - get flex items horizontal distribution property
+///
+/// @return {Value} flex item horizontal distribution property
 @function flexie-row-justify($flexie-row-justify) {
   $shorthand: (
     around  : space-around,
@@ -89,11 +77,11 @@
   @return $flexie-row-justify;
 }
 
-// Flexie row children align
-// 1. Create shorthand properties
-// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top`
-// 3. Warning message if passed incorrect value
-// 4. Return value
+/// Get flex items vertical distribution
+///
+/// @param {String} $flexie-row-align - get flex items vertical distribution property
+///
+/// @return {Value} flex item vertical distribution property
 @function flexie-row-align($flexie-row-align) {
   $shorthand: (
     bottom : flex-end,
@@ -108,16 +96,11 @@
   @return $flexie-row-align;
 }
 
-
-// ----------------------------------------------------------------------------
-// 3. Column functions
-// ----------------------------------------------------------------------------
-
-// Flexie column align
-// 1. Create shorthand properties
-// 2. Check if parameter is `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top`
-// 3. Warning message if passed incorrect value
-// 4. Return value
+/// Get flex items individual column alignment
+///
+/// @param {String} $flexie-col-align - get individual column alignment
+///
+/// @return {Value} flex item column alignment
 @function flexie-col-align($flexie-col-align) {
   $shorthand: (
     bottom : flex-end,
@@ -132,11 +115,11 @@
   @return $flexie-col-align;
 }
 
-
-// Flexie column ordering
-// 1. Check if value is passed into function and is an integer
-// 2. Warning message if passed incorrect value
-// 3. Return value
+/// Get flex item source order
+///
+/// @param {Number} $flexie-col-order - get new source order
+///
+/// @return {Number} new source order
 @function flexie-col-order($flexie-col-order) {
   @if type-of($flexie-col-order) != number or unitless($flexie-col-order) != true or round($flexie-col-order) != $flexie-col-order {
     @warn '`#{$flexie-col-order}` is not a valid argument of flexie-col-order(). Please use a unit-less integer instead.';
