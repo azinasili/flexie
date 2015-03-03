@@ -6,22 +6,21 @@
 // Use the predefined row an column mixins
 // or customize your own grid system with the helper mixins
 //
-// 1. Flexie base
+// 1. Base mixins
 // 2. Row helpers
-// 3. Column 4elpers
-// 3. Flexie mixins
+// 3. Column helpers
+// 3. Flexie grid mixins
 // ----------------------------------------------------------------------------
 
 
 // ----------------------------------------------------------------------------
-// 1. Flex base
+// 1. Base mixins
 // ----------------------------------------------------------------------------
 
 // Flex content
 @mixin flexie-display($flexie-display: flex) {
   display: flexie-display($flexie-display);
 }
-
 
 // Flex direction
 @mixin flexie-direction($flexie-direction: row) {
@@ -89,7 +88,7 @@
 
 
 // ----------------------------------------------------------------------------
-// 4. Flexie mixins
+// 4. Flexie grid mixins
 // ----------------------------------------------------------------------------
 
 // Container mixin
