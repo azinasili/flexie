@@ -100,12 +100,12 @@
 
 /// Create column width
 ///
-/// @param {String | Number} $flexie-col-width ['auto'] - Create auto width column
+/// @param {String | Number} $flexie-col-width ['auto'] - create auto width column
 ///
 /// @example scss
-///   @include flexie-row-width();
-///   @include flexie-row-width(auto);
-///   @include flexie-row-width(3/5);
+///   @include flexie-col-width();
+///   @include flexie-col-width(auto);
+///   @include flexie-col-width(3/5);
 @mixin flexie-col-width($flexie-col-width: auto) {
   @if $flexie-col-width != auto {
     flex-basis: percentage($flexie-col-width);
@@ -119,20 +119,44 @@
   }
 }
 
-// Flexie coloumn align
+/// Set individual column alignment
+///
+/// @param {String} $flexie-col-align ['flex-start'] - set individual column alignment
+///
+/// @example scss
+///   @include flexie-col-align();
+///   @include flexie-col-align(flex-start);
+///   @include flexie-col-align(flex-end);
+///   @include flexie-col-align(center);
+///   @include flexie-col-align(stretch);
+///   @include flexie-col-align(baseline);
+///   @include flexie-col-align(bottom);
+///   @include flexie-col-align(middle);
+///   @include flexie-col-align(top);
 @mixin flexie-col-align($flexie-col-align: flex-start) {
   align-self: flexie-col-align($flexie-col-align);
 }
 
-// Flexie column ordering
+/// Set flex-item source order
+///
+/// @param {String} $flexie-col-order - integer greater than 0
+///
+/// @example scss
+///   @include flexie-col-align();
 @mixin flexie-col-order($flexie-col-order) {
   order: flexie-col-order($flexie-col-order);
 }
 
-
-
-
-// Container mixin
+/// Create container element context
+///
+/// @param {Number} $width [map-get($flexie, container-width)] - set a max-width on container element
+/// @param {Number} $gutter [map-get($flexie, gutter)] - set grid gutter width to container element
+///
+/// @example scss
+///   @include flexie-container();
+///   @include flexie-container(1500px);
+///   @include flexie-container(1500px, 40px);
+///   @include flexie-container($gutter: 40px);
 @mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
   @if $width != 100% {
     margin-left: auto;
@@ -143,7 +167,19 @@
   width: 100%;
 }
 
-// Row mixin
+/// Create row element context
+///
+/// @param {String} $display ['flex'] - set flex display property
+/// @param {String} $direction ['row'] - set flex direction property
+/// @param {String} $wrap ['wrap'] - set flex items re-flow behavior
+/// @param {Number} $gutter [map-get($flexie, gutter)] - set row gutter width
+/// @param {String} $justify - set flex items horizontal distribution behavior
+/// @param {String} $align - set flex items vertical distribution behavior
+///
+/// @example scss
+///   @include flexie-row();
+///   @include flexie-row($direction: column);
+///   @include flexie-row($wrap: wrap-reverse, $justify: around);
 @mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
   @include flexie-display($display);
   @include flexie-direction($direction);
@@ -161,12 +197,24 @@
   }
 }
 
-// Column mixin
-@mixin flexie-col($display: flex, $direction: column, $width: auto, $gutter: map-get($flexie, gutter), $align: null, $order: null) {
-  @include flexie-display($display);
-  @include flexie-direction($direction);
+/// Create column element context
+///
+/// @param {Number} $width ['auto'] - create auto width column
+/// @param {Number} $gutter [map-get($flexie, gutter)] - set column gutter width
+/// @param {String} $display ['flex'] - set flex display property
+/// @param {String} $direction ['column'] - set flex direction property
+/// @param {String} $align - set individual column alignment
+/// @param {String} $order - set flex-item source order
+///
+/// @example scss
+///   @include flexie-col();
+///   @include flexie-col(3/7, 40px);
+///   @include flexie-col(3/7, $display: inline-flex, $align: bottom);
+@mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $display: flex, $direction: column, $align: null, $order: null) {
   @include flexie-col-width($width);
   @include flexie-gutter($gutter, col);
+  @include flexie-display($display);
+  @include flexie-direction($direction);
 
   // Check if column is aligned
   @if $align != null {
