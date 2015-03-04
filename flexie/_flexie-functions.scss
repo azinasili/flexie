@@ -77,44 +77,6 @@
   @return $flexie-row-justify;
 }
 
-/// Get flex items vertical distribution
-///
-/// @param {String} $flexie-row-align - get flex items vertical distribution property
-///
-/// @return {Value} flex item vertical distribution property
-@function flexie-row-align($flexie-row-align) {
-  $shorthand: (
-    bottom : flex-end,
-    middle : center,
-    top    : flex-start
-  );
-  @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-row-align) and map-has-key($shorthand, $flexie-row-align) == false {
-    @warn '`#{$flexie-row-align}` is not a valid argument for flexie-row-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
-  } @else if map-has-key($shorthand, $flexie-row-align) {
-    @return map-get($shorthand, $flexie-row-align);
-  }
-  @return $flexie-row-align;
-}
-
-/// Get flex items individual column alignment
-///
-/// @param {String} $flexie-col-align - get individual column alignment
-///
-/// @return {Value} flex item column alignment
-@function flexie-col-align($flexie-col-align) {
-  $shorthand: (
-    bottom : flex-end,
-    middle : center,
-    top    : flex-start
-  );
-  @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-col-align) and map-has-key($shorthand, $flexie-col-align) == false {
-    @warn '`#{$flexie-col-align}` is not a valid argument for flexie-col-align(). Please us `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
-  } @else if map-has-key($shorthand, $flexie-col-align) {
-    @return map-get($shorthand, $flexie-col-align);
-  }
-  @return $flexie-col-align;
-}
-
 /// Get flex item source order
 ///
 /// @param {Number} $flexie-col-order - get new source order
@@ -126,3 +88,75 @@
   }
   @return $flexie-col-order;
 }
+
+
+
+
+
+
+
+
+@function flexie-align($flexie-align) {
+  $shorthand: (
+    bottom : flex-end,
+    middle : center,
+    top    : flex-start
+  );
+  @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-align) and map-has-key($shorthand, $flexie-align) == false {
+    @warn '`#{$flexie-align}` is not a valid argument for flexie-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+  } @else if map-has-key($shorthand, $flexie-align) {
+    @return map-get($shorthand, $flexie-align);
+  }
+  @return $flexie-align;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/// Get flex items individual column alignment
+///
+/// @param {String} $flexie-col-align - get individual column alignment
+///
+/// @return {Value} flex item column alignment
+// @function flexie-col-align($flexie-col-align) {
+//   $shorthand: (
+//     bottom : flex-end,
+//     middle : center,
+//     top    : flex-start
+//   );
+//   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-col-align) and map-has-key($shorthand, $flexie-col-align) == false {
+//     @warn '`#{$flexie-col-align}` is not a valid argument for flexie-col-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+//   } @else if map-has-key($shorthand, $flexie-col-align) {
+//     @return map-get($shorthand, $flexie-col-align);
+//   }
+//   @return $flexie-col-align;
+// }
+
+
+
+/// Get flex items vertical distribution
+///
+/// @param {String} $flexie-row-align - get flex items vertical distribution property
+///
+/// @return {Value} flex item vertical distribution property
+// @function flexie-row-align($flexie-row-align) {
+//   $shorthand: (
+//     bottom : flex-end,
+//     middle : center,
+//     top    : flex-start
+//   );
+//   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-row-align) and map-has-key($shorthand, $flexie-row-align) == false {
+//     @warn '`#{$flexie-row-align}` is not a valid argument for flexie-row-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+//   } @else if map-has-key($shorthand, $flexie-row-align) {
+//     @return map-get($shorthand, $flexie-row-align);
+//   }
+//   @return $flexie-row-align;
+// }

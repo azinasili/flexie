@@ -80,24 +80,6 @@
   justify-content: flexie-row-justify($flexie-row-justify);
 }
 
-/// Set flex items vertical distribution
-///
-/// @param {String} $flexie-row-align ['flex-start'] - set flex items vertical distribution behavior
-///
-/// @example scss
-///   @include flexie-row-align();
-///   @include flexie-row-align(flex-start);
-///   @include flexie-row-align(flex-end);
-///   @include flexie-row-align(center);
-///   @include flexie-row-align(stretch);
-///   @include flexie-row-align(baseline);
-///   @include flexie-row-align(bottom);
-///   @include flexie-row-align(middle);
-///   @include flexie-row-align(top);
-@mixin flexie-row-align($flexie-row-align: flex-start) {
-  align-items: flexie-row-align($flexie-row-align);
-}
-
 /// Create column width
 ///
 /// @param {String | Number} $flexie-col-width ['auto'] - create auto width column
@@ -117,24 +99,6 @@
     max-width: 100%;
     min-width: 0;
   }
-}
-
-/// Set individual column alignment
-///
-/// @param {String} $flexie-col-align ['flex-start'] - set individual column alignment
-///
-/// @example scss
-///   @include flexie-col-align();
-///   @include flexie-col-align(flex-start);
-///   @include flexie-col-align(flex-end);
-///   @include flexie-col-align(center);
-///   @include flexie-col-align(stretch);
-///   @include flexie-col-align(baseline);
-///   @include flexie-col-align(bottom);
-///   @include flexie-col-align(middle);
-///   @include flexie-col-align(top);
-@mixin flexie-col-align($flexie-col-align: flex-start) {
-  align-self: flexie-col-align($flexie-col-align);
 }
 
 /// Set flex-item source order
@@ -227,3 +191,38 @@
   }
   flex-shrink: 0;
 }
+
+/// Set flex item alignment on row level or column level
+///
+/// @param {String} $row-or-col ['row'] - determine alignment context
+/// @param {String} $flexie-align ['flex-start'] - set alignment behavior
+///
+/// @example scss
+///   @include flexie-align();
+///   @include flexie-align(col);
+///   @include flexie-align(row, center);
+///   @include flexie-align(col, stretch);
+@mixin flexie-align($row-or-col: row, $flexie-align: flex-start) {
+  @if $row-or-col == 'col' or $row-or-col == 'column' {
+    align-self: flexie-align($flexie-align);
+  } @else if $row-or-col == 'row' {
+    align-items: flexie-align($flexie-align);
+  } @else {
+    @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please `row`, `col`, or `column` instead.';
+    invalid-argument: $row-or-col;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
