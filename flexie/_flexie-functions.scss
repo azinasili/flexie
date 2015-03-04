@@ -29,7 +29,7 @@
 /// Calculate gutter for rows or columns
 ///
 /// @param {number} $flexie-gutter - get value to calculate
-/// @param {String} $row-or-col ['col'] - get context for gutter width
+/// @param {String} $row-or-col ['col'] - determine how to calculate gutter width
 ///
 /// @return {number} half of $flexie-gutter for row or column
 @function flexie-gutter($flexie-gutter, $row-or-col: col) {

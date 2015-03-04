@@ -1,33 +1,43 @@
-// ----------------------------------------------------------------------------
-// Flexie grid system
-// @author: Azin Asili
-//
-// Flexie is a modular SCSS flexbox grid system
-// Use the predefined row an column mixins
-// or customize your own grid system with the helper mixins
-//
-// 1. Base mixins
-// 2. Row helpers
-// 3. Column helpers
-// 3. Flexie grid mixins
-// ----------------------------------------------------------------------------
+/// Flexie grid system
+/// @author: Azin Asili
+/// @link https://github.com/azinasili/flexie
 
-
-// ----------------------------------------------------------------------------
-// 1. Base mixins
-// ----------------------------------------------------------------------------
-
-// Flex content
+/// Set flex display property
+///
+/// @param {String} $flexie-display ['flex'] - set flex display property
+///
+/// @example scss
+///   @include flexie-display();
+///   @include flexie-display(flex);
+///   @include flexie-display(inline-flex);
 @mixin flexie-display($flexie-display: flex) {
   display: flexie-display($flexie-display);
 }
 
-// Flex direction
+/// Set direction of flex items
+///
+/// @param {String} $flexie-direction ['row'] - set flex direction property
+///
+/// @example scss
+///   @include flexie-direction();
+///   @include flexie-direction(row);
+///   @include flexie-direction(row-reverse);
+///   @include flexie-direction(column);
+///   @include flexie-direction(column-reverse);
 @mixin flexie-direction($flexie-direction: row) {
   flex-direction: flexie-direction($flexie-direction);
 }
 
-// Flexie gutter width
+/// Set row or column gutter width
+///
+/// @param {Number} $flexie-gutter [map-get($flexie, gutter)] - get gutter width from settings
+/// @param {String} $row-or-col ['col'] - determine how to calculate gutter width
+///
+/// @example scss
+///   @include flexie-gutter();
+///   @include flexie-gutter(30px);
+///   @include flexie-gutter(30px, col);
+///   @include flexie-gutter(30px, row);
 @mixin flexie-gutter($flexie-gutter: map-get($flexie, gutter), $row-or-col: col) {
   @if $row-or-col == 'col' {
     padding-left: flexie-gutter($flexie-gutter, $row-or-col: col);
@@ -38,31 +48,64 @@
   }
 }
 
-// ----------------------------------------------------------------------------
-// 2. Row helpers
-// ----------------------------------------------------------------------------
-
-// Flexie row wrap
+/// Set flex items re-flow
+///
+/// @param {String} $flexie-row-wrap ['wrap'] - set flex items re-flow behavior
+///
+/// @example scss
+///   @include flexie-row-wrap();
+///   @include flexie-row-wrap(wrap);
+///   @include flexie-row-wrap(wrap-reverse);
+///   @include flexie-row-wrap(nowrap);
 @mixin flexie-row-wrap($flexie-row-wrap: wrap) {
   flex-wrap: flexie-row-wrap($flexie-row-wrap);
 }
 
-// Flexie row justification
+/// Set flex items horizontal distribution
+///
+/// @param {String} $flexie-row-justify ['flex-start'] - set flex items horizontal distribution behavior
+///
+/// @example scss
+///   @include flexie-row-justify();
+///   @include flexie-row-justify(flex-start);
+///   @include flexie-row-justify(flex-end);
+///   @include flexie-row-justify(center);
+///   @include flexie-row-justify(space-around);
+///   @include flexie-row-justify(space-between);
+///   @include flexie-row-justify(around);
+///   @include flexie-row-justify(between);
+///   @include flexie-row-justify(left);
+///   @include flexie-row-justify(right);
 @mixin flexie-row-justify($flexie-row-justify: flex-start) {
   justify-content: flexie-row-justify($flexie-row-justify);
 }
 
-// Flexie row children align
+/// Set flex items vertical distribution
+///
+/// @param {String} $flexie-row-align ['flex-start'] - set flex items vertical distribution behavior
+///
+/// @example scss
+///   @include flexie-row-align();
+///   @include flexie-row-align(flex-start);
+///   @include flexie-row-align(flex-end);
+///   @include flexie-row-align(center);
+///   @include flexie-row-align(stretch);
+///   @include flexie-row-align(baseline);
+///   @include flexie-row-align(bottom);
+///   @include flexie-row-align(middle);
+///   @include flexie-row-align(top);
 @mixin flexie-row-align($flexie-row-align: flex-start) {
   align-items: flexie-row-align($flexie-row-align);
 }
 
-
-// ----------------------------------------------------------------------------
-// 3. Column helpers
-// ----------------------------------------------------------------------------
-
-// Flexie column width
+/// Create column width
+///
+/// @param {String | Number} $flexie-col-width ['auto'] - Create auto width column
+///
+/// @example scss
+///   @include flexie-row-width();
+///   @include flexie-row-width(auto);
+///   @include flexie-row-width(3/5);
 @mixin flexie-col-width($flexie-col-width: auto) {
   @if $flexie-col-width != auto {
     flex-basis: percentage($flexie-col-width);
@@ -87,9 +130,7 @@
 }
 
 
-// ----------------------------------------------------------------------------
-// 4. Flexie grid mixins
-// ----------------------------------------------------------------------------
+
 
 // Container mixin
 @mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
