@@ -36,7 +36,7 @@
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
   } @else if type-of($flexie-gutter) != number or unitless($flexie-gutter) == true {
-    @warn '`#{$flexie-gutter}` is not a valid argument of flexie-row-gutter(). Please use a number with a unit instead';
+    @warn '`#{$flexie-gutter}` is not a valid argument of flexie-gutter(). Please use a number with a unit instead';
   }
   @if $row-or-col == 'col' {
     @return $flexie-gutter/2;
@@ -47,55 +47,41 @@
 
 /// Get flex items re-flow
 ///
-/// @param {String} $flexie-row-wrap - get flex items re-flow property
+/// @param {String} $flexie-wrap - get flex items re-flow property
 ///
 /// @return {Value} flex item re-flow property
-@function flexie-row-wrap($flexie-row-wrap) {
-  @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-row-wrap) {
-    @warn '`#{$flexie-row-wrap}` is not a valid argument of flexie-row-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
+@function flexie-wrap($flexie-wrap) {
+  @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-wrap) {
+    @warn '`#{$flexie-wrap}` is not a valid argument of flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
-  @return $flexie-row-wrap;
+  @return $flexie-wrap;
 }
 
 /// Get flex items horizontal distribution
 ///
-/// @param {String} $flexie-row-justify - get flex items horizontal distribution property
+/// @param {String} $flexie-justify - get flex items horizontal distribution property
 ///
 /// @return {Value} flex item horizontal distribution property
-@function flexie-row-justify($flexie-row-justify) {
+@function flexie-justify($flexie-justify) {
   $shorthand: (
     around  : space-around,
     between : space-between,
     left    : flex-start,
     right   : flex-end
   );
-  @if not index('flex-start' 'flex-end' 'center' 'space-around' 'space-between', $flexie-row-justify) and map-has-key($shorthand, $flexie-row-justify) == false {
-    @warn '`#{$flexie-row-justify}` is not a valid argument for flexie-row-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
-  } @else if map-has-key($shorthand, $flexie-row-justify) {
-    @return map-get($shorthand, $flexie-row-justify);
+  @if not index('flex-start' 'flex-end' 'center' 'space-around' 'space-between', $flexie-justify) and map-has-key($shorthand, $flexie-justify) == false {
+    @warn '`#{$flexie-justify}` is not a valid argument for flexie-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
+  } @else if map-has-key($shorthand, $flexie-justify) {
+    @return map-get($shorthand, $flexie-justify);
   }
-  @return $flexie-row-justify;
+  @return $flexie-justify;
 }
 
-/// Get flex item source order
+/// Get flex items row and column alignment
 ///
-/// @param {Number} $flexie-col-order - get new source order
+/// @param {String} $flexie-col-align - get row or column alignment
 ///
-/// @return {Number} new source order
-@function flexie-col-order($flexie-col-order) {
-  @if type-of($flexie-col-order) != number or unitless($flexie-col-order) != true or round($flexie-col-order) != $flexie-col-order {
-    @warn '`#{$flexie-col-order}` is not a valid argument of flexie-col-order(). Please use a unit-less integer instead.';
-  }
-  @return $flexie-col-order;
-}
-
-
-
-
-
-
-
-
+/// @return {Value} flex item alignment
 @function flexie-align($flexie-align) {
   $shorthand: (
     bottom : flex-end,
@@ -110,53 +96,14 @@
   @return $flexie-align;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/// Get flex items individual column alignment
+/// Get flex item source order
 ///
-/// @param {String} $flexie-col-align - get individual column alignment
+/// @param {Number} $flexie-order - get new source order
 ///
-/// @return {Value} flex item column alignment
-// @function flexie-col-align($flexie-col-align) {
-//   $shorthand: (
-//     bottom : flex-end,
-//     middle : center,
-//     top    : flex-start
-//   );
-//   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-col-align) and map-has-key($shorthand, $flexie-col-align) == false {
-//     @warn '`#{$flexie-col-align}` is not a valid argument for flexie-col-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
-//   } @else if map-has-key($shorthand, $flexie-col-align) {
-//     @return map-get($shorthand, $flexie-col-align);
-//   }
-//   @return $flexie-col-align;
-// }
-
-
-
-/// Get flex items vertical distribution
-///
-/// @param {String} $flexie-row-align - get flex items vertical distribution property
-///
-/// @return {Value} flex item vertical distribution property
-// @function flexie-row-align($flexie-row-align) {
-//   $shorthand: (
-//     bottom : flex-end,
-//     middle : center,
-//     top    : flex-start
-//   );
-//   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $flexie-row-align) and map-has-key($shorthand, $flexie-row-align) == false {
-//     @warn '`#{$flexie-row-align}` is not a valid argument for flexie-row-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
-//   } @else if map-has-key($shorthand, $flexie-row-align) {
-//     @return map-get($shorthand, $flexie-row-align);
-//   }
-//   @return $flexie-row-align;
-// }
+/// @return {Number} new source order
+@function flexie-order($flexie-order) {
+  @if type-of($flexie-order) != number or unitless($flexie-order) != true or round($flexie-order) != $flexie-order {
+    @warn '`#{$flexie-order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
+  }
+  @return $flexie-order;
+}

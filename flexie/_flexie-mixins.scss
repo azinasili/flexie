@@ -50,34 +50,55 @@
 
 /// Set flex items re-flow
 ///
-/// @param {String} $flexie-row-wrap ['wrap'] - set flex items re-flow behavior
+/// @param {String} $flexie-wrap ['wrap'] - set flex items re-flow behavior
 ///
 /// @example scss
-///   @include flexie-row-wrap();
-///   @include flexie-row-wrap(wrap);
-///   @include flexie-row-wrap(wrap-reverse);
-///   @include flexie-row-wrap(nowrap);
-@mixin flexie-row-wrap($flexie-row-wrap: wrap) {
-  flex-wrap: flexie-row-wrap($flexie-row-wrap);
+///   @include flexie-wrap();
+///   @include flexie-wrap(wrap);
+///   @include flexie-wrap(wrap-reverse);
+///   @include flexie-wrap(nowrap);
+@mixin flexie-wrap($flexie-wrap: wrap) {
+  flex-wrap: flexie-wrap($flexie-wrap);
 }
 
 /// Set flex items horizontal distribution
 ///
-/// @param {String} $flexie-row-justify ['flex-start'] - set flex items horizontal distribution behavior
+/// @param {String} $flexie-justify ['flex-start'] - set flex items horizontal distribution behavior
 ///
 /// @example scss
-///   @include flexie-row-justify();
-///   @include flexie-row-justify(flex-start);
-///   @include flexie-row-justify(flex-end);
-///   @include flexie-row-justify(center);
-///   @include flexie-row-justify(space-around);
-///   @include flexie-row-justify(space-between);
-///   @include flexie-row-justify(around);
-///   @include flexie-row-justify(between);
-///   @include flexie-row-justify(left);
-///   @include flexie-row-justify(right);
-@mixin flexie-row-justify($flexie-row-justify: flex-start) {
-  justify-content: flexie-row-justify($flexie-row-justify);
+///   @include flexie-justify();
+///   @include flexie-justify(flex-start);
+///   @include flexie-justify(flex-end);
+///   @include flexie-justify(center);
+///   @include flexie-justify(space-around);
+///   @include flexie-justify(space-between);
+///   @include flexie-justify(around);
+///   @include flexie-justify(between);
+///   @include flexie-justify(left);
+///   @include flexie-justify(right);
+@mixin flexie-justify($flexie-justify: flex-start) {
+  justify-content: flexie-justify($flexie-justify);
+}
+
+/// Set flex item alignment on row level or column level
+///
+/// @param {String} $row-or-col ['row'] - determine alignment context
+/// @param {String} $flexie-align ['flex-start'] - set alignment behavior
+///
+/// @example scss
+///   @include flexie-align();
+///   @include flexie-align(col);
+///   @include flexie-align(row, center);
+///   @include flexie-align(col, stretch);
+@mixin flexie-align($row-or-col: row, $flexie-align: flex-start) {
+  @if $row-or-col == 'col' or $row-or-col == 'column' {
+    align-self: flexie-align($flexie-align);
+  } @else if $row-or-col == 'row' {
+    align-items: flexie-align($flexie-align);
+  } @else {
+    @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please `row`, `col`, or `column` instead.';
+    invalid-argument: $row-or-col;
+  }
 }
 
 /// Create column width
@@ -103,12 +124,12 @@
 
 /// Set flex-item source order
 ///
-/// @param {String} $flexie-col-order - integer greater than 0
+/// @param {String} $flexie-order - integer greater than 0
 ///
 /// @example scss
 ///   @include flexie-col-align();
-@mixin flexie-col-order($flexie-col-order) {
-  order: flexie-col-order($flexie-col-order);
+@mixin flexie-order($flexie-order) {
+  order: flexie-order($flexie-order);
 }
 
 /// Create container element context
@@ -147,12 +168,12 @@
 @mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
   @include flexie-display($display);
   @include flexie-direction($direction);
-  @include flexie-row-wrap($wrap);
+  @include flexie-wrap($wrap);
   @include flexie-gutter($gutter, row);
 
   // Check if row is justified
   @if $justify != null {
-    @include flexie-row-justify($justify);
+    @include flexie-justify($justify);
   }
 
   // Check if row is aligned
@@ -187,42 +208,7 @@
 
   // Check if column is re-ordered
   @if $order != null {
-    @include flexie-col-order($order);
+    @include flexie-order($order);
   }
   flex-shrink: 0;
 }
-
-/// Set flex item alignment on row level or column level
-///
-/// @param {String} $row-or-col ['row'] - determine alignment context
-/// @param {String} $flexie-align ['flex-start'] - set alignment behavior
-///
-/// @example scss
-///   @include flexie-align();
-///   @include flexie-align(col);
-///   @include flexie-align(row, center);
-///   @include flexie-align(col, stretch);
-@mixin flexie-align($row-or-col: row, $flexie-align: flex-start) {
-  @if $row-or-col == 'col' or $row-or-col == 'column' {
-    align-self: flexie-align($flexie-align);
-  } @else if $row-or-col == 'row' {
-    align-items: flexie-align($flexie-align);
-  } @else {
-    @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please `row`, `col`, or `column` instead.';
-    invalid-argument: $row-or-col;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
