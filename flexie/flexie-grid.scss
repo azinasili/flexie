@@ -14,6 +14,11 @@
 @import 'flexie-mixins';
 
 
+.foo {
+  @include flexie-gutter(balls, 60px);
+}
+
+
 // ----------------------------------------------------------------------------
 // 1. Universal grid structure
 // ----------------------------------------------------------------------------
@@ -50,7 +55,7 @@
 .row-end       { @include flexie-justify(flex-end); }
 
 // Vertical alignment for children columns
-.row-top       { @include flexie-align(); }
+.row-top       { @include flexie-align(row); }
 .row-middle    { @include flexie-align(row, center); }
 .row-bottom    { @include flexie-align(row, flex-end); }
 .row-stretch   { @include flexie-align(row, stretch); }
@@ -112,7 +117,7 @@
   .row-end-md       { @include flexie-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-md       { @include flexie-align(); }
+  .row-top-md       { @include flexie-align(row); }
   .row-middle-md    { @include flexie-align(row, center); }
   .row-bottom-md    { @include flexie-align(row, flex-end); }
   .row-stretch-md   { @include flexie-align(row, stretch); }
@@ -167,7 +172,7 @@
   .row-end-lg       { @include flexie-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-lg       { @include flexie-align(); }
+  .row-top-lg       { @include flexie-align(row); }
   .row-middle-lg    { @include flexie-align(row, center); }
   .row-bottom-lg    { @include flexie-align(row, flex-end); }
   .row-stretch-lg   { @include flexie-align(row, stretch); }
@@ -222,7 +227,7 @@
   .row-end-xl       { @include flexie-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-xl       { @include flexie-align(); }
+  .row-top-xl       { @include flexie-align(row); }
   .row-middle-xl    { @include flexie-align(row, center); }
   .row-bottom-xl    { @include flexie-align(row, flex-end); }
   .row-stretch-xl   { @include flexie-align(row, stretch); }

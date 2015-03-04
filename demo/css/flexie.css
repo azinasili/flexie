@@ -1,3 +1,7 @@
+.foo {
+  invalid-argument: balls;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

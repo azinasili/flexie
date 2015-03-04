@@ -32,13 +32,13 @@
 /// @param {String} $row-or-col ['col'] - determine how to calculate gutter width
 ///
 /// @return {number} half of $flexie-gutter for row or column
-@function flexie-gutter($flexie-gutter, $row-or-col: col) {
+@function flexie-gutter($row-or-col, $flexie-gutter) {
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
   } @else if type-of($flexie-gutter) != number or unitless($flexie-gutter) == true {
     @warn '`#{$flexie-gutter}` is not a valid argument of flexie-gutter(). Please use a number with a unit instead';
   }
-  @if $row-or-col == 'col' {
+  @if $row-or-col == 'col' or $row-or-col == 'column' {
     @return $flexie-gutter/2;
   } @else if $row-or-col == 'row' {
     @return $flexie-gutter/-2;

@@ -38,13 +38,16 @@
 ///   @include flexie-gutter(30px);
 ///   @include flexie-gutter(30px, col);
 ///   @include flexie-gutter(30px, row);
-@mixin flexie-gutter($flexie-gutter: map-get($flexie, gutter), $row-or-col: col) {
-  @if $row-or-col == 'col' {
-    padding-left: flexie-gutter($flexie-gutter, $row-or-col: col);
-    padding-right: flexie-gutter($flexie-gutter, $row-or-col: col);
+@mixin flexie-gutter($row-or-col: col, $flexie-gutter: map-get($flexie, gutter)) {
+  @if $row-or-col == 'col' or $row-or-col == 'column' {
+    padding-left: flexie-gutter($row-or-col, $flexie-gutter);
+    padding-right: flexie-gutter($row-or-col, $flexie-gutter);
   } @else if $row-or-col == 'row' {
-    margin-left: flexie-gutter($flexie-gutter, $row-or-col: row);
-    margin-right: flexie-gutter($flexie-gutter, $row-or-col: row);
+    margin-left: flexie-gutter($row-or-col, $flexie-gutter);
+    margin-right: flexie-gutter($row-or-col, $flexie-gutter);
+  } @else {
+    @warn '`#{$row-or-col}` is not a valid argument for flexie-gutter(). Please `row`, `col`, or `column` instead.';
+    invalid-argument: $row-or-col;
   }
 }
 
@@ -148,7 +151,7 @@
     margin-right: auto;
     max-width: $width;
   }
-  @include flexie-gutter($gutter, col);
+  @include flexie-gutter(col, $gutter);
   width: 100%;
 }
 
@@ -169,7 +172,7 @@
   @include flexie-display($display);
   @include flexie-direction($direction);
   @include flexie-wrap($wrap);
-  @include flexie-gutter($gutter, row);
+  @include flexie-gutter(row, $gutter);
 
   // Check if row is justified
   @if $justify != null {
@@ -178,7 +181,7 @@
 
   // Check if row is aligned
   @if $align != null {
-    @include flexie-row-align($align);
+    @include flexie-align(row, $align);
   }
 }
 
@@ -197,13 +200,13 @@
 ///   @include flexie-col(3/7, $display: inline-flex, $align: bottom);
 @mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $display: flex, $direction: column, $align: null, $order: null) {
   @include flexie-col-width($width);
-  @include flexie-gutter($gutter, col);
+  @include flexie-gutter(col, $gutter);
   @include flexie-display($display);
   @include flexie-direction($direction);
 
   // Check if column is aligned
   @if $align != null {
-    @include flexie-col-align($align);
+    @include flexie-align(col, $align);
   }
 
   // Check if column is re-ordered
