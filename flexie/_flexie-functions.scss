@@ -1,12 +1,12 @@
+////
 /// Flexie grid system
 /// @author: Azin Asili
 /// @link https://github.com/azinasili/flexie
+////
 
-/// Get flex display
-///
-/// @param {String} $flexie-display - get flex display property
-///
-/// @return {Value} flex display property
+/// Flex display value getter
+/// @param {String} $flexie-display - Flex display value
+/// @return {Value} Flex display value
 @function flexie-display($flexie-display) {
   @if not index('flex' 'inline-flex', $flexie-display) {
     @warn '`#{$flexie-display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
@@ -14,11 +14,9 @@
   @return $flexie-display;
 }
 
-/// Get direction of flex items
-///
-/// @param {String} $flexie-direction - get flex direction property
-///
-/// @return {Value} flex direction property
+/// Flex direction value getter
+/// @param {String} $flexie-direction - Flex direction value
+/// @return {Value} Flex direction value
 @function flexie-direction($flexie-direction) {
   @if not index('row' 'row-reverse' 'column' 'column-reverse', $flexie-direction) {
     @warn '`#{$flexie-direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
@@ -26,12 +24,10 @@
   @return $flexie-direction;
 }
 
-/// Calculate gutter for rows or columns
-///
-/// @param {number} $flexie-gutter - get value to calculate
-/// @param {String} $row-or-col ['col'] - determine how to calculate gutter width
-///
-/// @return {number} half of $flexie-gutter for row or column
+/// Calculate gutter for row or column
+/// @param {String} $row-or-col - Gutter context
+/// @param {Number} $flexie-gutter - Gutter width
+/// @return {Number} Gutter width for row or column
 @function flexie-gutter($row-or-col, $flexie-gutter) {
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
@@ -45,11 +41,9 @@
   }
 }
 
-/// Get flex items re-flow
-///
-/// @param {String} $flexie-wrap - get flex items re-flow property
-///
-/// @return {Value} flex item re-flow property
+/// Flex wrap getter
+/// @param {String} $flexie-wrap - Flex wrap value
+/// @return {Value} Flex wrap value
 @function flexie-wrap($flexie-wrap) {
   @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-wrap) {
     @warn '`#{$flexie-wrap}` is not a valid argument of flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
@@ -57,11 +51,9 @@
   @return $flexie-wrap;
 }
 
-/// Get flex items horizontal distribution
-///
-/// @param {String} $flexie-justify - get flex items horizontal distribution property
-///
-/// @return {Value} flex item horizontal distribution property
+/// Flex items horizontal distribution getter
+/// @param {String} $flexie-justify - Flex items horizontal distribution value
+/// @return {Value} items horizontal distribution value
 @function flexie-justify($flexie-justify) {
   $shorthand: (
     around  : space-around,
@@ -77,11 +69,9 @@
   @return $flexie-justify;
 }
 
-/// Get flex items row and column alignment
-///
-/// @param {String} $flexie-col-align - get row or column alignment
-///
-/// @return {Value} flex item alignment
+/// Flex item alignment getter
+/// @param {String} $flexie-col-align - Flex alignment value for row or column
+/// @return {Value} Flex alignment value
 @function flexie-align($flexie-align) {
   $shorthand: (
     bottom : flex-end,
@@ -96,11 +86,9 @@
   @return $flexie-align;
 }
 
-/// Get flex item source order
-///
-/// @param {Number} $flexie-order - get new source order
-///
-/// @return {Number} new source order
+/// Flex item order getter
+/// @param {Number} $flexie-order - Flex item source order value
+/// @return {Number} Flex item source order value
 @function flexie-order($flexie-order) {
   @if type-of($flexie-order) != number or unitless($flexie-order) != true or round($flexie-order) != $flexie-order {
     @warn '`#{$flexie-order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
