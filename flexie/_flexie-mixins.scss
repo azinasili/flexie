@@ -5,9 +5,7 @@
 ////
 
 /// Set flex display property
-///
 /// @param {String} $flexie-display ['flex'] - set flex display property
-///
 /// @example scss
 ///   @include flexie-display();
 ///   @include flexie-display(flex);
@@ -17,9 +15,7 @@
 }
 
 /// Set direction of flex items
-///
 /// @param {String} $flexie-direction ['row'] - set flex direction property
-///
 /// @example scss
 ///   @include flexie-direction();
 ///   @include flexie-direction(row);
@@ -31,10 +27,8 @@
 }
 
 /// Set row or column gutter width
-///
 /// @param {Number} $flexie-gutter [map-get($flexie, gutter)] - get gutter width from settings
 /// @param {String} $row-or-col ['col'] - determine how to calculate gutter width
-///
 /// @example scss
 ///   @include flexie-gutter();
 ///   @include flexie-gutter(30px);
@@ -54,9 +48,7 @@
 }
 
 /// Set flex items re-flow
-///
 /// @param {String} $flexie-wrap ['wrap'] - set flex items re-flow behavior
-///
 /// @example scss
 ///   @include flexie-wrap();
 ///   @include flexie-wrap(wrap);
@@ -67,9 +59,7 @@
 }
 
 /// Set flex items horizontal distribution
-///
 /// @param {String} $flexie-justify ['flex-start'] - set flex items horizontal distribution behavior
-///
 /// @example scss
 ///   @include flexie-justify();
 ///   @include flexie-justify(flex-start);
@@ -86,10 +76,8 @@
 }
 
 /// Set flex item alignment on row level or column level
-///
 /// @param {String} $row-or-col ['row'] - determine alignment context
 /// @param {String} $flexie-align ['flex-start'] - set alignment behavior
-///
 /// @example scss
 ///   @include flexie-align();
 ///   @include flexie-align(col);
@@ -107,9 +95,7 @@
 }
 
 /// Create column width
-///
 /// @param {String | Number} $flexie-col-width ['auto'] - create auto width column
-///
 /// @example scss
 ///   @include flexie-col-width();
 ///   @include flexie-col-width(auto);
@@ -128,9 +114,7 @@
 }
 
 /// Set flex-item source order
-///
 /// @param {String} $flexie-order - integer greater than 0
-///
 /// @example scss
 ///   @include flexie-col-align();
 @mixin flexie-order($flexie-order) {
@@ -138,10 +122,8 @@
 }
 
 /// Create container element context
-///
 /// @param {Number} $width [map-get($flexie, container-width)] - set a max-width on container element
 /// @param {Number} $gutter [map-get($flexie, gutter)] - set grid gutter width to container element
-///
 /// @example scss
 ///   @include flexie-container();
 ///   @include flexie-container(1500px);
@@ -158,14 +140,12 @@
 }
 
 /// Create row element context
-///
 /// @param {String} $display ['flex'] - set flex display property
 /// @param {String} $direction ['row'] - set flex direction property
 /// @param {String} $wrap ['wrap'] - set flex items re-flow behavior
 /// @param {Number} $gutter [map-get($flexie, gutter)] - set row gutter width
 /// @param {String} $justify - set flex items horizontal distribution behavior
 /// @param {String} $align - set flex items vertical distribution behavior
-///
 /// @example scss
 ///   @include flexie-row();
 ///   @include flexie-row($direction: column);
@@ -188,14 +168,12 @@
 }
 
 /// Create column element context
-///
 /// @param {Number} $width ['auto'] - create auto width column
 /// @param {Number} $gutter [map-get($flexie, gutter)] - set column gutter width
 /// @param {String} $display ['flex'] - set flex display property
 /// @param {String} $direction ['column'] - set flex direction property
 /// @param {String} $align - set individual column alignment
 /// @param {String} $order - set flex-item source order
-///
 /// @example scss
 ///   @include flexie-col();
 ///   @include flexie-col(3/7, 40px);
