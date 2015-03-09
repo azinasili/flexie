@@ -1,6 +1,7 @@
 ////
 /// Flexie grid system
-/// @author: Azin Asili
+/// @author Azin Asili
+/// @access private
 /// @link https://github.com/azinasili/flexie
 ////
 
@@ -8,7 +9,7 @@
 /// @param {String} $flexie-display - Flex display value
 /// @return {Value} Flex display value
 /// @throw Warning if $flexie-display is not 'flex' or 'inline-flex'
-@function flexie-display($flexie-display) {
+@function _flexie-display($flexie-display) {
   @if not index('flex' 'inline-flex', $flexie-display) {
     @warn '`#{$flexie-display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
   }
@@ -19,7 +20,7 @@
 /// @param {String} $flexie-direction - Flex direction value
 /// @return {Value} Flex direction value
 /// @throw Warning if $flexie-direction is not 'row', 'row-reverse', 'column', or 'column-reverse'
-@function flexie-direction($flexie-direction) {
+@function _flexie-direction($flexie-direction) {
   @if not index('row' 'row-reverse' 'column' 'column-reverse', $flexie-direction) {
     @warn '`#{$flexie-direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
   }
@@ -31,7 +32,7 @@
 /// @param {Number} $flexie-gutter - Gutter width
 /// @return {Number} Gutter width for row or column
 /// @throw Warning if $flexie-gutter is not a unitless number
-@function flexie-gutter($row-or-col, $flexie-gutter) {
+@function _flexie-gutter($row-or-col, $flexie-gutter) {
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
   } @else if type-of($flexie-gutter) != number or unitless($flexie-gutter) == true {
@@ -48,7 +49,7 @@
 /// @param {String} $flexie-wrap - Flex wrap value
 /// @return {Value} Flex wrap value
 /// @throw Warning if $flexie-wrap is not 'wrap', 'wrap-reverse', 'nowrap'
-@function flexie-wrap($flexie-wrap) {
+@function _flexie-wrap($flexie-wrap) {
   @if not index('wrap' 'wrap-reverse' 'nowrap', $flexie-wrap) {
     @warn '`#{$flexie-wrap}` is not a valid argument of flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
@@ -59,7 +60,7 @@
 /// @param {String} $flexie-justify - Flex items horizontal distribution value
 /// @return {Value} items horizontal distribution value
 /// @throw Warning if $flexie-justify is not 'flex-start', 'flex-end', 'center', 'space-around', 'space-between', 'around', 'between', 'left', or 'right'
-@function flexie-justify($flexie-justify) {
+@function _flexie-justify($flexie-justify) {
   $shorthand: (
     around  : space-around,
     between : space-between,
@@ -78,7 +79,7 @@
 /// @param {String} $flexie-col-align - Flex alignment value for row or column
 /// @return {Value} Flex alignment value
 /// @throw Warning if $flexie-align is not 'flex-start', 'flex-end', 'center', 'stretch', 'baseline', 'bottom', 'middle', or 'top'
-@function flexie-align($flexie-align) {
+@function _flexie-align($flexie-align) {
   $shorthand: (
     bottom : flex-end,
     middle : center,
@@ -96,7 +97,7 @@
 /// @param {Number} $flexie-order - Flex item source order value
 /// @return {Number} Flex item source order value
 /// @throw Warning if $flexie-order is not a unitless integer
-@function flexie-order($flexie-order) {
+@function _flexie-order($flexie-order) {
   @if type-of($flexie-order) != number or unitless($flexie-order) != true or round($flexie-order) != $flexie-order {
     @warn '`#{$flexie-order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
   }

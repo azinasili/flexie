@@ -14,7 +14,7 @@
 ///   @include flexie-display(flex);
 ///   @include flexie-display(inline-flex);
 @mixin flexie-display($flexie-display: flex) {
-  display: flexie-display($flexie-display);
+  display: _flexie-display($flexie-display);
 }
 
 /// Flex direction property setter
@@ -27,7 +27,7 @@
 ///   @include flexie-direction(column);
 ///   @include flexie-direction(column-reverse);
 @mixin flexie-direction($flexie-direction: row) {
-  flex-direction: flexie-direction($flexie-direction);
+  flex-direction: _flexie-direction($flexie-direction);
 }
 
 /// Row or column gutter width setter
@@ -42,12 +42,12 @@
 ///   @include flexie-gutter(30px, row);
 @mixin flexie-gutter($row-or-col: col, $flexie-gutter: map-get($flexie, gutter)) {
   @if index('c' 'col' 'column', $row-or-col) {
-    padding-left: flexie-gutter($row-or-col, $flexie-gutter);
-    padding-right: flexie-gutter($row-or-col, $flexie-gutter);
+    padding-left: _flexie-gutter($row-or-col, $flexie-gutter);
+    padding-right: _flexie-gutter($row-or-col, $flexie-gutter);
 
   } @else if index('r' 'row', $row-or-col) {
-    margin-left: flexie-gutter($row-or-col, $flexie-gutter);
-    margin-right: flexie-gutter($row-or-col, $flexie-gutter);
+    margin-left: _flexie-gutter($row-or-col, $flexie-gutter);
+    margin-right: _flexie-gutter($row-or-col, $flexie-gutter);
   } @else {
     @warn '`#{$row-or-col}` is not a valid argument for flexie-gutter(). Please `row`, `col`, or `column` instead.';
     invalid-argument: $row-or-col;
@@ -63,7 +63,7 @@
 ///   @include flexie-wrap(wrap-reverse);
 ///   @include flexie-wrap(nowrap);
 @mixin flexie-wrap($flexie-wrap: wrap) {
-  flex-wrap: flexie-wrap($flexie-wrap);
+  flex-wrap: _flexie-wrap($flexie-wrap);
 }
 
 /// Justify-content property setter
@@ -81,7 +81,7 @@
 ///   @include flexie-justify(left);
 ///   @include flexie-justify(right);
 @mixin flexie-justify($flexie-justify: flex-start) {
-  justify-content: flexie-justify($flexie-justify);
+  justify-content: _flexie-justify($flexie-justify);
 }
 
 /// Flex alignment setter
@@ -96,9 +96,9 @@
 ///   @include flexie-align(col, stretch);
 @mixin flexie-align($row-or-col: row, $flexie-align: flex-start) {
   @if index('c' 'col' 'column', $row-or-col) {
-    align-self: flexie-align($flexie-align);
+    align-self: _flexie-align($flexie-align);
   } @else if index('r' 'row', $row-or-col) {
-    align-items: flexie-align($flexie-align);
+    align-items: _flexie-align($flexie-align);
   } @else {
     @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please `row`, `col`, or `column` instead.';
     invalid-argument: $row-or-col;
@@ -131,7 +131,7 @@
 /// @example scss
 ///   @include flexie-col-align();
 @mixin flexie-order($flexie-order) {
-  order: flexie-order($flexie-order);
+  order: _flexie-order($flexie-order);
 }
 
 /// Create container element
