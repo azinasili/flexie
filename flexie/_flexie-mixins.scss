@@ -1,7 +1,7 @@
 ////
 /// Flexie grid system
 /// @author Azin Asili
-/// @group API
+/// @group Flexie mixin library
 /// @access public
 /// @link https://github.com/azinasili/flexie
 ////
@@ -107,7 +107,7 @@
 
 /// Column width setter
 /// @param {String | Number} $flexie-col-width ['auto'] - Column width
-/// @ouput Flex column width
+/// @output Flex column width
 /// @example scss
 ///   @include flexie-col-width();
 ///   @include flexie-col-width(auto);
