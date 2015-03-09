@@ -37,9 +37,9 @@
   } @else if type-of($flexie-gutter) != number or unitless($flexie-gutter) == true {
     @warn '`#{$flexie-gutter}` is not a valid argument of flexie-gutter(). Please use a number with a unit instead';
   }
-  @if $row-or-col == 'col' or $row-or-col == 'column' {
+  @if index('c' 'col' 'column', $row-or-col) {
     @return $flexie-gutter/2;
-  } @else if $row-or-col == 'row' {
+  } @else if index('r' 'row', $row-or-col) {
     @return $flexie-gutter/-2;
   }
 }
