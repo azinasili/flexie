@@ -8,7 +8,8 @@
 
 /// Flex display value getter
 /// @param {String} $flexie-display - Flex display value
-/// @return {Value} Flex display value
+/// @require {String} $flexie-display
+/// @return {Value} Display value for flex items
 /// @throw Warning if $flexie-display is not 'flex' or 'inline-flex'
 @function _flexie-display($flexie-display) {
   @if not index('flex' 'inline-flex', $flexie-display) {
@@ -19,6 +20,7 @@
 
 /// Flex direction value getter
 /// @param {String} $flexie-direction - Flex direction value
+/// @require {String} $flexie-direction
 /// @return {Value} Flex direction value
 /// @throw Warning if $flexie-direction is not 'row', 'row-reverse', 'column', or 'column-reverse'
 @function _flexie-direction($flexie-direction) {
@@ -31,8 +33,10 @@
 /// Calculate gutter for row or column
 /// @param {String} $row-or-col - Gutter context
 /// @param {Number} $flexie-gutter - Gutter width
+/// @require {String} $row-or-col
+/// @require {Number} $flexie-gutter
 /// @return {Number} Gutter width for row or column
-/// @throw Warning if $flexie-gutter is not a unitless number
+/// @throw Warning if $flexie-gutter is not a number or is unitless
 @function _flexie-gutter($row-or-col, $flexie-gutter) {
   @if $flexie-gutter == 0 {
     @return $flexie-gutter;
@@ -48,6 +52,7 @@
 
 /// Flex wrap getter
 /// @param {String} $flexie-wrap - Flex wrap value
+/// @require {String} $flexie-wrap
 /// @return {Value} Flex wrap value
 /// @throw Warning if $flexie-wrap is not 'wrap', 'wrap-reverse', 'nowrap'
 @function _flexie-wrap($flexie-wrap) {
@@ -59,6 +64,7 @@
 
 /// Flex items horizontal distribution getter
 /// @param {String} $flexie-justify - Flex items horizontal distribution value
+/// @require {String} $flexie-justify
 /// @return {Value} items horizontal distribution value
 /// @throw Warning if $flexie-justify is not 'flex-start', 'flex-end', 'center', 'space-around', 'space-between', 'around', 'between', 'left', or 'right'
 @function _flexie-justify($flexie-justify) {
@@ -77,7 +83,8 @@
 }
 
 /// Flex item alignment getter
-/// @param {String} $flexie-col-align - Flex alignment value for row or column
+/// @param {String} $flexie-align - Flex alignment value for row or column
+/// @require {String} $flexie-align
 /// @return {Value} Flex alignment value
 /// @throw Warning if $flexie-align is not 'flex-start', 'flex-end', 'center', 'stretch', 'baseline', 'bottom', 'middle', or 'top'
 @function _flexie-align($flexie-align) {
@@ -96,8 +103,9 @@
 
 /// Flex item order getter
 /// @param {Number} $flexie-order - Flex item source order value
+/// @require {Number} $flexie-order
 /// @return {Number} Flex item source order value
-/// @throw Warning if $flexie-order is not a unitless integer
+/// @throw Warning if $flexie-order is not a number or is unitless
 @function _flexie-order($flexie-order) {
   @if type-of($flexie-order) != number or unitless($flexie-order) != true or round($flexie-order) != $flexie-order {
     @warn '`#{$flexie-order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
