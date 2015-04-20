@@ -1,7 +1,7 @@
 ////
 /// Flexie grid system
 /// @author Azin Asili
-/// @group Flexie function helpers
+/// @group Flexie Function Helpers
 /// @access private
 /// @link https://github.com/azinasili/flexie
 ////
@@ -12,7 +12,7 @@
 /// @throw Warning if $display is not 'flex' or 'inline-flex'
 @function _flexie-display($display) {
   @if not index('flex' 'inline-flex', $display) {
-    @warn '`#{$display}` is not a valid argument of _flexie-display(). Please use `flex` or `inline-flex` instead.';
+    @warn '`#{$display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
   }
   @return $display;
 }
@@ -23,7 +23,7 @@
 /// @throw Warning if $direction is not 'row', 'row-reverse', 'column', or 'column-reverse'
 @function _flexie-direction($direction) {
   @if not index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
-    @warn '`#{$direction}` is not a valid argument of _flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
+    @warn '`#{$direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
   }
   @return $direction;
 }
@@ -37,7 +37,7 @@
   @if $gutter == 0 {
     @return $gutter;
   } @else if type-of($gutter) != number or unitless($gutter) == true {
-    @warn '`#{$gutter}` is not a valid argument of _flexie-gutter(). Please use a number with a unit instead';
+    @warn '`#{$gutter}` is not a valid argument of flexie-gutter(). Please use a number with a unit instead';
   }
   @if index('c' 'col' 'column', $row-or-col) {
     @return $gutter/2;
@@ -52,7 +52,7 @@
 /// @throw Warning if $wrap is not 'wrap', 'wrap-reverse', 'nowrap'
 @function _flexie-wrap($wrap) {
   @if not index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
-    @warn '`#{$wrap}` is not a valid argument of _flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
+    @warn '`#{$wrap}` is not a valid argument of flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
   @return $wrap;
 }
@@ -69,7 +69,7 @@
     right   : flex-end
   );
   @if not index('flex-start' 'flex-end' 'center' 'space-around' 'space-between', $justify) and map-has-key($shorthand, $justify) == false {
-    @warn '`#{$justify}` is not a valid argument for _flexie-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
+    @warn '`#{$justify}` is not a valid argument for flexie-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
   } @else if map-has-key($shorthand, $justify) {
     @return map-get($shorthand, $justify);
   }
@@ -87,7 +87,7 @@
     top    : flex-start
   );
   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $align) and map-has-key($shorthand, $align) == false {
-    @warn '`#{$align}` is not a valid argument for _flexie-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+    @warn '`#{$align}` is not a valid argument for flexie-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
   } @else if map-has-key($shorthand, $align) {
     @return map-get($shorthand, $align);
   }
@@ -100,7 +100,7 @@
 /// @throw Warning if $order is not a number or is unitless
 @function _flexie-order($order) {
   @if type-of($order) != number or unitless($order) != true or round($order) != $order {
-    @warn '`#{$order}` is not a valid argument of _flexie-order(). Please use a unit-less integer instead.';
+    @warn '`#{$order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
   }
   @return $order;
 }

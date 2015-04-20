@@ -1,7 +1,7 @@
 ////
 /// Flexie grid system
 /// @author Azin Asili
-/// @group Flexie mixin library
+/// @group Flexie Mixin Library
 /// @access public
 /// @link https://github.com/azinasili/flexie
 ////
@@ -24,6 +24,7 @@
 
 /// Flex direction property setter
 /// @param {string} $direction [row] - Flex direction value
+/// @require {function} _flexie-direction - Flex direction value getter
 /// @output Flex-direction declaration
 /// @example scss
 ///   .foo {
@@ -40,6 +41,7 @@
 /// Row or column gutter width setter
 /// @param {string} $row-or-col [col] - Determine gutter width context
 /// @param {number} $gutter [map-get($flexie, gutter)] - Gutter width
+/// @require {function} _flexie-gutter - Calculate gutter for row or column
 /// @output Gutter width for row or column depending on context passed
 /// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
 /// @example scss
@@ -67,6 +69,7 @@
 
 /// Flex-wrap property setter
 /// @param {string} $wrap [wrap] - Flex wrap value
+/// @require {function} _flexie-wrap - Flex wrap getter
 /// @output Flex-wrap declaration
 /// @example scss
 ///   .foo {
@@ -82,6 +85,7 @@
 
 /// Justify-content property setter
 /// @param {string} $justify [flex-start] - Justify-content value
+/// @require {function} _flexie-justify - Flex items horizontal distribution getter
 /// @output Justify content for flex children
 /// @example scss
 ///   .foo {
@@ -98,6 +102,7 @@
 /// Flex alignment setter
 /// @param {string} $row-or-col [row] - Determine alignment context
 /// @param {string} $align [flex-start] - Flex alignment value
+/// @require {function} _flexie-align - Flex item alignment getter
 /// @output Align-self or align-items declaration depending on context passed
 /// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
 /// @example scss
@@ -147,6 +152,7 @@
 
 /// Source order setter
 /// @param {string} $order - Source order value
+/// @require {function} _flexie-order - Flex item order getter
 /// @output Order declaration
 /// @example scss
 ///   .foo {
@@ -163,6 +169,7 @@
 /// Create container element
 /// @param {number} $width [map-get($flexie, container-width)] - Container element width
 /// @param {number} $gutter [map-get($flexie, gutter)] - Container element gutter width
+/// @require {mixin} flexie-gutter - Row or column gutter width setter
 /// @output Width and center container element
 /// @example scss
 ///   .foo {
@@ -194,6 +201,12 @@
 /// @param {number} $gutter [map-get($flexie, gutter)] - Gutter width
 /// @param {string} $justify [null] - Justify-content value
 /// @param {string} $align [null] - Flex alignment value
+/// @require {mixin} flexie-display - Flex display property setter
+/// @require {mixin} flexie-direction - Flex direction property setter
+/// @require {mixin} flexie-wrap - Flex-wrap property setter
+/// @require {mixin} flexie-gutter - Row or column gutter width setter
+/// @require {mixin} flexie-justify - Justify-content property setter
+/// @require {mixin} flexie-align - Flex alignment setter
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
 /// @example scss
 ///   .foo {
@@ -229,6 +242,12 @@
 /// @param {string} $direction [column] - Flex direction value
 /// @param {string} $align [null] - Flex alignment value
 /// @param {string} $order [null] - Source order value
+/// @require {mixin} flexie-col-width - Column width setter
+/// @require {mixin} flexie-gutter - Row or column gutter width setter
+/// @require {mixin} flexie-display - Flex display property setter
+/// @require {mixin} flexie-direction - Flex direction property setter
+/// @require {mixin} flexie-align - Flex alignment setter
+/// @require {mixin} flexie-order - Source order setter
 /// @output Width, padding, display, flex-direction, align-self, order, and flex-shrink declarations to create column
 /// @example scss
 ///   .foo {
