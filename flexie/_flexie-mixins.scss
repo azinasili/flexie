@@ -7,39 +7,49 @@
 ////
 
 /// Flex display property setter
-/// @param {String} $flexie-display ['flex'] - Flex display value
+/// @param {String} $flexie-display [flex] - Flex display value
 /// @output Display declaration
 /// @example scss
-///   @include flexie-display();
-///   @include flexie-display(flex);
-///   @include flexie-display(inline-flex);
+///   .foo {
+///     @include flexie-display(inline-flex);
+///   }
+/// @example css
+///   .foo {
+///     display: inline-flex;
+///   }
 @mixin flexie-display($flexie-display: flex) {
   display: _flexie-display($flexie-display);
 }
 
 /// Flex direction property setter
-/// @param {String} $flexie-direction ['row'] - Flex direction value
+/// @param {String} $flexie-direction [row] - Flex direction value
 /// @output Flex-direction declaration
 /// @example scss
-///   @include flexie-direction();
-///   @include flexie-direction(row);
-///   @include flexie-direction(row-reverse);
-///   @include flexie-direction(column);
-///   @include flexie-direction(column-reverse);
+///   .foo {
+///     @include flexie-direction(column);
+///   }
+/// @example css
+///   .foo {
+///     flex-direction: column;
+///   }
 @mixin flexie-direction($flexie-direction: row) {
   flex-direction: _flexie-direction($flexie-direction);
 }
 
 /// Row or column gutter width setter
-/// @param {String} $row-or-col ['col'] - Determine gutter width context
+/// @param {String} $row-or-col [col] - Determine gutter width context
 /// @param {Number} $flexie-gutter [map-get($flexie, gutter)] - Gutter width
 /// @output Gutter width for row or column depending on context passed
 /// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
 /// @example scss
-///   @include flexie-gutter();
-///   @include flexie-gutter(30px);
-///   @include flexie-gutter(30px, col);
-///   @include flexie-gutter(30px, row);
+///   .foo {
+///     @include flexie-gutter(row, 20px);
+///   }
+/// @example css
+///   .foo {
+///     margin-left: -10px;
+///     margin-right: -10px;
+///   }
 @mixin flexie-gutter($row-or-col: col, $flexie-gutter: map-get($flexie, gutter)) {
   @if index('c' 'col' 'column', $row-or-col) {
     padding-left: _flexie-gutter($row-or-col, $flexie-gutter);
@@ -49,69 +59,78 @@
     margin-left: _flexie-gutter($row-or-col, $flexie-gutter);
     margin-right: _flexie-gutter($row-or-col, $flexie-gutter);
   } @else {
-    @warn '`#{$row-or-col}` is not a valid argument for flexie-gutter(). Please `row`, `col`, or `column` instead.';
+    @warn '`#{$row-or-col}` is not a valid argument for flexie-gutter(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
     invalid-argument: $row-or-col;
   }
 }
 
 /// Flex-wrap property setter
-/// @param {String} $flexie-wrap ['wrap'] - Flex wrap value
+/// @param {String} $flexie-wrap [wrap] - Flex wrap value
 /// @output Flex-wrap declaration
 /// @example scss
-///   @include flexie-wrap();
-///   @include flexie-wrap(wrap);
-///   @include flexie-wrap(wrap-reverse);
-///   @include flexie-wrap(nowrap);
+///   .foo {
+///     @include flexie-wrap(nowrap);
+///   }
+/// @example css
+///   .foo {
+///     flex-wrap: nowrap;
+///   }
 @mixin flexie-wrap($flexie-wrap: wrap) {
   flex-wrap: _flexie-wrap($flexie-wrap);
 }
 
 /// Justify-content property setter
-/// @param {String} $flexie-justify ['flex-start'] - Justify-content value
-/// @output Justify-content declaration
+/// @param {String} $flexie-justify [flex-start] - Justify-content value
+/// @output Justify content for flex children
 /// @example scss
-///   @include flexie-justify();
-///   @include flexie-justify(flex-start);
-///   @include flexie-justify(flex-end);
-///   @include flexie-justify(center);
-///   @include flexie-justify(space-around);
-///   @include flexie-justify(space-between);
-///   @include flexie-justify(around);
-///   @include flexie-justify(between);
-///   @include flexie-justify(left);
-///   @include flexie-justify(right);
+///   .foo {
+///     @include flexie-justify(center);
+///   }
+/// @example css
+///   .foo {
+///     justify-content: center;
+///   }
 @mixin flexie-justify($flexie-justify: flex-start) {
   justify-content: _flexie-justify($flexie-justify);
 }
 
 /// Flex alignment setter
-/// @param {String} $row-or-col ['row'] - Determine alignment context
-/// @param {String} $flexie-align ['flex-start'] - Flex alignment value
+/// @param {String} $row-or-col [row] - Determine alignment context
+/// @param {String} $flexie-align [flex-start] - Flex alignment value
 /// @output Align-self or align-items declaration depending on context passed
 /// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
 /// @example scss
-///   @include flexie-align();
-///   @include flexie-align(col);
-///   @include flexie-align(row, center);
-///   @include flexie-align(col, stretch);
+///   .foo {
+///     @include flexie-align(col, stretch);
+///   }
+/// @example css
+///   .foo {
+///     align-self: stretch;
+///   }
 @mixin flexie-align($row-or-col: row, $flexie-align: flex-start) {
   @if index('c' 'col' 'column', $row-or-col) {
     align-self: _flexie-align($flexie-align);
   } @else if index('r' 'row', $row-or-col) {
     align-items: _flexie-align($flexie-align);
   } @else {
-    @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please `row`, `col`, or `column` instead.';
+    @warn '`#{$row-or-col}` is not a valid argument for flexie-align(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
     invalid-argument: $row-or-col;
   }
 }
 
 /// Column width setter
-/// @param {String | Number} $flexie-col-width ['auto'] - Column width
-/// @output Flex column width
+/// @param {String | Number} $flexie-col-width [auto] - Column width
+/// @output Flex item width
 /// @example scss
-///   @include flexie-col-width();
-///   @include flexie-col-width(auto);
-///   @include flexie-col-width(3/5);
+///   .foo {
+///     @include flexie-col-width(3/5);
+///   }
+/// @example css
+///   .foo {
+///     flex-basis: 60%;
+///     flex-grow: 0;
+///     max-width: 60%;
+///   }
 @mixin flexie-col-width($flexie-col-width: auto) {
   @if $flexie-col-width != auto {
     flex-basis: percentage($flexie-col-width);
@@ -129,7 +148,13 @@
 /// @param {String} $flexie-order - Source order value
 /// @output Order declaration
 /// @example scss
-///   @include flexie-col-align();
+///   .foo {
+///     @include flexie-order(3);
+///   }
+/// @example css
+///   .foo {
+///     order: 3;
+///   }
 @mixin flexie-order($flexie-order) {
   order: _flexie-order($flexie-order);
 }
@@ -139,10 +164,18 @@
 /// @param {Number} $gutter [map-get($flexie, gutter)] - Container element gutter width
 /// @output Width and center container element
 /// @example scss
-///   @include flexie-container();
-///   @include flexie-container(1500px);
-///   @include flexie-container(1500px, 40px);
-///   @include flexie-container($gutter: 40px);
+///   .foo {
+///     @include flexie-container(1500px, 20px);
+///   }
+/// @example css
+///   .foo {
+///     margin-left: auto;
+///     margin-right: auto;
+///     max-width: 1500px;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///     width: 100%;
+///   }
 @mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
   @if $width != 100% {
     margin-left: auto;
@@ -154,58 +187,72 @@
 }
 
 /// Create row element
-/// @param {String} $display ['flex'] - Flex display value
-/// @param {String} $direction ['row'] - Flex direction value
-/// @param {String} $wrap ['wrap'] - Flex wrap value
+/// @param {String} $display [flex] - Flex display value
+/// @param {String} $direction [row] - Flex direction value
+/// @param {String} $wrap [wrap] - Flex wrap value
 /// @param {Number} $gutter [map-get($flexie, gutter)] - Gutter width
-/// @param {String} $justify - Justify-content value
-/// @param {String} $align - Flex alignment value
+/// @param {String} $justify [null] - Justify-content value
+/// @param {String} $align [null] - Flex alignment value
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
 /// @example scss
-///   @include flexie-row();
-///   @include flexie-row($direction: column);
-///   @include flexie-row($wrap: wrap-reverse, $justify: around);
+///   .foo {
+///     @include flexie-row(flex, row-reverse, nowrap, 20px, center, stretch);
+///   }
+/// @example css
+///   .foo {
+///     display: flex;
+///     flex-direction: row-reverse;
+///     flex-wrap: nowrap;
+///     margin-left: -10px;
+///     margin-right: -10px;
+///     justify-content: center;
+///     align-items: stretch;
+///   }
 @mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
   @include flexie-display($display);
   @include flexie-direction($direction);
   @include flexie-wrap($wrap);
   @include flexie-gutter(row, $gutter);
-
-  // Check if row is justified
   @if $justify != null {
     @include flexie-justify($justify);
   }
-
-  // Check if row is aligned
   @if $align != null {
     @include flexie-align(row, $align);
   }
 }
 
 /// Create column element
-/// @param {Number} $width ['auto'] - Column width
+/// @param {Number} $width [auto] - Column width
 /// @param {Number} $gutter [map-get($flexie, gutter)] - Gutter width
-/// @param {String} $display ['flex'] - Flex display value
-/// @param {String} $direction ['column'] - Flex direction value
-/// @param {String} $align - Flex alignment value
-/// @param {String} $order - Source order value
+/// @param {String} $display [flex] - Flex display value
+/// @param {String} $direction [column] - Flex direction value
+/// @param {String} $align [null] - Flex alignment value
+/// @param {String} $order [null] - Source order value
 /// @output Width, padding, display, flex-direction, align-self, order, and flex-shrink declarations to create column
 /// @example scss
-///   @include flexie-col();
-///   @include flexie-col(3/7, 40px);
-///   @include flexie-col(3/7, $display: inline-flex, $align: bottom);
+///   .foo {
+///     @include flexie-col(3/5, 20px, flex, row, center, 2);
+///   }
+/// @example css
+///   .foo {
+///     flex-basis: 60%;
+///     flex-grow: 0;
+///     max-width: 60%;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///     display: flex;
+///     flex-direction: row;
+///     align-self: center;
+///     order: 2;
+///   }
 @mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $display: flex, $direction: column, $align: null, $order: null) {
   @include flexie-col-width($width);
   @include flexie-gutter(col, $gutter);
   @include flexie-display($display);
   @include flexie-direction($direction);
-
-  // Check if column is aligned
   @if $align != null {
     @include flexie-align(col, $align);
   }
-
-  // Check if column is re-ordered
   @if $order != null {
     @include flexie-order($order);
   }
