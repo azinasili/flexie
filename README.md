@@ -1,16 +1,25 @@
-# Flexie Grid System
+# Flexie
 
-Flexie is an easy to use function and mixin library for flexbox layouts. Flexie
-also comes with a predefined grid system.
+Flexie is an easy to use Sass function and mixin library for flexbox. Flexie is designed to be simple out of the box solution for modern web layouts. The library does not include any browser prefixed CSS by default. Flexie also includes a basic predefined 10 column grid system to quickly make layouts
 
 ## How To Use Flexie
 
-Drop Flexie into your project and use the grid system or mixins provided!
+1. Include the necessary files into your Sass project
+2. Import flexie at the beginning of your stylesheet
+   
+	```scss
+	@import 'flexie-settings';
+	@import 'flexie-functions';
+	@import 'flexie-mixins';
+	```
+	
+	Note: order does matter
+3. Import `flexie-grid.scss` if using predefined grid
 
-### Notes
+### Documentation
 
-Flexie is still in it's infancy and not ready for production use. Please use with
-caution. Since Flexie is still under development API changes may occur.
+Flexie uses [SassDoc](https://github.com/SassDoc/sassdoc) to document function and mixin uses. Please refer to the generated Sassdoc html for further documentation. 
+
 
 #### License
 
