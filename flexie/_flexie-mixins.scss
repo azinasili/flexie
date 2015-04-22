@@ -222,7 +222,14 @@
 ///     justify-content: center;
 ///     align-items: stretch;
 ///   }
-@mixin flexie-row($display: flex, $direction: row, $wrap: wrap, $gutter: map-get($flexie, gutter), $justify: null, $align: null) {
+@mixin flexie-row(
+  $display: flex,
+  $direction: row,
+  $wrap: wrap,
+  $gutter: map-get($flexie, gutter),
+  $justify: null,
+  $align: null)
+{
   @include flexie-display($display);
   @include flexie-direction($direction);
   @include flexie-wrap($wrap);
@@ -265,7 +272,14 @@
 ///     align-self: center;
 ///     order: 2;
 ///   }
-@mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $display: flex, $direction: column, $align: null, $order: null) {
+@mixin flexie-col(
+  $width: auto,
+  $gutter: map-get($flexie, gutter),
+  $display: flex,
+  $direction: column,
+  $align: null,
+  $order: null)
+{
   @include flexie-width($width);
   @include flexie-gutter(col, $gutter);
   @include flexie-display($display);
