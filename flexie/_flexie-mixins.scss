@@ -167,7 +167,7 @@
 }
 
 /// Create container element
-/// @param {number} $width [map-get($flexie, container-width)] - Container element width
+/// @param {number} $width [map-get($flexie, max-width)] - Container element width
 /// @param {number} $gutter [map-get($flexie, gutter)] - Container element gutter width
 /// @require {mixin} flexie-gutter - Row or column gutter width setter
 /// @output Width and center container element
@@ -184,7 +184,7 @@
 ///     padding-right: 10px;
 ///     width: 100%;
 ///   }
-@mixin flexie-container($width: map-get($flexie, container-width), $gutter: map-get($flexie, gutter)) {
+@mixin flexie-container($width: map-get($flexie, max-width), $gutter: map-get($flexie, gutter)) {
   @if $width != 100% {
     margin-left: auto;
     margin-right: auto;
