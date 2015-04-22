@@ -129,7 +129,7 @@
 /// @output Flex item width
 /// @example scss
 ///   .foo {
-///     @include flexie-col-width(3/5);
+///     @include flexie-width(3/5);
 ///   }
 /// @example css
 ///   .foo {
@@ -137,7 +137,7 @@
 ///     flex-grow: 0;
 ///     max-width: 60%;
 ///   }
-@mixin flexie-col-width($col-width: auto) {
+@mixin flexie-width($col-width: auto) {
   @if $col-width != auto {
     flex-basis: percentage($col-width);
     flex-grow: 0;
@@ -242,7 +242,7 @@
 /// @param {string} $direction [column] - Flex direction value
 /// @param {string} $align [null] - Flex alignment value
 /// @param {string} $order [null] - Source order value
-/// @require {mixin} flexie-col-width - Column width setter
+/// @require {mixin} flexie-width - Column width setter
 /// @require {mixin} flexie-gutter - Row or column gutter width setter
 /// @require {mixin} flexie-display - Flex display property setter
 /// @require {mixin} flexie-direction - Flex direction property setter
@@ -266,7 +266,7 @@
 ///     order: 2;
 ///   }
 @mixin flexie-col($width: auto, $gutter: map-get($flexie, gutter), $display: flex, $direction: column, $align: null, $order: null) {
-  @include flexie-col-width($width);
+  @include flexie-width($width);
   @include flexie-gutter(col, $gutter);
   @include flexie-display($display);
   @include flexie-direction($direction);

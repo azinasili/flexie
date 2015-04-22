@@ -77,16 +77,16 @@
 // ----------------------------------------------------------------------------
 // 3. Grid system
 // ----------------------------------------------------------------------------
-.col-auto { @include flexie-col-width(); }
+.col-auto { @include flexie-width(); }
 
 // Column sizes
 @if map-has-key($flexie, columns) {
   @for $i from 1 through map-get($flexie, columns) {
-    .col-#{$i}   { @include flexie-col-width(1/$i); }
+    .col-#{$i}   { @include flexie-width(1/$i); }
   }
 } @else {
   @for $i from 1 through 10 {
-    .col-#{$i}   { @include flexie-col-width(1/$i); }
+    .col-#{$i}   { @include flexie-width(1/$i); }
   }
 }
 
@@ -136,16 +136,16 @@
   }
 
   // Auto size column
-  .col-auto-md { @include flexie-col-width(); }
+  .col-auto-md { @include flexie-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-md   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-md   { @include flexie-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-md   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-md   { @include flexie-width(1/$i); }
     }
   }
 }
@@ -191,16 +191,16 @@
   }
 
   // Auto size column
-  .col-auto-lg { @include flexie-col-width(); }
+  .col-auto-lg { @include flexie-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-lg   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-lg   { @include flexie-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-lg   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-lg   { @include flexie-width(1/$i); }
     }
   }
 }
@@ -246,16 +246,16 @@
   }
 
   // Auto size column
-  .col-auto-xl { @include flexie-col-width(); }
+  .col-auto-xl { @include flexie-width(); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
     @for $i from 1 through map-get($flexie, columns) {
-      .col-#{$i}-xl   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-xl   { @include flexie-width(1/$i); }
     }
   } @else {
     @for $i from 1 through 10 {
-      .col-#{$i}-xl   { @include flexie-col-width(1/$i); }
+      .col-#{$i}-xl   { @include flexie-width(1/$i); }
     }
   }
 }
