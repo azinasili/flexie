@@ -1,7 +1,7 @@
 ////
-/// Flexie grid system
+/// Flexie Grid System
 /// @author Azin Asili
-/// @group Flexie Mixin Library
+/// @group Flexie Library
 /// @access public
 /// @link https://github.com/azinasili/flexie
 ////
@@ -43,7 +43,7 @@
 /// @param {number} $gutter [map-get($flexie, gutter)] - Gutter width
 /// @require {function} _flexie-gutter - Calculate gutter for row or column
 /// @output Gutter width for row or column depending on context passed
-/// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
+/// @throw Warning and invalid property if `$row-or-col` is not `'r'`, `'row'`, `'c'`, `'col'`, or `'column'`
 /// @example scss
 ///   .foo {
 ///     @include flexie-gutter(row, 20px);
@@ -104,7 +104,7 @@
 /// @param {string} $align [flex-start] - Flex alignment value
 /// @require {function} _flexie-align - Flex item alignment getter
 /// @output Align-self or align-items declaration depending on context passed
-/// @throw Warning and invalid property if $row-or-col is not 'r', 'row', 'c', 'col', or 'column'
+/// @throw Warning and invalid property if `$row-or-col` is not `'r'`, `'row'`, `'c'`, `'col'`, or `'column'`
 /// @example scss
 ///   .foo {
 ///     @include flexie-align(col, stretch);
