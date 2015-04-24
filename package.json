@@ -5,7 +5,7 @@
   "url" : "https://github.com/azinasili/flexie",
   "author" : "Azin Asili",
   "copyright" : "2014",
-  "version" : "0.1.4",
+  "version" : "0.1.5",
   "license" : "MIT",
   "devDependencies" : {
     "grunt" : "~0.4.5",

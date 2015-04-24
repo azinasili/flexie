@@ -1,0 +1,10 @@
+/// Flex direction value getter
+/// @param {string} $direction - Flex direction value
+/// @return {value} Flex direction value
+/// @throw Warning if `$direction` is not `'row'`, `'row-reverse'`, `'column'`, or `'column-reverse'`
+@function _flexie-direction($direction) {
+  @if not index('row' 'row-reverse' 'column' 'column-reverse', $direction) {
+    @warn '`#{$direction}` is not a valid argument of flexie-direction(). Please use `row`, `row-reverse`, `column`, or `column-reverse` instead.';
+  }
+  @return $direction;
+}

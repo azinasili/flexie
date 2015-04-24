@@ -1,0 +1,15 @@
+/// Source order setter
+/// @param {string} $order - Source order value
+/// @require {function} _flexie-order - Flex item order getter
+/// @output Order declaration
+/// @example scss
+///   .foo {
+///     @include flexie-order(3);
+///   }
+/// @example css
+///   .foo {
+///     order: 3;
+///   }
+@mixin flexie-order($order) {
+  order: _flexie-order($order);
+}

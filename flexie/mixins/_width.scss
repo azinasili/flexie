@@ -1,0 +1,25 @@
+/// Column width setter
+/// @param {string | number} $col-width [auto] - Column width
+/// @output Flex item width
+/// @example scss
+///   .foo {
+///     @include flexie-width(3/5);
+///   }
+/// @example css
+///   .foo {
+///     flex-basis: 60%;
+///     flex-grow: 0;
+///     max-width: 60%;
+///   }
+@mixin flexie-width($col-width: auto) {
+  @if $col-width != auto {
+    flex-basis: percentage($col-width);
+    flex-grow: 0;
+    max-width: percentage($col-width);
+  } @else {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 0;
+  }
+}

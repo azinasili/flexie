@@ -1,0 +1,15 @@
+/// Justify-content property setter
+/// @param {string} $justify [flex-start] - Justify-content value
+/// @require {function} _flexie-justify - Flex items horizontal distribution getter
+/// @output Justify content for flex children
+/// @example scss
+///   .foo {
+///     @include flexie-justify(center);
+///   }
+/// @example css
+///   .foo {
+///     justify-content: center;
+///   }
+@mixin flexie-justify($justify: flex-start) {
+  justify-content: _flexie-justify($justify);
+}
