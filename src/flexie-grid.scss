@@ -77,7 +77,7 @@
 // ----------------------------------------------------------------------------
 // 3. Grid system
 // ----------------------------------------------------------------------------
-.col-auto { @include flexie-width(); }
+.col-auto { @include flexie-width(auto); }
 
 // Column sizes
 @if map-has-key($flexie, columns) {
@@ -136,7 +136,7 @@
   }
 
   // Auto size column
-  .col-auto-md { @include flexie-width(); }
+  .col-auto-md { @include flexie-width(auto); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
@@ -191,7 +191,7 @@
   }
 
   // Auto size column
-  .col-auto-lg { @include flexie-width(); }
+  .col-auto-lg { @include flexie-width(auto); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {
@@ -246,7 +246,7 @@
   }
 
   // Auto size column
-  .col-auto-xl { @include flexie-width(); }
+  .col-auto-xl { @include flexie-width(auto); }
 
   // Column sizes
   @if map-has-key($flexie, columns) {

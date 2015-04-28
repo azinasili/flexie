@@ -46,7 +46,6 @@
   @if $order != null {
     @include flexie-order($order);
   }
-  flex-shrink: 0;
 }
 
 /// Alias to flexie-column()
