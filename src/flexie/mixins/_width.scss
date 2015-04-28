@@ -28,7 +28,7 @@
   } @else {
     flex-grow: 0;
     flex-shrink: 1;
-    @if floor($width) != $width {
+    @if type-of($width) == number and floor(abs($width)) != abs($width) {
       flex-basis: percentage($width);
       max-width: percentage($width);
     } @else if $width == 1 {
