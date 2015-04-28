@@ -2,15 +2,16 @@
 /// @param {string | number} $col-width [auto] - Column width
 /// @output Flex item width
 /// @todo Change to flex shorthand, currently cssmin grunt plugin
-///       causes a bug in IE because it removes 0 units
+///       causes a bug in IE because it removes units on 0 values
 /// @example scss
 ///   .foo {
 ///     @include flexie-width(3/5);
 ///   }
 /// @example css
 ///   .foo {
-///     flex-basis: 60%;
 ///     flex-grow: 0;
+///     flex-shrink: 1;
+///     flex-basis: 60%;
 ///     max-width: 60%;
 ///   }
 @mixin flexie-width($width: null) {
@@ -23,11 +24,19 @@
     flex-shrink: 0;
     flex-basis: 0;
     max-width: 100%;
-    min-width: 0; // Firefox fix
+    min-width: 0;
   } @else {
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: percentage($width);
-    max-width: percentage($width);
+    @if floor($width) != $width {
+      flex-basis: percentage($width);
+      max-width: percentage($width);
+    } @else if $width == 1 {
+      flex-basis: 100%;
+      max-width: 100%;
+    } @else {
+      flex-basis: $width;
+      max-width: $width;
+    }
   }
 }
