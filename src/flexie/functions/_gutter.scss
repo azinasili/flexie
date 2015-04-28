@@ -6,8 +6,8 @@
 @function _flexie-gutter($row-or-col, $gutter) {
   @if $gutter == 0 {
     @return null;
-  } @else if type-of($gutter) != number or unitless($gutter) == true {
-    @warn '`#{$gutter}` is not a valid argument of flexie-gutter(). Please use a number with a unit instead';
+  } @else if type-of($gutter) != number or unitless($gutter) == true or $gutter < 0 {
+    @warn '`#{$gutter}` is not a valid argument of flexie-gutter(). Please use positive number with a unit instead';
   }
   @if index('c' 'col' 'column', $row-or-col) {
     @return $gutter/2;
