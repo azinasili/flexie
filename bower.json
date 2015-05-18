@@ -1,0 +1,33 @@
+{
+  "name": "flexie",
+  "version": "0.1.5",
+  "homepage": "https://github.com/azinasili/flexie",
+  "authors": [
+    "Azin Asili <azinasili@gmail.com>"
+  ],
+  "description": "Flexbox grid system made specifically for SCSS",
+  "main": [
+    "src/flexie/_flexie.scss",
+    "src/flexie-grid.scss"
+  ],
+  "keywords": [
+    "grid",
+    "sass",
+    "scss",
+    "flexbox"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_tmp",
+    "demo",
+    "bower_components",
+    "bower.json",
+    "Gruntfile.js",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ]
+}
