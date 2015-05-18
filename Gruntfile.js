@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     project: {
       src  : 'src',
       app  : 'demo',
-      css  : '<%= project.app %>/css/flexie.css',
+      css  : '<%= project.app %>/css/flexiegs.css',
       scss : '<%= project.src %>/flexie-grid.scss'
     },
 

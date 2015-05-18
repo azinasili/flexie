@@ -1,11 +1,11 @@
 {
-  "name": "flexie",
+  "name": "flexiegs",
   "title": "Flexie Grid System",
   "description": "Flexbox grid system made specifically for SCSS",
-  "url": "https://github.com/azinasili/flexie",
+  "url": "https://github.com/azinasili/flexiegs",
   "author": "Azin Asili",
   "copyright": "2014",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
