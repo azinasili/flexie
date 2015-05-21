@@ -2,9 +2,7 @@
   "name": "yoga",
   "version": "0.2.0",
   "homepage": "https://github.com/azinasili/yoga",
-  "authors": [
-    "Azin Asili <azinasili@gmail.com>"
-  ],
+  "authors": "Azin Asili <azinasili@gmail.com>",
   "description": "Flexbox grid system made specifically for SCSS",
   "main": [
     "src/yoga/_yoga.scss",
