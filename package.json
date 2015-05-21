@@ -5,7 +5,7 @@
   "url": "https://github.com/azinasili/yoga",
   "author": "Azin Asili",
   "copyright": "2015",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
