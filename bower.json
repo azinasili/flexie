@@ -26,8 +26,6 @@
     "bower_components",
     "bower.json",
     "Gruntfile.js",
-    "LICENSE.md",
-    "package.json",
-    "README.md"
+    "package.json"
   ]
 }
