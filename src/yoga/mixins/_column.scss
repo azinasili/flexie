@@ -1,0 +1,55 @@
+/// Create column element
+/// @param {number} $width [auto] - Column width
+/// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
+/// @param {string} $display [flex] - Flex display value
+/// @param {string} $direction [column] - Flex direction value
+/// @param {string} $align [null] - Flex alignment value
+/// @param {string} $order [null] - Source order value
+/// @require {mixin} yoga-width - Column width setter
+/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @require {mixin} yoga-display - Flex display property setter
+/// @require {mixin} yoga-direction - Flex direction property setter
+/// @require {mixin} yoga-align - Flex alignment setter
+/// @require {mixin} yoga-order - Source order setter
+/// @output Width, padding, display, flex-direction, align-self, order, and flex-shrink declarations to create column
+/// @example scss
+///   .foo {
+///     @include yoga-column(3/5, 20px, flex, row, center, 2);
+///   }
+/// @example css
+///   .foo {
+///     flex-basis: 60%;
+///     flex-grow: 0;
+///     max-width: 60%;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///     display: flex;
+///     flex-direction: row;
+///     align-self: center;
+///     order: 2;
+///   }
+@mixin yoga-column(
+  $width: auto,
+  $gutter: map-get($yoga, gutter),
+  $display: flex,
+  $direction: column,
+  $align: null,
+  $order: null)
+{
+  @include yoga-width($width);
+  @include yoga-gutter(col, $gutter);
+  @include yoga-display($display);
+  @include yoga-direction($direction);
+  @if $align != null {
+    @include yoga-align(col, $align);
+  }
+  @if $order != null {
+    @include yoga-order($order);
+  }
+}
+
+/// Alias to yoga-column()
+/// @alias yoga-column()
+@mixin yoga-col($args...) {
+  @include yoga-column($args...);
+}

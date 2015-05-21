@@ -1,0 +1,27 @@
+/// Create container element
+/// @param {number} $width [map-get($yoga, max-width)] - Container element width
+/// @param {number} $gutter [map-get($yoga, gutter)] - Container element gutter width
+/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @output Width and center container element
+/// @example scss
+///   .foo {
+///     @include yoga-container(1500px, 20px);
+///   }
+/// @example css
+///   .foo {
+///     margin-left: auto;
+///     margin-right: auto;
+///     max-width: 1500px;
+///     padding-left: 10px;
+///     padding-right: 10px;
+///     width: 100%;
+///   }
+@mixin yoga-container($width: map-get($yoga, max-width), $gutter: map-get($yoga, gutter)) {
+  @if $width != 100% {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $width;
+  }
+  @include yoga-gutter(col, $gutter);
+  width: 100%;
+}

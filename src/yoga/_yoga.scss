@@ -1,14 +1,14 @@
 ////
-/// Flexie Grid System
+/// Yoga Grid System
 /// @author Azin Asili
-/// @group Flexie
-/// @link https://github.com/azinasili/flexie
+/// @group Yoga
+/// @link https://github.com/azinasili/yoga
 ////
 
-// Flexie grid settings
+// Yoga grid settings
 @import 'settings';
 
-// Flexie functions
+// Yoga functions
 @import 'functions/display';
 @import 'functions/direction';
 @import 'functions/gutter';
@@ -17,7 +17,7 @@
 @import 'functions/align';
 @import 'functions/order';
 
-// Flexie mixins
+// Yoga mixins
 @import 'mixins/display';
 @import 'mixins/direction';
 @import 'mixins/gutter';

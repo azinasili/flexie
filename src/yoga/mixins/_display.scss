@@ -1,15 +1,15 @@
 /// Flex display property setter
 /// @param {string} $display [flex] - Flex display value
-/// @require {function} _flexie-display - Flex display value getter
+/// @require {function} _goga-display - Flex display value getter
 /// @output Display declaration
 /// @example scss
 ///   .foo {
-///     @include flexie-display(inline-flex);
+///     @include goga-display(inline-flex);
 ///   }
 /// @example css
 ///   .foo {
 ///     display: inline-flex;
 ///   }
-@mixin flexie-display($display: flex) {
-  display: _flexie-display($display);
+@mixin goga-display($display: flex) {
+  display: _goga-display($display);
 }

@@ -1,11 +1,11 @@
 {
-  "name": "flexie",
-  "title": "Flexie Grid System",
+  "name": "yoga",
+  "title": "Yoga Grid System",
   "description": "Flexbox grid system made specifically for SCSS",
-  "url": "https://github.com/azinasili/flexie",
+  "url": "https://github.com/azinasili/yoga",
   "author": "Azin Asili",
-  "copyright": "2014",
-  "version": "0.1.5",
+  "copyright": "2015",
+  "version": "0.2.0",
   "license": "MIT",
   "devDependencies": {
     "connect-livereload": "^0.5.3",

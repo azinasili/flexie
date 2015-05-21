@@ -2,9 +2,9 @@
 /// @param {string} $wrap - Flex wrap value
 /// @return {value} Flex wrap value
 /// @throw Warning if `$wrap` is not `'wrap'`, `'wrap-reverse'`, `'nowrap'`
-@function _flexie-wrap($wrap) {
+@function _yoga-wrap($wrap) {
   @if not index('wrap' 'wrap-reverse' 'nowrap', $wrap) {
-    @warn '`#{$wrap}` is not a valid argument of flexie-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
+    @warn '`#{$wrap}` is not a valid argument of yoga-wrap(). Please use `wrap`, `wrap-reverse`, or `nowrap` instead.';
   }
   @return $wrap;
 }

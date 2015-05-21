@@ -2,19 +2,19 @@
 /// @param {string} $display [flex] - Flex display value
 /// @param {string} $direction [row] - Flex direction value
 /// @param {string} $wrap [wrap] - Flex wrap value
-/// @param {number} $gutter [map-get($flexie, gutter)] - Gutter width
+/// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
 /// @param {string} $justify [null] - Justify-content value
 /// @param {string} $align [null] - Flex alignment value
-/// @require {mixin} flexie-display - Flex display property setter
-/// @require {mixin} flexie-direction - Flex direction property setter
-/// @require {mixin} flexie-wrap - Flex-wrap property setter
-/// @require {mixin} flexie-gutter - Row or column gutter width setter
-/// @require {mixin} flexie-justify - Justify-content property setter
-/// @require {mixin} flexie-align - Flex alignment setter
+/// @require {mixin} yoga-display - Flex display property setter
+/// @require {mixin} yoga-direction - Flex direction property setter
+/// @require {mixin} yoga-wrap - Flex-wrap property setter
+/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @require {mixin} yoga-justify - Justify-content property setter
+/// @require {mixin} yoga-align - Flex alignment setter
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
 /// @example scss
 ///   .foo {
-///     @include flexie-row(flex, row-reverse, nowrap, 20px, center, stretch);
+///     @include yoga-row(flex, row-reverse, nowrap, 20px, center, stretch);
 ///   }
 /// @example css
 ///   .foo {
@@ -26,22 +26,22 @@
 ///     justify-content: center;
 ///     align-items: stretch;
 ///   }
-@mixin flexie-row(
+@mixin yoga-row(
   $display: flex,
   $direction: row,
   $wrap: wrap,
-  $gutter: map-get($flexie, gutter),
+  $gutter: map-get($yoga, gutter),
   $justify: null,
   $align: null)
 {
-  @include flexie-display($display);
-  @include flexie-direction($direction);
-  @include flexie-wrap($wrap);
-  @include flexie-gutter(row, $gutter);
+  @include yoga-display($display);
+  @include yoga-direction($direction);
+  @include yoga-wrap($wrap);
+  @include yoga-gutter(row, $gutter);
   @if $justify != null {
-    @include flexie-justify($justify);
+    @include yoga-justify($justify);
   }
   @if $align != null {
-    @include flexie-align(row, $align);
+    @include yoga-align(row, $align);
   }
 }

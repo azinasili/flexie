@@ -2,7 +2,7 @@
 /// @param {string} $justify - Flex items horizontal distribution value
 /// @return {value} items horizontal distribution value
 /// @throw Warning if `$justify` is not `'flex-start'`, `'flex-end'`, `'center'`, `'space-around'`, `'space-between'`, `'around'`, `'between'`, `'left'`, or `'right'`
-@function _flexie-justify($justify) {
+@function _yoga-justify($justify) {
   $shorthand: (
     around  : space-around,
     between : space-between,
@@ -10,7 +10,7 @@
     right   : flex-end
   );
   @if not index('flex-start' 'flex-end' 'center' 'space-around' 'space-between', $justify) and map-has-key($shorthand, $justify) == false {
-    @warn '`#{$justify}` is not a valid argument for flexie-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
+    @warn '`#{$justify}` is not a valid argument for yoga-justify(). Please use `flex-start`, `flex-end`, `center`, `space-around`, `space-between`, `around`, `between`, `left`, or `right` instead.';
   } @else if map-has-key($shorthand, $justify) {
     @return map-get($shorthand, $justify);
   }

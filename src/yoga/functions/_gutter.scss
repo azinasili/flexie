@@ -3,11 +3,11 @@
 /// @param {number} $gutter - Gutter width
 /// @return {number} Gutter width for row or column
 /// @throw Warning if `$gutter` is not a number or is unitless
-@function _flexie-gutter($row-or-col, $gutter) {
+@function _yoga-gutter($row-or-col, $gutter) {
   @if $gutter == 0 {
     @return null;
   } @else if type-of($gutter) != number or unitless($gutter) == true or $gutter < 0 {
-    @warn '`#{$gutter}` is not a valid argument of flexie-gutter(). Please use positive number with a unit instead';
+    @warn '`#{$gutter}` is not a valid argument of yoga-gutter(). Please use positive number with a unit instead';
   }
   @if index('c' 'col' 'column', $row-or-col) {
     @return $gutter/2;

@@ -2,9 +2,9 @@
 /// @param {string} $display - Flex display value
 /// @return {value} Display value for flex items
 /// @throw Warning if `$display` is not `'flex'` or `'inline-flex'`
-@function _flexie-display($display) {
+@function _yoga-display($display) {
   @if not index('flex' 'inline-flex', $display) {
-    @warn '`#{$display}` is not a valid argument of flexie-display(). Please use `flex` or `inline-flex` instead.';
+    @warn '`#{$display}` is not a valid argument of yoga-display(). Please use `flex` or `inline-flex` instead.';
   }
   @return $display;
 }

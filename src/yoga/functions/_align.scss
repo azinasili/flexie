@@ -2,14 +2,14 @@
 /// @param {string} $align - Flex alignment value for row or column
 /// @return {value} Flex alignment value
 /// @throw Warning if `$align` is not `'flex-start'`, `'flex-end'`, `'center'`, `'stretch'`, `'baseline'`, `'bottom'`, `'middle'`, or `'top'`
-@function _flexie-align($align) {
+@function _yoga-align($align) {
   $shorthand: (
     bottom : flex-end,
     middle : center,
     top    : flex-start
   );
   @if not index('flex-start' 'flex-end' 'center' 'stretch' 'baseline', $align) and map-has-key($shorthand, $align) == false {
-    @warn '`#{$align}` is not a valid argument for flexie-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
+    @warn '`#{$align}` is not a valid argument for yoga-align(). Please use `flex-start`, `flex-end`, `center`, `stretch`, `baseline`, `bottom`, `middle`, or `top` instead.';
   } @else if map-has-key($shorthand, $align) {
     @return map-get($shorthand, $align);
   }

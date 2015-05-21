@@ -1,0 +1,28 @@
+/// Row or column gutter width setter
+/// @param {string} $row-or-col [col] - Determine gutter width context
+/// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
+/// @require {function} _yoga-gutter - Calculate gutter for row or column
+/// @output Gutter width for row or column depending on context passed
+/// @throw Warning and invalid property if `$row-or-col` is not `'r'`, `'row'`, `'c'`, `'col'`, or `'column'`
+/// @example scss
+///   .foo {
+///     @include yoga-gutter(row, 20px);
+///   }
+/// @example css
+///   .foo {
+///     margin-left: -10px;
+///     margin-right: -10px;
+///   }
+@mixin yoga-gutter($row-or-col: col, $gutter: map-get($yoga, gutter)) {
+  @if index('c' 'col' 'column', $row-or-col) {
+    padding-left: _yoga-gutter($row-or-col, $gutter);
+    padding-right: _yoga-gutter($row-or-col, $gutter);
+
+  } @else if index('r' 'row', $row-or-col) {
+    margin-left: _yoga-gutter($row-or-col, $gutter);
+    margin-right: _yoga-gutter($row-or-col, $gutter);
+  } @else {
+    @warn '`#{$row-or-col}` is not a valid argument for yoga-gutter(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
+    invalid-argument: $row-or-col;
+  }
+}

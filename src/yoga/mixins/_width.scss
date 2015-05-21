@@ -5,7 +5,7 @@
 ///       causes a bug in IE because it removes units on 0 values
 /// @example scss
 ///   .foo {
-///     @include flexie-width(3/5);
+///     @include yoga-width(3/5);
 ///   }
 /// @example css
 ///   .foo {
@@ -14,7 +14,7 @@
 ///     flex-basis: 60%;
 ///     max-width: 60%;
 ///   }
-@mixin flexie-width($width: null) {
+@mixin yoga-width($width: null) {
   @if $width == null {
     flex-grow: 0;
     flex-shrink: 1;

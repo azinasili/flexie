@@ -2,9 +2,9 @@
 /// @param {number} $order - Flex item source order value
 /// @return {number} Flex item source order value
 /// @throw Warning if `$order` is not a number or is unitless
-@function _flexie-order($order) {
+@function _yoga-order($order) {
   @if type-of($order) != number or unitless($order) != true or round($order) != $order {
-    @warn '`#{$order}` is not a valid argument of flexie-order(). Please use a unit-less integer instead.';
+    @warn '`#{$order}` is not a valid argument of yoga-order(). Please use a unit-less integer instead.';
   }
   @return $order;
 }
