@@ -15,7 +15,7 @@ a basic predefined 10 column grid system to quickly make layouts
   ```
 3. Import `yoga/yoga-grid.scss` if using predefined grid
 
-**Note:** *The path fornYoga might be different in your project*
+**Note:** *The path for Yoga might be different in your project*
 
 ### Manuel Install
 1. Download Yoga zip and include `yoga` folder into your project
