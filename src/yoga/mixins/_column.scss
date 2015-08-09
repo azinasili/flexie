@@ -18,15 +18,14 @@
 ///   }
 /// @example css
 ///   .foo {
-///     flex-basis: 60%;
-///     flex-grow: 0;
-///     max-width: 60%;
-///     padding-left: 10px;
-///     padding-right: 10px;
+///     align-self: center;
 ///     display: flex;
 ///     flex-direction: row;
-///     align-self: center;
+///     padding-left: 10px;
+///     padding-right: 10px;
 ///     order: 2;
+///     flex: 1 0 60%;
+///     max-width: 60%;
 ///   }
 @mixin yoga-column(
   $width: auto,
@@ -34,18 +33,18 @@
   $display: flex,
   $direction: column,
   $align: null,
-  $order: null)
-{
-  @include yoga-width($width);
-  @include yoga-gutter(col, $gutter);
-  @include yoga-display($display);
-  @include yoga-direction($direction);
+  $order: null
+) {
   @if $align != null {
     @include yoga-align(col, $align);
   }
+  @include yoga-display($display);
+  @include yoga-direction($direction);
+  @include yoga-gutter(col, $gutter);
   @if $order != null {
     @include yoga-order($order);
   }
+  @include yoga-width($width);
 }
 
 /// Alias to yoga-column()
