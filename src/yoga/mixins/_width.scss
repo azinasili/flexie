@@ -16,26 +16,17 @@
 ///   }
 @mixin yoga-width($width: null) {
   @if $width == null {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
+    flex: 0 1 auto;
   } @else if $width == auto {
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 0;
+    flex: 1 0 auto;
     max-width: 100%;
     min-width: 0;
   } @else {
-    flex-grow: 0;
-    flex-shrink: 1;
     @if type-of($width) == number and floor(abs($width)) != abs($width) {
-      flex-basis: percentage($width);
+      flex: 0 1 percentage($width);
       max-width: percentage($width);
-    } @else if $width == 1 {
-      flex-basis: 100%;
-      max-width: 100%;
     } @else {
-      flex-basis: $width;
+      flex: 0 1 $width;
       max-width: $width;
     }
   }
