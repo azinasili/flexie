@@ -1,8 +1,6 @@
 /// Column width setter
-/// @param {string | number} $col-width [auto] - Column width
+/// @param {string | number} $width [null] - Column width
 /// @output Flex item width
-/// @todo Change to flex shorthand, currently cssmin grunt plugin
-///       causes a bug in IE because it removes units on 0 values
 /// @example scss
 ///   .foo {
 ///     @include yoga-width(3/5);
