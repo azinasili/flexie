@@ -81,11 +81,13 @@
 
 // Column sizes
 @if map-has-key($yoga, columns) {
-  @for $i from 1 through map-get($yoga, columns) {
+  .col-1         { @include yoga-width(100%); }
+  @for $i from 2 through map-get($yoga, columns) {
     .col-#{$i}   { @include yoga-width(1/$i); }
   }
 } @else {
-  @for $i from 1 through 10 {
+  .col-1         { @include yoga-width(100%); }
+  @for $i from 2 through 10 {
     .col-#{$i}   { @include yoga-width(1/$i); }
   }
 }
