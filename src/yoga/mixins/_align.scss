@@ -13,12 +13,12 @@
 ///     align-self: stretch;
 ///   }
 @mixin yoga-align($row-or-col: row, $align: flex-start) {
-  @if index('c' 'col' 'column', $row-or-col) {
-    align-self: _yoga-align($align);
-  } @else if index('r' 'row', $row-or-col) {
-    align-items: _yoga-align($align);
-  } @else {
+  @if not index('r' 'row', $row-or-col) and not index('c' 'col' 'column', $row-or-col) {
     @warn '`#{$row-or-col}` is not a valid argument for yoga-align(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
-    invalid-argument: $row-or-col;
+  }
+  @if index('r' 'row', $row-or-col) {
+    align-items: _yoga-align($align);
+  } @else if index('c' 'col' 'column', $row-or-col) {
+    align-self: _yoga-align($align);
   }
 }

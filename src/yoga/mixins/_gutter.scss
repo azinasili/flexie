@@ -14,15 +14,13 @@
 ///     margin-right: -10px;
 ///   }
 @mixin yoga-gutter($row-or-col: col, $gutter: map-get($yoga, gutter)) {
-  @if index('c' 'col' 'column', $row-or-col) {
-    padding-left: _yoga-gutter($row-or-col, $gutter);
-    padding-right: _yoga-gutter($row-or-col, $gutter);
-
-  } @else if index('r' 'row', $row-or-col) {
+  @if not index('r' 'row', $row-or-col) and not index('c' 'col' 'column', $row-or-col) {
+    @warn '`#{$row-or-col}` is not a valid argument for yoga-gutter(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
+  } @if index('r' 'row', $row-or-col) {
     margin-left: _yoga-gutter($row-or-col, $gutter);
     margin-right: _yoga-gutter($row-or-col, $gutter);
-  } @else {
-    @warn '`#{$row-or-col}` is not a valid argument for yoga-gutter(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
-    invalid-argument: $row-or-col;
+  } @else if index('c' 'col' 'column', $row-or-col) {
+    padding-left: _yoga-gutter($row-or-col, $gutter);
+    padding-right: _yoga-gutter($row-or-col, $gutter);
   }
 }
