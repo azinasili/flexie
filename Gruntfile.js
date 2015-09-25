@@ -31,9 +31,8 @@ module.exports = function (grunt) {
      * Set project info
      */
     project: {
-      src  : 'src',
-      app  : 'demo',
-      css  : '<%= project.app %>/css/yoga.css',
+      src  : 'test/css',
+      css  : '<%= project.src %>/yoga.css',
       scss : '<%= project.src %>/yoga-grid.scss'
     },
 

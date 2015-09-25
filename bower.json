@@ -3,16 +3,17 @@
   "version": "0.2.3",
   "homepage": "https://github.com/azinasili/yoga",
   "authors": "Azin Asili <azinasili@gmail.com>",
-  "description": "Flexbox grid system made specifically for SCSS",
-  "main": [
-    "src/yoga/_yoga.scss",
-    "src/yoga-grid.scss"
-  ],
+  "description": "Flexbox Sass grid system library",
+  "main": "_yoga.scss",
   "keywords": [
+    "flexbox",
     "grid",
     "sass",
     "scss",
-    "flexbox"
+    "helper",
+    "library",
+    "mixins",
+    "functions"
   ],
   "license": "MIT",
   "ignore": [
@@ -20,7 +21,6 @@
     "node_modules",
     "bower_components",
     "_tmp",
-    "demo",
     "bower_components",
     "bower.json",
     "Gruntfile.js",
