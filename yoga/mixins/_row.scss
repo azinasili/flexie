@@ -1,6 +1,7 @@
 /// Create row element
 /// @author Azin Asili
 /// @access public
+/// @param {string} $display [flex] - Flex display value
 /// @param {string} $direction [row] - Flex direction value
 /// @param {string} $wrap [wrap] - Flex wrap value
 /// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
@@ -15,7 +16,7 @@
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
 /// @example scss
 ///   .foo {
-///     @include yoga-row(row-reverse, nowrap, 20px, center, stretch);
+///     @include yoga-row(flex, row-reverse, nowrap, 20px, center, stretch);
 ///   }
 /// @example css
 ///   .foo {
@@ -28,6 +29,7 @@
 ///     flex-wrap: nowrap;
 ///   }
 @mixin yoga-row(
+  $display: flex,
   $direction: row,
   $wrap: wrap,
   $gutter: map-get($yoga, gutter),
