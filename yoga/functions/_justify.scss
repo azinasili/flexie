@@ -1,4 +1,6 @@
 /// Flex items horizontal distribution getter
+/// @author Azin Asili
+/// @access private
 /// @param {string} $justify - Flex items horizontal distribution value
 /// @return {value} items horizontal distribution value
 /// @throw Warning if `$justify` is not `'flex-start'`, `'flex-end'`, `'center'`, `'space-around'`, `'space-between'`, `'around'`, `'between'`, `'left'`, or `'right'`

@@ -1,4 +1,6 @@
 /// Flex alignment setter
+/// @author Azin Asili
+/// @access public
 /// @param {string} $row-or-col [row] - Determine alignment context
 /// @param {string} $align [flex-start] - Flex alignment value
 /// @require {function} _yoga-align - Flex item alignment getter

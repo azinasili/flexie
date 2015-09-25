@@ -1,4 +1,6 @@
 /// Row or column gutter width setter
+/// @author Azin Asili
+/// @access public
 /// @param {string} $row-or-col [col] - Determine gutter width context
 /// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
 /// @require {function} _yoga-gutter - Calculate gutter for row or column

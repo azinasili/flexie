@@ -1,4 +1,6 @@
 /// Flex direction value getter
+/// @author Azin Asili
+/// @access private
 /// @param {string} $direction - Flex direction value
 /// @return {value} Flex direction value
 /// @throw Warning if `$direction` is not `'row'`, `'row-reverse'`, `'column'`, or `'column-reverse'`

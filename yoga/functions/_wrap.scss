@@ -1,4 +1,6 @@
 /// Flex wrap getter
+/// @author Azin Asili
+/// @access private
 /// @param {string} $wrap - Flex wrap value
 /// @return {value} Flex wrap value
 /// @throw Warning if `$wrap` is not `'wrap'`, `'wrap-reverse'`, `'nowrap'`

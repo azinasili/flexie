@@ -1,4 +1,6 @@
 /// Create container element
+/// @author Azin Asili
+/// @access public
 /// @param {number} $width [map-get($yoga, max-width)] - Container element width
 /// @param {number} $gutter [map-get($yoga, gutter)] - Container element gutter width
 /// @require {mixin} yoga-gutter - Row or column gutter width setter

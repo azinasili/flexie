@@ -1,4 +1,6 @@
 /// Flex display value getter
+/// @author Azin Asili
+/// @access private
 /// @param {string} $display - Flex display value
 /// @return {value} Display value for flex items
 /// @throw Warning if `$display` is not `'flex'` or `'inline-flex'`

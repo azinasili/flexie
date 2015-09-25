@@ -1,4 +1,6 @@
 /// Justify-content property setter
+/// @author Azin Asili
+/// @access public
 /// @param {string} $justify [flex-start] - Justify-content value
 /// @require {function} _yoga-justify - Flex items horizontal distribution getter
 /// @output Justify content for flex children

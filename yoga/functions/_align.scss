@@ -1,4 +1,6 @@
 /// Flex item alignment getter
+/// @author Azin Asili
+/// @access private
 /// @param {string} $align - Flex alignment value for row or column
 /// @return {value} Flex alignment value
 /// @throw Warning if `$align` is not `'flex-start'`, `'flex-end'`, `'center'`, `'stretch'`, `'baseline'`, `'bottom'`, `'middle'`, or `'top'`

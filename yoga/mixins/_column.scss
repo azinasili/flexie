@@ -1,4 +1,6 @@
 /// Create column element
+/// @author Azin Asili
+/// @access public
 /// @param {number} $width [auto] - Column width
 /// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
 /// @param {string} $display [flex] - Flex display value
@@ -48,7 +50,7 @@
 }
 
 /// Alias to yoga-column()
-/// @alias yoga-column()
+/// @alias yoga-column
 @mixin yoga-col($args...) {
   @include yoga-column($args...);
 }
