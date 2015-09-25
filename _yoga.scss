@@ -8,12 +8,15 @@
 @import 'yoga/options';
 
 // Yoga functions
+@import 'yoga/functions/is-float';
+@import 'yoga/functions/convert-float';
 @import 'yoga/functions/display';
 @import 'yoga/functions/direction';
 @import 'yoga/functions/gutter';
 @import 'yoga/functions/wrap';
 @import 'yoga/functions/justify';
 @import 'yoga/functions/align';
+@import 'yoga/functions/flex';
 @import 'yoga/functions/order';
 
 // Yoga mixins
@@ -24,7 +27,6 @@
 @import 'yoga/mixins/justify';
 @import 'yoga/mixins/align';
 @import 'yoga/mixins/width';
-@import 'yoga/mixins/flex';
 @import 'yoga/mixins/order';
 @import 'yoga/mixins/container';
 @import 'yoga/mixins/row';

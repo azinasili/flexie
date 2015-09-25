@@ -1,0 +1,13 @@
+/// Flex shorthand setter
+/// @author Azin Asili
+/// @access private
+/// @param {list | string} $flex - Flex shorthand properties
+/// @return {value} Flex shorthand
+@function _yoga-flex($flex: null) {
+  @if type-of($flex) == 'list' and length($flex) == 3 {
+    $width: nth($flex, 3);
+    $convert: _yoga-is-float($width);
+    @return set-nth($flex, 3, $convert);
+  }
+  @return $flex;
+}
