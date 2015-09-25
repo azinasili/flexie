@@ -21,7 +21,7 @@
     max-width: 100%;
   } @else if type-of($flex) == number {
     flex: 0 1 _yoga-convert-float($flex);
-    max-width: percentage($flex);
+    max-width: _yoga-convert-float($flex);
   } @else if type-of($flex) == list {
     flex: _yoga-flex($flex);
     max-width: _yoga-convert-float(nth($flex, 3));

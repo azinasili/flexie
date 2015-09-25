@@ -92,10 +92,6 @@
   }
 }
 
-.balls {
-  @include yoga-width(1/8);
-}
-
 
 // ----------------------------------------------------------------------------
 // 4. Breakpoints
@@ -146,12 +142,14 @@
 
   // Column sizes
   @if map-has-key($yoga, columns) {
-    @for $i from 1 through map-get($yoga, columns) {
-      .col-#{$i}-md   { @include yoga-width(1/$i); }
+    .col-1-md       { @include yoga-width(100%); }
+    @for $i from 2 through map-get($yoga, columns) {
+      .col-#{$i}-md { @include yoga-width(1/$i); }
     }
   } @else {
-    @for $i from 1 through 10 {
-      .col-#{$i}-md   { @include yoga-width(1/$i); }
+    .col-1-md       { @include yoga-width(100%); }
+    @for $i from 2 through 10 {
+      .col-#{$i}-md { @include yoga-width(1/$i); }
     }
   }
 }
@@ -201,12 +199,14 @@
 
   // Column sizes
   @if map-has-key($yoga, columns) {
-    @for $i from 1 through map-get($yoga, columns) {
-      .col-#{$i}-lg   { @include yoga-width(1/$i); }
+    .col-1-lg       { @include yoga-width(100%); }
+    @for $i from 2 through map-get($yoga, columns) {
+      .col-#{$i}-lg { @include yoga-width(1/$i); }
     }
   } @else {
-    @for $i from 1 through 10 {
-      .col-#{$i}-lg   { @include yoga-width(1/$i); }
+    .col-1-lg       { @include yoga-width(100%); }
+    @for $i from 2 through 10 {
+      .col-#{$i}-lg { @include yoga-width(1/$i); }
     }
   }
 }
@@ -255,13 +255,16 @@
   .col-auto-xl { @include yoga-width(auto); }
 
   // Column sizes
+  // Column sizes
   @if map-has-key($yoga, columns) {
-    @for $i from 1 through map-get($yoga, columns) {
-      .col-#{$i}-xl   { @include yoga-width(1/$i); }
+    .col-1-xl       { @include yoga-width(100%); }
+    @for $i from 2 through map-get($yoga, columns) {
+      .col-#{$i}-xl { @include yoga-width(1/$i); }
     }
   } @else {
-    @for $i from 1 through 10 {
-      .col-#{$i}-xl   { @include yoga-width(1/$i); }
+    .col-1-xl       { @include yoga-width(100%); }
+    @for $i from 2 through 10 {
+      .col-#{$i}-xl { @include yoga-width(1/$i); }
     }
   }
 }
