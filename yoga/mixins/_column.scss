@@ -8,7 +8,7 @@
 /// @param {string} $align [null] - Flex alignment value
 /// @param {string} $order [null] - Source order value
 /// @require {mixin} yoga-width - Column width setter
-/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @require {mixin} yoga-gutter - Parent or child gutter setter
 /// @require {mixin} yoga-display - Flex display property setter
 /// @require {mixin} yoga-direction - Flex direction property setter
 /// @require {mixin} yoga-align - Flex alignment setter
@@ -38,11 +38,11 @@
   $order: null
 ) {
   @if $align != null {
-    @include yoga-align(col, $align);
+    @include yoga-align($align, child);
   }
   @include yoga-display($display);
   @include yoga-direction($direction);
-  @include yoga-gutter(col, $gutter);
+  @include yoga-gutter($gutter, child);
   @if $order != null {
     @include yoga-order($order);
   }

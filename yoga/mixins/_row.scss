@@ -10,7 +10,7 @@
 /// @require {mixin} yoga-display - Flex display property setter
 /// @require {mixin} yoga-direction - Flex direction property setter
 /// @require {mixin} yoga-wrap - Flex-wrap property setter
-/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @require {mixin} yoga-gutter - Parent or child gutter setter
 /// @require {mixin} yoga-justify - Justify-content property setter
 /// @require {mixin} yoga-align - Flex alignment setter
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
@@ -37,11 +37,11 @@
   $align: null
 ) {
   @if $align != null {
-    @include yoga-align(row, $align);
+    @include yoga-align($align, parent);
   }
   @include yoga-display($display);
   @include yoga-direction($direction);
-  @include yoga-gutter(row, $gutter);
+  @include yoga-gutter($gutter, parent);
   @if $justify != null {
     @include yoga-justify($justify);
   }

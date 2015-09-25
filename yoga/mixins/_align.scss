@@ -1,11 +1,11 @@
 /// Flex alignment setter
 /// @author Azin Asili
 /// @access public
-/// @param {string} $row-or-col [row] - Determine alignment context
 /// @param {string} $align [flex-start] - Flex alignment value
+/// @param {string} $context [parent] - Determine alignment context
 /// @require {function} _yoga-align - Flex item alignment getter
 /// @output Align-self or align-items declaration depending on context passed
-/// @throw Warning and invalid property if `$row-or-col` is not `'r'`, `'row'`, `'c'`, `'col'`, or `'column'`
+/// @throw Warning and invalid property if `$context` is not `'p'`, `'parent'`, `'c'`, or `'child'`
 /// @example scss
 ///   .foo {
 ///     @include yoga-align(col, stretch);
@@ -14,13 +14,13 @@
 ///   .foo {
 ///     align-self: stretch;
 ///   }
-@mixin yoga-align($row-or-col: row, $align: flex-start) {
-  @if not index('r' 'row', $row-or-col) and not index('c' 'col' 'column', $row-or-col) {
-    @warn '`#{$row-or-col}` is not a valid argument for yoga-align(). Please use `r`, `row`, `c`, `col`, or `column` instead.';
+@mixin yoga-align($align: flex-start, $context: parent) {
+  @if not index('p' 'parent', $context) and not index('c' 'child', $context) {
+    @warn '`#{$context}` is not a valid argument for yoga-align(). Please use `p`, `parent`, `c`, or `child` instead.';
   }
-  @if index('r' 'row', $row-or-col) {
+  @if index('p' 'parent', $context) {
     align-items: _yoga-align($align);
-  } @else if index('c' 'col' 'column', $row-or-col) {
+  } @else if index('c' 'child', $context) {
     align-self: _yoga-align($align);
   }
 }

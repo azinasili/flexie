@@ -47,20 +47,20 @@
 .row-end       { @include yoga-justify(flex-end); }
 
 // Vertical alignment for children columns
-.row-top       { @include yoga-align(row); }
-.row-middle    { @include yoga-align(row, center); }
-.row-bottom    { @include yoga-align(row, flex-end); }
-.row-stretch   { @include yoga-align(row, stretch); }
+.row-top       { @include yoga-align(); }
+.row-middle    { @include yoga-align(center); }
+.row-bottom    { @include yoga-align(flex-end); }
+.row-stretch   { @include yoga-align(stretch); }
 
 // Evenly distribute remaining space for children columns
 .row-around    { @include yoga-justify(space-around); }
 .row-between   { @include yoga-justify(space-between); }
 
   // Column alignment overrides
-.col-top       { @include yoga-align(col); }
-.col-middle    { @include yoga-align(col, center); }
-.col-bottom    { @include yoga-align(col, flex-end); }
-.col-stretch   { @include yoga-align(col, stretch); }
+.col-top       { @include yoga-align($context: child); }
+.col-middle    { @include yoga-align(center, child); }
+.col-bottom    { @include yoga-align(flex-end, child); }
+.col-stretch   { @include yoga-align(stretch, child); }
 
 // Re-order columns
 @if map-has-key($yoga, columns) {
@@ -111,20 +111,20 @@
   .row-end-md       { @include yoga-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-md       { @include yoga-align(row); }
-  .row-middle-md    { @include yoga-align(row, center); }
-  .row-bottom-md    { @include yoga-align(row, flex-end); }
-  .row-stretch-md   { @include yoga-align(row, stretch); }
+  .row-top-md       { @include yoga-align(); }
+  .row-middle-md    { @include yoga-align(center); }
+  .row-bottom-md    { @include yoga-align(flex-end); }
+  .row-stretch-md   { @include yoga-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-md    { @include yoga-justify(space-around); }
   .row-between-md   { @include yoga-justify(space-between); }
 
   // Column alignment overrides
-  .col-top-md       { @include yoga-align(col); }
-  .col-middle-md    { @include yoga-align(col, center); }
-  .col-bottom-md    { @include yoga-align(col, flex-end); }
-  .col-stretch-md   { @include yoga-align(col, stretch); }
+  .col-top-md       { @include yoga-align($context: child); }
+  .col-middle-md    { @include yoga-align(center, child); }
+  .col-bottom-md    { @include yoga-align(flex-end, child); }
+  .col-stretch-md   { @include yoga-align(stretch, child); }
 
   // Re-order columns
   @if map-has-key($yoga, columns) {
@@ -168,20 +168,20 @@
   .row-end-lg       { @include yoga-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-lg       { @include yoga-align(row); }
-  .row-middle-lg    { @include yoga-align(row, center); }
-  .row-bottom-lg    { @include yoga-align(row, flex-end); }
-  .row-stretch-lg   { @include yoga-align(row, stretch); }
+  .row-top-lg       { @include yoga-align(); }
+  .row-middle-lg    { @include yoga-align(center); }
+  .row-bottom-lg    { @include yoga-align(flex-end); }
+  .row-stretch-lg   { @include yoga-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-lg    { @include yoga-justify(space-around); }
   .row-between-lg   { @include yoga-justify(space-between); }
 
   // Column alignment overrides
-  .col-top-lg       { @include yoga-align(col); }
-  .col-middle-lg    { @include yoga-align(col, center); }
-  .col-bottom-lg    { @include yoga-align(col, flex-end); }
-  .col-stretch-lg   { @include yoga-align(col, stretch); }
+  .col-top-lg       { @include yoga-align($context: child); }
+  .col-middle-lg    { @include yoga-align(center, child); }
+  .col-bottom-lg    { @include yoga-align(flex-end, child); }
+  .col-stretch-lg   { @include yoga-align(stretch, child); }
 
   // Re-order columns
   @if map-has-key($yoga, columns) {
@@ -225,20 +225,20 @@
   .row-end-xl       { @include yoga-justify(flex-end); }
 
   // Vertical alignment for children columns
-  .row-top-xl       { @include yoga-align(row); }
-  .row-middle-xl    { @include yoga-align(row, center); }
-  .row-bottom-xl    { @include yoga-align(row, flex-end); }
-  .row-stretch-xl   { @include yoga-align(row, stretch); }
+  .row-top-xl       { @include yoga-align(); }
+  .row-middle-xl    { @include yoga-align(center); }
+  .row-bottom-xl    { @include yoga-align(flex-end); }
+  .row-stretch-xl   { @include yoga-align(stretch); }
 
   // Evenly distribute remaining space for children columns
   .row-around-xl    { @include yoga-justify(space-around); }
   .row-between-xl   { @include yoga-justify(space-between); }
 
   // Column alignment overrides
-  .col-top-xl       { @include yoga-align(col); }
-  .col-middle-xl    { @include yoga-align(col, center); }
-  .col-bottom-xl    { @include yoga-align(col, flex-end); }
-  .col-stretch-xl   { @include yoga-align(col, stretch); }
+  .col-top-xl       { @include yoga-align($context: child); }
+  .col-middle-xl    { @include yoga-align(center, child); }
+  .col-bottom-xl    { @include yoga-align(flex-end, child); }
+  .col-stretch-xl   { @include yoga-align(stretch, child); }
 
   // Re-order columns
   @if map-has-key($yoga, columns) {
@@ -268,4 +268,3 @@
     }
   }
 }
-
