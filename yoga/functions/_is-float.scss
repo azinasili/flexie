@@ -1,0 +1,11 @@
+/// Check if number is a float
+/// @author Azin Asili
+/// @access private
+/// @param {number} $float - Number to check if is a float
+/// @return {number} True or false
+@function _yoga-is-float($float) {
+  @if type-of($float) == number and unitless($float) and floor(abs($float)) != abs($float) {
+    @return true;
+  }
+  @return false;
+}

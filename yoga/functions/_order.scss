@@ -1,4 +1,6 @@
 /// Flex item order getter
+/// @author Azin Asili
+/// @access private
 /// @param {number} $order - Flex item source order value
 /// @return {number} Flex item source order value
 /// @throw Warning if `$order` is not a number or is unitless

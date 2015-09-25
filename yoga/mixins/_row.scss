@@ -1,4 +1,6 @@
 /// Create row element
+/// @author Azin Asili
+/// @access public
 /// @param {string} $display [flex] - Flex display value
 /// @param {string} $direction [row] - Flex direction value
 /// @param {string} $wrap [wrap] - Flex wrap value
@@ -8,7 +10,7 @@
 /// @require {mixin} yoga-display - Flex display property setter
 /// @require {mixin} yoga-direction - Flex direction property setter
 /// @require {mixin} yoga-wrap - Flex-wrap property setter
-/// @require {mixin} yoga-gutter - Row or column gutter width setter
+/// @require {mixin} yoga-gutter - Parent or child gutter setter
 /// @require {mixin} yoga-justify - Justify-content property setter
 /// @require {mixin} yoga-align - Flex alignment setter
 /// @output Display, flex-direction, flex-wrap, margin, justify-content, and align-items declarations to create row
@@ -18,13 +20,13 @@
 ///   }
 /// @example css
 ///   .foo {
+///     align-items: stretch;
 ///     display: flex;
 ///     flex-direction: row-reverse;
-///     flex-wrap: nowrap;
 ///     margin-left: -10px;
 ///     margin-right: -10px;
 ///     justify-content: center;
-///     align-items: stretch;
+///     flex-wrap: nowrap;
 ///   }
 @mixin yoga-row(
   $display: flex,
@@ -32,16 +34,16 @@
   $wrap: wrap,
   $gutter: map-get($yoga, gutter),
   $justify: null,
-  $align: null)
-{
+  $align: null
+) {
+  @if $align != null {
+    @include yoga-align($align, parent);
+  }
   @include yoga-display($display);
   @include yoga-direction($direction);
-  @include yoga-wrap($wrap);
-  @include yoga-gutter(row, $gutter);
+  @include yoga-gutter($gutter, parent);
   @if $justify != null {
     @include yoga-justify($justify);
   }
-  @if $align != null {
-    @include yoga-align(row, $align);
-  }
+  @include yoga-wrap($wrap);
 }

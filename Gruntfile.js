@@ -31,9 +31,9 @@ module.exports = function (grunt) {
      * Set project info
      */
     project: {
-      src  : 'src',
-      app  : 'demo',
-      css  : '<%= project.app %>/css/yoga.css',
+      dir  : 'test',
+      src  : '<%= project.dir %>/css',
+      css  : '<%= project.src %>/yoga.css',
       scss : '<%= project.src %>/yoga-grid.scss'
     },
 
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           middleware: function (connect) {
-            return [lrSnippet, mountFolder(connect, 'demo')];
+            return [lrSnippet, mountFolder(connect, 'test')];
           }
         }
       }
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
           livereload: LIVERELOAD_PORT
         },
         files: [
-          '<%= project.app %>/{,*/}*.html',
+          '<%= project.dir %>/{,*/}*.html',
           '<%= project.css %>'
         ]
       }

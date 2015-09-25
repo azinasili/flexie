@@ -1,0 +1,43 @@
+/// Column width setter
+/// @author Azin Asili
+/// @access public
+/// @param {string | number | list} $flex [null] - Column width
+/// @require {function} _yoga-is-float - Check if number is a float
+/// @require {function} _yoga-convert-float - Convert float numbers to percents
+/// @require {function} _yoga-flex - Flex shorthand setter
+/// @output Flex item width
+/// @example scss
+///   .foo {
+///     @include yoga-width(3/5);
+///   }
+/// @example css
+///   .foo {
+///     flex: 0 1 60%;
+///     max-width: 60%;
+///   }
+@mixin yoga-width($flex: 0 1 auto) {
+  @if type-of($flex) == number and unitless($flex) and _yoga-is-float($flex) == false {
+    flex: $flex 1 0%;
+    max-width: 100%;
+  } @else if type-of($flex) == number {
+    flex: 0 1 _yoga-convert-float($flex);
+    max-width: _yoga-convert-float($flex);
+  } @else if type-of($flex) == list {
+    flex: _yoga-flex($flex);
+    max-width: _yoga-convert-float(nth($flex, 3));
+  } @else if type-of($flex) == string {
+    @if not index('initial' 'auto', $flex) {
+      @warn '`#{$flex}` is not a valid string for `yoga-width()`';
+    } @else if $flex == 'initial' {
+      flex: 0 1 auto;
+      max-width: 100%;
+    } @else if $flex == 'auto' {
+      flex: 1 1 auto;
+      max-width: 100%;
+      min-width: 0;
+    }
+  } @else {
+    flex: $flex;
+    max-width: 100%;
+  }
+}

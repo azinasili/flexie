@@ -1,0 +1,26 @@
+/// Flex alignment setter
+/// @author Azin Asili
+/// @access public
+/// @param {string} $align [flex-start] - Flex alignment value
+/// @param {string} $context [parent] - Determine alignment context
+/// @require {function} _yoga-align - Flex item alignment getter
+/// @output Align-self or align-items declaration depending on context passed
+/// @throw Warning and invalid property if `$context` is not `'p'`, `'parent'`, `'c'`, or `'child'`
+/// @example scss
+///   .foo {
+///     @include yoga-align(col, stretch);
+///   }
+/// @example css
+///   .foo {
+///     align-self: stretch;
+///   }
+@mixin yoga-align($align: flex-start, $context: parent) {
+  @if not index('p' 'parent', $context) and not index('c' 'child', $context) {
+    @warn '`#{$context}` is not a valid argument for yoga-align(). Please use `p`, `parent`, `c`, or `child` instead.';
+  }
+  @if index('p' 'parent', $context) {
+    align-items: _yoga-align($align);
+  } @else if index('c' 'child', $context) {
+    align-self: _yoga-align($align);
+  }
+}

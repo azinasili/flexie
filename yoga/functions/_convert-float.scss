@@ -1,0 +1,13 @@
+/// Convert float numbers to percents
+/// @author Azin Asili
+/// @access private
+/// @param {number} $float - Float to convert
+/// @return {number} converted number
+@function _yoga-convert-float($float) {
+  @if $float == 1 {
+    @return 100%;
+  } @else if _yoga-is-float($float) {
+    @return percentage($float);
+  }
+  @return $float;
+}

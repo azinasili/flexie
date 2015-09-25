@@ -1,8 +1,8 @@
 {
   "name": "yoga",
-  "title": "Yoga Grid System",
-  "description": "Flexbox grid system made specifically for SCSS",
-  "version": "0.2.3",
+  "title": "Yoga",
+  "description": "Flexbox Sass grid system library",
+  "version": "0.2.4",
   "copyright": "2015",
   "repository": {
     "type": "git",
@@ -12,7 +12,11 @@
     "flexbox",
     "grid",
     "sass",
-    "scss"
+    "scss",
+    "helper",
+    "library",
+    "mixins",
+    "functions"
   ],
   "author": "Azin Asili",
   "license": "MIT",

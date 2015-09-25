@@ -1,0 +1,28 @@
+/// Parent or child gutter setter
+/// @author Azin Asili
+/// @access public
+/// @param {number} $gutter [map-get($yoga, gutter)] - Gutter width
+/// @param {string} $context [child] - Determine parent or child gutter width
+/// @require {function} _yoga-gutter - Calculate gutter for row or column
+/// @output Gutter width for row or column depending on context passed
+/// @throw Warning and invalid property if `$context` is not `'p'`, `'parent'`, `'c'`, or `'child'`
+/// @example scss
+///   .foo {
+///     @include yoga-gutter(row, 20px);
+///   }
+/// @example css
+///   .foo {
+///     margin-left: -10px;
+///     margin-right: -10px;
+///   }
+@mixin yoga-gutter($gutter: map-get($yoga, gutter), $context: child) {
+  @if not index('p' 'parent', $context) and not index('c' 'child', $context) {
+    @warn '`#{$context}` is not a valid argument for yoga-gutter(). Please use `p`, `parent`, `c`, or `child` instead.';
+  } @if index('p' 'parent', $context) {
+    margin-left: _yoga-gutter($gutter, $context);
+    margin-right: _yoga-gutter($gutter, $context);
+  } @else if index('c' 'child', $context) {
+    padding-left: _yoga-gutter($gutter, $context);
+    padding-right: _yoga-gutter($gutter, $context);
+  }
+}
