@@ -6,7 +6,7 @@
 @function _yoga-flex($flex: null) {
   @if type-of($flex) == 'list' and length($flex) == 3 {
     $width: nth($flex, 3);
-    $convert: _yoga-is-float($width);
+    $convert: _yoga-convert-float($width);
     @return set-nth($flex, 3, $convert);
   }
   @return $flex;
