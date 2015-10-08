@@ -1,9 +1,11 @@
 {
   "name": "yoga",
-  "title": "Yoga",
   "description": "Flexbox Sass grid system library",
-  "version": "0.2.4",
+  "homepage": "https://github.com/azinasili/yoga",
+  "author": "Azin Asili @azinasili",
   "copyright": "2015",
+  "version": "0.2.5",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:azinasili/yoga.git"
@@ -18,9 +20,6 @@
     "mixins",
     "functions"
   ],
-  "author": "Azin Asili",
-  "license": "MIT",
-  "homepage": "https://github.com/azinasili/yoga",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
     "grunt": "^0.4.5",
