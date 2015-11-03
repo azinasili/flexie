@@ -1,7 +1,7 @@
 # Yoga
-Yoga is a flexbox and easy to use flexbox Sass grid library. Yoga is
-designed to be simple custom grid solution for modern web layouts. The
-library does not include any browser prefixed CSS by default.
+Yoga is a flexbox Sass grid library. Yoga is designed to be simple custom grid
+solution for modern web layouts. The library does not include any browser
+prefixed CSS by default.
 
 ## How To Use Yoga
 
@@ -10,7 +10,7 @@ library does not include any browser prefixed CSS by default.
 2. Import Yoga at the beginning of your stylesheet
 
   ```scss
-  @import 'yoga/yoga';
+  @import 'path/to/bower/yoga/yoga';
   ```
 
 **Note:** *The path for Yoga might be different in your project*
