@@ -11,7 +11,7 @@ module.exports = {
       middleware: function (connect) {
         return [
           require('connect-livereload')({
-            port: '<%= port %>'
+            port: '<%= reload %>'
           }),
           connect.static(require('path').resolve('test'))
         ];
