@@ -5,7 +5,7 @@ prefixed CSS by default.
 
 ## How To Use Yoga
 
-### Using Bower
+### Install with Bower
 1. Run `bower install yoga`
 2. Import Yoga at the beginning of your stylesheet
 
@@ -20,15 +20,23 @@ prefixed CSS by default.
 2. Import Yoga at the beginning of your stylesheet
 
   ```scss
-  @import 'yoga/yoga';
+  @import 'path/to/yoga/yoga';
   ```
 
-### Documentation
-Yoga uses [SassDoc](https://github.com/SassDoc/sassdoc) to document function and
-mixin uses. Further documentation coming soon!
+### API
+Yoga can be used to create basic bootstrap style grids using `@include yoga-container`,
+`@include yoga-row`, and `@include yoga-columns` mixins. Yoga also includes mixins
+for individual flexbox properties to create your own custom and semantic layouts.
+Yoga includes [SassDoc](https://github.com/SassDoc/sassdoc) to document function
+and mixin uses. Open the `HTML` document in your browser to read about all of
+Yoga's APIs.
 
+## Bugs
+Flexbox currently has some weird cross bowers bugs. A list of common bugs can be
+found at [flexbugs](https://github.com/philipwalton/flexbugs) repo. If there is an
+issue with Yoga please open an issue with steps to recreate the bug.
 
-#### License
+## License
 The MIT License (MIT)
 
 Copyright (c) 2014 Azin Asili
