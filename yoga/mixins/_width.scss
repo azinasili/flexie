@@ -1,7 +1,7 @@
 /// Column width setter
 /// @author Azin Asili
 /// @access public
-/// @param {string | number | list} $flex [null] - Column width
+/// @param {string | number | list} $flex [0 1 auto] - Column width
 /// @require {function} _yoga-is-float - Check if number is a float
 /// @require {function} _yoga-convert-float - Convert float numbers to percents
 /// @require {function} _yoga-flex - Flex shorthand setter
