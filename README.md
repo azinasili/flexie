@@ -3,25 +3,26 @@ Yoga is a flexbox Sass grid library. Yoga is designed to be simple custom grid
 solution for modern web layouts. The library does not include any browser
 prefixed CSS by default.
 
-## How To Use Yoga
+## Installation
+With [NPM](https://www.npmjs.com/package/@azinasili/yoga):
 
-### Install with Bower
-1. Run `bower install yoga`
-2. Import Yoga at the beginning of your stylesheet
+```bash
+npm install @azinasili/yoga --save
+```
 
-  ```scss
-  @import 'path/to/bower/yoga/yoga';
-  ```
+Install Yoga with [Bower](http://bower.io) package manager:
 
-**Note:** *The path for Yoga might be different in your project*
+```bash
+bower install yoga --save
+```
 
-### Manuel Install
-1. Download Yoga zip and include `yoga` folder into your project
-2. Import Yoga at the beginning of your stylesheet
+Import Yoga into your stylesheet:
 
-  ```scss
-  @import 'path/to/yoga/yoga';
-  ```
+```scss
+@import "path/to/yoga/yoga";
+```
+
+It’s not recommended to add or modify files so that you can update them easily.
 
 ### API
 Yoga can be used to create basic bootstrap style grids using `@include yoga-container`,
