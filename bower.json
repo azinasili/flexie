@@ -3,8 +3,8 @@
   "description": "Flexbox Sass grid system library",
   "homepage": "https://github.com/azinasili/yoga",
   "author": "Azin Asili @azinasili",
-  "copyright": "2015",
-  "version": "0.2.6",
+  "copyright": "2016",
+  "version": "0.2.7",
   "license": "MIT",
   "main": "_yoga.scss",
   "keywords": [
